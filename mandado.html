@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tam Osornio">
+    <meta name="rights" content="Tam Osornio">
+    <meta name="description" content="¡Hola! Aquí podrás encontrar tu mercado y tianguis, tus puestos más cerca de ti">
+    <meta name="keywords" content="mercado, tianguis, puestos, frutas, verduras, carne, miscelaneas, ropa, comida">
+    <meta name="robots" content="index, follow">
+
+    <!-- Required links CSS -->
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- Favicon CSS-->
+    <link rel="icon" type="image/ico" href="img/mimarchante.ico">
+    <!--Animate CSS-->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--Hover CSS-->
+    <link rel="stylesheet" href="css/hover.css" media="all">
+    <!-- Google Fonts CSS   -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+    <!-- Mi Marchante Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Mi Marchante CSS -->
+    <link rel="stylesheet" href="css/mimarchante_style.css">
+    <!-- Mi Marchante Fonts CSS -->
+    <link rel="stylesheet" href="css/mimarchante_fonts.css">
+
+    <title>Mi Mandado / Encuentra tu puesto favorito</title>
+  </head>
+
+  <!-- Body -->
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-mm1">
+      <a class="navbar-brand logotipo" href="index.html">
+        Mi <br> marchante
+      </a>
+      <a href="bolsa.html"><i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">3</sup></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#login">Ofelia González <i class="far fa-user"></i></a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Container -->
+    <section class="container mb-5">
+      <div class="row justify-content-center">
+        <!-- Título del Mercado -->
+        <div class="col-md-12 bg-warning mb-3 py-2">
+          <p class="h2 mb-0 titulo">
+            <i class="fas fa-warehouse"></i> Mercado San Cosme
+          </p>
+        </div>
+        <!-- Pasillos -->
+        <div class="col-md-12 mb-5 px-0">
+          <div class="accordion" id="accordionExample">
+            <!-- Pasillo 1 FRUTAS - VERDURAS - HIERBAS -SEMILLAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingOne">
+                <h5 class="card-title lead d-inline">
+                  FRUTAS - VERDURAS - HIERBAS -SEMILLAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">3</sup>
+                </p>
+                <p>
+                <i class="fas fa-apple-alt fa-2x text-danger"></i>
+                <i class="fas fa-carrot fa-2x text-warning"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo1" aria-expanded="true" aria-controls="pasillo1">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 1 FRUTAS - VERDURAS - HIERBAS -SEMILLAS -->
+              <div id="pasillo1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 2 RES - POLLO - PESCADO - CARNE -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingTwo">
+                <h5 class="card-title lead d-inline">
+                  RES - POLLO - PESCADO - CARNE
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-drumstick-bite fa-2x text-warning"></i>
+                  <i class="fas fa-fish fa-2x text-primary"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo2" aria-expanded="true" aria-controls="pasillo2">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 2 RES - POLLO - PESCADO - CARNE -->
+              <div id="pasillo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 3 LÁCTEOS - HUEVO - SALCHICHONERÍA -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingThree">
+                <h5 class="card-title lead d-inline">
+                  LÁCTEOS - HUEVO - SALCHICHONERÍA
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-egg fa-2x text-secondary"></i>
+                  <i class="fas fa-cheese fa-2x text-warning"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo3" aria-expanded="true" aria-controls="pasillo3">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 3 LÁCTEOS / HUEVO / SALCHICHONERÍA -->
+              <div id="pasillo3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 4 ABARROTES - ESPECIAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingFour">
+                <h5 class="card-title lead d-inline">
+                  ABARROTES - ESPECIAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-wine-bottle fa-2x text-primary"></i>
+                  <i class="fas fa-seedling fa-2x text-success"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo4" aria-expanded="true" aria-controls="pasillo4">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 4 ABARROTES / ESPECIAS -->
+              <div id="pasillo4" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 5 COMIDAS PREPARADAS - GARNACHAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingFive">
+                <h5 class="card-title lead d-inline">
+                  COMIDAS PREPARADAS - GARNACHAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-utensils fa-2x text-secondary"></i>
+                  <i class="fas fa-hamburger fa-2x text-warning"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo5" aria-expanded="true" aria-controls="pasillo5">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 5 COMIDAS - PREPARADAS - GARNACHAS -->
+              <div id="pasillo5" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 6 DULCERÍAS - DESECHABLES - MATERIAS PRIMAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingSix">
+                <h5 class="card-title lead d-inline">
+                  DULCERÍAS - DESECHABLES - MATERIAS PRIMAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-candy-cane fa-2x text-danger"></i>
+                  <i class="fas fa-glass-whiskey fa-2x text-primary"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo6" aria-expanded="true" aria-controls="pasillo6">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 6 DULCERÍAS - DESECHABLES -->
+              <div id="pasillo6" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 7 FLORERÍAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingSeven">
+                <h5 class="card-title lead d-inline">
+                  FLORERÍAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-spa fa-2x text-danger"></i>
+                  <i class="fas fa-leaf fa-2x text-success"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo7" aria-expanded="true" aria-controls="pasillo7">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 7 FLORERÍAS -->
+              <div id="pasillo7" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 8 MASCOTAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingEight">
+                <h5 class="card-title lead d-inline">
+                 MASCOTAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-paw fa-2x text-dark"></i>
+                  <i class="fas fa-paw fa-2x text-dark"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo8" aria-expanded="true" aria-controls="pasillo8">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 8 MASCOTAS -->
+              <div id="pasillo8" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 9 ROPA - UNIFORMES - CALZADO - MOCHILAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingNine">
+                <h5 class="card-title lead d-inline">
+                  ROPA - UNIFORMES - CALZADO - MOCHILAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-tshirt fa-2x text-primary"></i>
+                  <i class="fas fa-user-tie fa-2x text-success"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo9" aria-expanded="true" aria-controls="pasillo9">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 9 ROPA - UNIFORMES - CALZADO - MOCHILAS -->
+              <div id="pasillo9" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 10 REGALOS - DISFRACES -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingTen">
+                <h5 class="card-title lead d-inline">
+                  REGALOS - DISFRACES
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-gifts fa-2x text-danger"></i>
+                  <i class="fas fa-mask fa-2x text-dark"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo10" aria-expanded="true" aria-controls="pasillo10">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 10 REGALOS - DISFRACES -->
+              <div id="pasillo10" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 11 PAPELERÍAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingEleven">
+                <h5 class="card-title lead d-inline">
+                  PAPELERÍAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-paperclip fa-2x text-dark"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo11" aria-expanded="true" aria-controls="pasillo11">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 11 PAPELERÍAS -->
+              <div id="pasillo11" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 12 PELUQERÍAS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingTwelve">
+                <h5 class="card-title lead d-inline">
+                  PELUQERÍAS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-cut fa-2x text-dark"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo12" aria-expanded="true" aria-controls="pasillo12">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 12 PELUQERÍAS -->
+              <div id="pasillo12" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 13 FERRETERÍA - CONSTRUCCIÓN -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingThirteen">
+                <h5 class="card-title lead d-inline">
+                  FERRETERÍA - CONSTRUCCIÓN
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-tools fa-2x text-primary"></i>
+                  <i class="fas fa-hard-hat fa-2x text-warning"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo13" aria-expanded="true" aria-controls="pasillo13">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 13 FERRETERÍA - CONSTRUCCIÓN -->
+              <div id="pasillo13" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 14 MERCERÍA - HILOS - TELAS - BORDADOS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingFourteen">
+                <h5 class="card-title lead d-inline">
+                  MERCERÍA - HILOS - TELAS - BORDADOS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-award fa-2x text-warning"></i>
+                  <i class="fas fa-tshirt fa-2x text-primary"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo14" aria-expanded="true" aria-controls="pasillo14">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 14 MATERIAS PRIMAS - HILOS - TELAS - BORDADOS -->
+              <div id="pasillo14" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Pasillo 15 HOGAR - OTROS -->
+            <div class="card border-info">
+              <div class="card-header bg-white text-center text-secondary" id="headingFiveteen">
+                <h5 class="card-title lead d-inline">
+                  HOGAR - OTROS
+                </h5>
+                <p class="float-right">
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
+                </p>
+                <p>
+                  <i class="fas fa-home fa-2x text-danger"></i>
+                  <i class="fas fa-boxes fa-2x text-primary"></i>
+                </p>
+                <h2 class="mb-0 mt-3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo15" aria-expanded="true" aria-controls="pasillo15">
+                    VER LOCALES
+                    <br>
+                    <i class="fas fa-angle-down"></i>
+                  </button>
+                </h2>
+              </div>
+              <!-- Locales de Pasillo 15 HOGAR - OTROS -->
+              <div id="pasillo15" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordionExample">
+                <div class="card-body table-responsive overflow-auto h-300">
+                  <table class="table table-hover dataTable">
+                    <thead class="small table-info text-secondary">
+                      <tr>
+                        <th scope="col"># LOCAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PEDIDO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">203</th>
+                        <td>Don Mario</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">20</th>
+                        <td>Doña Mari</td>
+                        <td>Verdulería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3-B</th>
+                        <td>Don Arturo</td>
+                        <td>Semillas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">85</th>
+                        <td>Don Panchito</td>
+                        <td>Hierbas</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">05</th>
+                        <td>Don Pedro</td>
+                        <td>Frutería</td>
+                        <td>
+                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+   
+    <!-- Modal Ayuda-->
+    <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-black-50">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¡Hola! ¿Tienes alguna duda o aclaración?
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Nos puedes contactar aquí:</p>
+            <a href="#" target="_blank" class="text-success my-3 py-3">
+              WHATSAPP <i class="fab fa-whatsapp"></i>
+              <br>
+              <p class="lead">+52 5531981449</p>
+            </a>
+            <hr>
+            <a href="#" target="_blank" class="text-info lead my-3 py-3">
+              EMAIL <i class="far fa-envelope"></i>
+              <br>
+              <p class="lead">mimarchante@gmail.com</p>
+            </a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="container-fluid bg-secondary">
+       <div class="container">
+           <div class="row justify-content-center">
+               <div class="col-md-4 text-center text-light">
+                  <small>Contribuciones: 
+                    <br>
+                    <a href='https://www.freepik.es/fotos/marco' class="text-white" target="_blank">Foto de Marco creado por freepik - www.freepik.es</a>
+                   </small> 
+                   <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
+                  <p class="d-inline-flex m-0 p-0"> 2020</p> 
+               </div>
+           </div>
+       </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <!--Wow JS-->
+    <script src="js/wow.min.js"></script>
+    <!-- Opcionales JS -->
+    <script src="js/mimarchante.js"></script>
+  </body>
+  <!-- Body -->
+</html>
+

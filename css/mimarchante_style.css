@@ -1,0 +1,299 @@
+/*Tam Osornio Style*/
+/*******************
+        Home
+*******************/
+
+/*
+1. Colors
+2. Fonts
+3. Others
+4. Media Queries
+*/
+
+/*******************
+    1. Colors
+*******************/
+
+.bg-header{
+    background-image: url(../img/portada.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-mm1{
+    background-color: #A9CE4D;
+}
+.text-mm2{
+    color: #e68e00;
+}
+.bg-mercados{
+    background-image: url(../img/mercados.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: inherit;
+    background-size: cover;
+}
+.bg-tianguis{
+    background-image: url(../img/tianguis.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: inherit;
+    background-size: cover;
+}
+.bg-transparencia{
+    background-color: rgba(248, 249, 250, 0.7);
+}
+.text-shadow{
+    text-shadow: 2px 1px #000
+}
+
+/*******************
+    2. Fonts
+*******************/
+
+.logotipo{
+    font-family: 'ShadowsIntoLight', normal;
+}
+.titulo{
+    font-family: 'ArchitectsDaughter', normal;
+}
+.subtitulo{
+    font-family: 'PermanentMarker', normal;
+}
+
+
+.bg-experiencia{
+    background-image: url(../img/parallax_fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px;
+    padding: 50px 0 50px 0;
+    color: #fff;
+}
+
+
+.bg-1{
+    background-color: #F7EC66;
+}
+.bg-2{
+    background-color: #6CC4C7;
+}
+.bg-3{
+    background-color: #CC6699;
+}
+.bg-4{
+    background-color: #B18CDD;
+}
+.bg-6{
+    background-color: #47C1F1;
+}
+.color-1{
+    color: #F7EC66;
+}
+.color-2{
+    color: #6CC4C7 !important;
+}
+.color-2:active{
+    background-color: transparent;
+}
+.color-3{
+    color: #CC6699;
+}
+.color-4{
+    color: #B18CDD;
+}
+.color-5{
+    color: #A9CE4D;
+}
+.color-6{
+    color: #47C1F1;
+}
+.color-logotipo{
+    color: #D60B52;
+}
+
+/*******************
+    3. Others
+*******************/
+
+.table-row{
+    cursor:pointer;
+}
+
+.border-header{
+    border: 7px solid #fff;
+}
+
+.h-300{
+    max-height: 300px;
+}
+
+.h-ticket{
+    max-height: 550px;
+}
+/*******************
+4. Media Queries
+*******************/
+
+@media only screen and (max-width: 425px) {  
+
+    .display-2{
+        font-size: 1.5rem
+    }
+
+    .display-4{
+        font-size: 2.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {   
+    .titulo-sec{
+        font-family: 'Monicas SalonNF', normal;
+        font-size: 5rem;
+    }
+}
+
+.texto{
+    font-family: 'Brazilia', normal;
+    font-size: 1.5rem;
+}
+.extras{
+    font-family: 'Honey Script-Light', normal;
+}
+.tips{
+    font-family: 'Demo_ConeriaScript', normal;
+}
+.img-logo-navbar{
+    width: 200px;
+}
+.manita{
+    cursor: pointer;
+}
+.mkt-activo:hover{
+    transition: all 1s ease;
+    transform: scale(1.1);
+}
+.border-trayectoria{
+    border: 5px solid #fff;
+}
+.fb a:hover{
+    color: white !important;
+}
+.insta a:hover{
+    color: white !important;
+}
+.correo a:hover{
+    color: white !important;
+}
+/*******************
+    Marketing
+*******************/
+.border-1{
+    border: 5px solid #F7EC66;
+}
+.border-2{
+    border: 5px solid #6CC4C7;
+}
+.border-3{
+    border: 5px solid #CC6699;
+}
+.border-4{
+    border: 5px solid #B18CDD;
+}
+.border-5{
+    border: 5px solid #A9CE4D;
+}
+.border-6{
+    border: 5px solid #47C1F1;
+}
+@media only screen and (max-width: 1024px) {   
+   .font-imple{
+    font-size: 70%;
+    }
+}
+@media only screen and (max-width: 767px) {   
+   .font-esta{
+    font-size: 4rem;
+    }
+}
+/*******************
+    Trayectoria
+*******************/
+.bg-trayectoria{
+    background-image: url(../img/trayectoria/bg-trayectoria1.JPG), url(../img/trayectoria/bg-trayectoria1.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+/*    background-blend-mode: hard-light;*/
+}
+/*******************
+    Sobre Tam
+*******************/
+.border-menu-1{
+    border-left: 15px solid #F7EC66;
+    border-right: 15px solid #F7EC66;
+}
+.border-menu-1:hover, .border-menu-1:active{
+    background-color: #F7EC66 !important;
+}
+.bg-menu-1{
+    background-color: #F7EC66 !important;
+    color: #000 !important;
+    text-align:center;
+}
+.border-menu-2{
+    border-left: 15px solid #6CC4C7;
+    border-right: 15px solid #6CC4C7;
+}
+.border-menu-2:hover{
+    background-color: #6CC4C7 !important;
+}
+.bg-menu-2{
+    background-color: #6CC4C7 !important;
+    color: #fff !important;
+    text-align:center;
+}
+.border-menu-3{
+    border-left: 15px solid #CC6699;
+    border-right: 15px solid #CC6699;
+}
+.border-menu-3:hover{
+    background-color: #CC6699 !important;
+}
+.bg-menu-3{
+    background-color: #CC6699 !important;
+    color: #fff !important;
+    text-align:center;
+}
+.border-menu-4{
+    border-left: 15px solid #B18CDD;
+    border-right: 15px solid #B18CDD;
+}
+.border-menu-4:hover{
+    background-color: #B18CDD !important;
+}
+.bg-menu-4{
+    background-color: #B18CDD !important;
+    color: #fff !important;
+    text-align:center;
+}
+.border-menu-5{
+    border-left: 15px solid #A9CE4D;
+    border-right: 15px solid #A9CE4D;
+}
+.border-menu-5:hover{
+    background-color: #A9CE4D !important;
+}
+.bg-menu-5{
+    background-color: #A9CE4D !important;
+    color: #fff !important;
+    text-align:center;
+}
+.img-scale:hover{
+    transform: scale(1.1)
+}

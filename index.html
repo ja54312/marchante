@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tam Osornio">
+    <meta name="rights" content="Tam Osornio">
+    <meta name="description" content="¡Hola! Aquí podrás encontrar tu mercado y tianguis, tus puestos más cerca de ti">
+    <meta name="keywords" content="mercado, tianguis, puestos, frutas, verduras, carne, miscelaneas, ropa, comida">
+    <meta name="robots" content="index, follow">
+
+    <!-- Required links CSS -->
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Favicon CSS-->
+    <link rel="icon" type="image/ico" href="img/mimarchante.ico">
+    <!--Animate CSS-->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--Hover CSS-->
+    <link rel="stylesheet" href="css/hover.css" media="all">
+    <!-- Google Fonts CSS   -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+    <!-- Mi Marchante Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Mi Marchante CSS -->
+    <link rel="stylesheet" href="css/mimarchante_style.css">
+    <!-- Mi Marchante Fonts CSS -->
+    <link rel="stylesheet" href="css/mimarchante_fonts.css">
+
+    <title>Mi Marchante / Encuentra tu puesto favorito</title>
+  </head>
+
+  <!-- Body -->
+  <body>
+
+    <!-- Header -->
+    <header class="container-fluid bg-header">
+      <div class="row justify-content-center p-5">
+        <div class="col-md-10 bg-header border-header border-white text-center">
+          <h2 class="display-2 border font-weight-bolder mt-2 p-5 text-white titulo">UNIDOS POR MÉXICO</h2>
+          <h1 class="display-4 font-weight-bolder text-white logotipo">Mi marchante</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-mm1">
+      <a class="navbar-brand logotipo" href="index.html">
+        Mi <br> marchante
+      </a>
+      <a href="bolsa.html"><i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#login">Iniciar Sesión <i class="far fa-user"></i></a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Container -->
+    <section class="container my-5">
+      <div class="row justify-content-around">
+        <div class="col-md-8 text-center mb-2">
+          <p class="h2 subtitulo">
+            ¡Hola! Bienvenidx a 
+            <br>
+            <span class="logotipo">Mi marchante</span>
+          </p>
+          <p class="text-muted">
+            Escribe tu código postal qué quieras buscar y disfruta de 
+            <b><i>tu mercado en línea</i></b>
+          </p>
+        </div>
+        <!-- Mercados -->
+        <article class="col-md-5 rounded text-center mt-4 py-3 bg-mercados">
+          <h3 class="subtitulo rounded p-2 bg-transparencia">MERCADOS <i class="fas fa-warehouse"></i></h3>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <label for="inputZipMercados" class="text-white text-shadow">Código Postal</label>
+                <input type="text" class="form-control" id="inputZipMercados">
+              </div>
+              <div class="col">
+                <label for="mercados" class="text-white text-shadow">Selecciona tu mercado</label>
+                <select class="form-control" id="mercados">
+                  <option>San Cosme</option>
+                  <option>La Dalia</option>
+                  <option>Martínez</option>
+                  <option>Roma</option>
+                  <option>Coyoacan</option>
+                </select>
+              </div>
+            </div>
+            <a href="mandado.html" class="btn btn-primary mt-4">ENTRAR</a>
+          </form>
+        </article>
+        <!-- Tianguis -->
+        <article class="col-md-5 rounded text-center py-3 bg-tianguis mt-4">
+          <h3 class="subtitulo rounded p-2 bg-transparencia">TIANGUIS <i class="fas fa-store"></i></h3>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <label for="inputZipTianguis" class="text-white text-shadow">Código Postal</label>
+                <input type="text" class="form-control" id="inputZipTianguis">
+              </div>
+              <div class="col">
+                <label for="tianguis" class="text-white text-shadow">Selecciona tu tianguis</label>
+                <select class="form-control" id="tianguis">
+                  <option>Sullivan</option>
+                  <option>El loro</option>
+                  <option>Juguetes</option>
+                  <option>Roma</option>
+                  <option>Coyoacan</option>
+                </select>
+              </div>
+            </div>
+            <a href="mandado.html" class="btn btn-primary mt-4">ENTRAR</a>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="container-fluid bg-warning mb-5 p-3">
+      <div class="row justify-content-around">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Registro / Log in -->
+    <section class="container mb-5">
+      <div class="row justify-content-around text-center">
+        <article class="col-md-5 border-left border-right border-secondary" id="registro">
+          <!-- Registro -->
+          <h4 class="mb-4 titulo">Regístrate</h4>
+          <hr>
+          <!-- Tipo de Cliente -->
+          <form>
+            <div class="form-group">
+              <label for="tipoCliente">Selecciona tu tipo</label>
+              <select class="form-control" id="tipoCliente">
+                <option>Cliente</option>
+                <option>Locatario</option>
+              </select>
+            </div>
+            <!-- Si es cliente esta parte desaparece -->
+            <div class="form-row form-group">
+              <div class="col">
+                <label for="mercadoTianguis">Tu mercado o tianguis</label>
+                <select class="form-control" id="mercadoTianguis">
+                  <option>Mercado</option>
+                  <option>Tianguis</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="zonaRegistro">Selecciona tu zona</label>
+                <select class="form-control" id="zonaRegistro">
+                  <option>CDMX Centro</option>
+                  <option>CDMX Norte</option>
+                  <option>CDMX Oriente</option>
+                  <option>CDMX Poninete</option>
+                  <option>CDMX Sur</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-group">
+              <div class="col">
+                <label for="mercado">Selecciona tu mercado</label>
+                <select class="form-control" id="mercado">
+                  <option>Sullivan</option>
+                  <option>El loro</option>
+                  <option>Juguetes</option>
+                  <option>Roma</option>
+                  <option>Coyoacan</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="local">Selecciona tu local</label>
+                <select class="form-control" id="local">
+                  <option>001</option>
+                  <option>002</option>
+                  <option>003</option>
+                  <option>004</option>
+                  <option>005</option>
+                </select>
+              </div>
+            </div>
+            <!-- Si es cliente esta parte desaparece -->
+            <div class="form-group">
+              <label for="formGroupExampleInput">Escribe tu nombre</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Escribe tu correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="micorreo@correo.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Escribe tu contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordar correo</label>
+              <p>
+                <a href="#" class="small">
+                  Olvide mi contraseña
+                </a>
+              </p>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarme</button>
+          </form>
+        </article>
+        <article class="col-md-5 border-left border-right border-secondary"  id="login">
+          <!-- Log in -->
+          <h4 class="mb-4 titulo">Inicia Sesión</h4>
+          <hr>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Escribe tu correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="micorreo@correo.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Escribe tu contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordar correo</label>
+              <p>
+                <a href="#" class="small">Olvide mi contraseña</a>
+              </p>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-black-50">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¡Hola! ¿Tienes alguna duda o aclaración?
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Nos puedes contactar aquí:</p>
+            <a href="#" target="_blank" class="text-success my-3 py-3">
+              WHATSAPP <i class="fab fa-whatsapp"></i>
+              <br>
+              <p class="lead">+52 5531981449</p>
+            </a>
+            <hr>
+            <a href="#" target="_blank" class="text-info lead my-3 py-3">
+              EMAIL <i class="far fa-envelope"></i>
+              <br>
+              <p class="lead">mimarchante@gmail.com</p>
+            </a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="container-fluid bg-secondary">
+       <div class="container">
+           <div class="row justify-content-center">
+               <div class="col-md-4 text-center text-light">
+                  <small>Contribuciones: 
+                    <br>
+                    <a href='https://www.freepik.es/fotos/marco' class="text-white" target="_blank">Foto de Marco creado por freepik - www.freepik.es</a>
+                   </small> 
+                   <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
+                  <p class="d-inline-flex m-0 p-0"> 2020</p> 
+               </div>
+           </div>
+       </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--Wow JS-->
+    <script src="js/wow.min.js"></script>
+    <!-- Opcionales JS -->
+    <script src="js/mimarchante.js"></script>
+  </body>
+</html>
+

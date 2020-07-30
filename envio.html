@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tam Osornio">
+    <meta name="rights" content="Tam Osornio">
+    <meta name="description" content="¡Hola! Aquí podrás encontrar tu mercado y tianguis, tus puestos más cerca de ti">
+    <meta name="keywords" content="mercado, tianguis, puestos, frutas, verduras, carne, miscelaneas, ropa, comida">
+    <meta name="robots" content="index, follow">
+
+    <!-- Required links CSS -->
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- DatePicker CSS -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <!-- Favicon CSS-->
+    <link rel="icon" type="image/ico" href="img/mimarchante.ico">
+    <!--Animate CSS-->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--Hover CSS-->
+    <link rel="stylesheet" href="css/hover.css" media="all">
+    <!-- Google Fonts CSS   -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+    <!-- Mi Marchante Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Mi Marchante CSS -->
+    <link rel="stylesheet" href="css/mimarchante_style.css">
+    <!-- Mi Marchante Fonts CSS -->
+    <link rel="stylesheet" href="css/mimarchante_fonts.css">
+
+    <title>Mi Mandado / Encuentra tu puesto favorito</title>
+  </head>
+
+  <!-- Body -->
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-mm1">
+      <a class="navbar-brand logotipo" href="index.html">
+        Mi <br> marchante
+      </a>
+      <a href="bolsa.html"><i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">1</sup></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#login">Juanita Pérez <i class="far fa-user"></i></a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Container -->
+    <section class="container mb-5">
+      <div class="row justify-content-center">
+        <!-- Título del Ticket -->
+        <div class="col-md-12 mt-3 py-2">
+          <p class="h2 mb-0 titulo text-warning text-center">
+            Tu bolsa de mandado
+            <hr>
+          </p>
+        </div>
+        <!-- Proceso de Envío y Pago -->
+        <div class="col-md-12 mt-4">
+          <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+            <!-- Envío -->
+            <li class="col-md-4 nav-item" role="presentation">
+              <a class="nav-link active" id="pills-envio-tab" data-toggle="pill" href="#pills-envio" role="tab" aria-controls="pills-envio" aria-selected="true">Envío</a>
+            </li>
+            <!-- Pago -->
+            <li class="col-md-4 nav-item" role="presentation" disable>
+              <a class="nav-link" id="pills-pago-tab" data-toggle="pill" href="#pills-pago" role="tab" aria-controls="pills-pago" aria-selected="false">Pago</a>
+            </li>
+          </ul>
+          <!-- Envío -->
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-envio" role="tabpanel" aria-labelledby="pills-envio-tab">
+              <div class="row">
+                <div class="col-md-8 border-right">
+                  <form class="needs-validation" novalidate>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="name">Nombre*</label>
+                        <input type="text" class="form-control" id="name" value="" placeholder="Escribe tu nombre" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="lastname">Apellidos*</label>
+                        <input type="text" class="form-control" id="lastname" value="" placeholder="Escribe tus apellidos" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputAddress">Dirección* <small class="text-muted"> Calle, número exterior, número interior</small></label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Amado Nervo 131-17" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputColonia">Colonia*</label>
+                        <input type="text" class="form-control" id="inputColonia" required>
+                        <div class="invalid-feedback">Por favor escribe una colonia valida</div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputAlcaldia">Alcaldía*</label>
+                        <input type="text" class="form-control" id="inputAlcaldia" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">Estado*</label>
+                        <select id="inputState" class="form-control" required>
+                          <option selected disabled value="">Selecciona...</option>
+                          <option>...</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor selecciona un estado valido</div>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Zip*</label>
+                        <input type="text" class="form-control" id="inputZip" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPais">País*</label>
+                        <input type="text" class="form-control" id="inputPais" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="phone">Número de Teléfono</label>
+                        <input type="number" class="form-control" id="phone" value="" placeholder="Escribe tú teléfono" required>
+                        <div class="valid-feedback">Listo</div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right">Siguiente</button>
+                  </form>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-light h-ticket">
+                    <div class="card-header">
+                     RESUMEN DE LA ORDEN
+                    </div>
+                    <div class="card-body text-muted">
+                      <table class="table table-sm text-center font-weight-light">
+                        <thead class="thead-light text-secondary small subtitulo">
+                          <tr>
+                            <td scope="col">ARTÍCULO</td>
+                            <td scope="col">CANTIDAD</td>
+                            <td scope="col">TOTAL PARCIAL</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Melón</th>
+                            <td>1 kg</td>
+                            <td>$ 15</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Naranjas</th>
+                            <td>1 kg</td>
+                            <td>$ 43</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Pepinos</th>
+                            <td>1 kg</td>
+                            <td>$ 25</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Cilantro</th>
+                            <td>1 pz</td>
+                            <td>$ 2</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Apio</th>
+                            <td>1 pz</td>
+                            <td>$ 5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pago -->
+            <div class="tab-pane fade" id="pills-pago" role="tabpanel" aria-labelledby="pills-pago-tab">
+              <div class="row">
+                <div class="col-md-8 border-right">
+                  <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header bg-white border-primary" id="headingOne">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapsePayPal" aria-expanded="true" aria-controls="collapsePayPal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </button>
+                      </div>
+
+                      <div id="collapsePayPal" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body text-center">
+                          <a href="#" class="btn btn-primary"><i class="fab fa-cc-paypal"></i> Continuar con PayPal</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header bg-white border-primary" id="headingTwo">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseDebCre" aria-expanded="false" aria-controls="collapseDebCre">
+                          <i class="far fa-credit-card"></i> Tarjeta de Débito o Crédito
+                        </button>
+                      </div>
+                      <div id="collapseDebCre" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <form>
+                            <div class="form-row align-items-center">
+                              <div class="col-auto my-1">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                  <label class="custom-control-label" for="customControlAutosizing">Mis direcciones de facturación y envío son las mismas</label>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                          <div class="col-md-12 py-2 bg-light">
+                            <!-- Información Preedeterminada -->
+                            <div class="card bg-light h-ticket">
+                              <div class="card-body text-muted">
+                                <table class="table table-sm text-center font-weight-light">
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">Tamara Soto Osornio</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">México, CDMX</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Cuauhtémoc, 06400</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Santa María la Ribera</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Amado Nervo 131-17</th>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5560927609</th>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <hr>
+                            <!-- Formulario con otros datos de Pago -->
+                            <form class="needs-validation my-3" novalidate>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="name01">Nombre*</label>
+                                  <input type="text" class="form-control" id="name01" value="" placeholder="Escribe tu nombre" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="lastname01">Apellidos*</label>
+                                  <input type="text" class="form-control" id="lastname01" value="" placeholder="Escribe tus apellidos" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputAddress01">Dirección* <small class="text-muted"> Calle, número exterior, número interior</small></label>
+                                  <input type="text" class="form-control" id="inputAddress01" placeholder="Amado Nervo 131-17" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputColonia01">Colonia*</label>
+                                  <input type="text" class="form-control" id="inputColonia01" required>
+                                  <div class="invalid-feedback">Por favor escribe una colonia valida</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputAlcaldia01">Alcaldía*</label>
+                                  <input type="text" class="form-control" id="inputAlcaldia01" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label for="inputState01">Estado*</label>
+                                  <select id="inputState01" class="form-control" required>
+                                    <option selected disabled value="">Selecciona...</option>
+                                    <option>...</option>
+                                  </select>
+                                  <div class="invalid-feedback">Por favor selecciona un estado valido</div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label for="inputZip01">Zip*</label>
+                                  <input type="text" class="form-control" id="inputZip01" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputPais01">País*</label>
+                                  <input type="text" class="form-control" id="inputPais01" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="phone01">Número de Teléfono</label>
+                                  <input type="number" class="form-control" id="phone01" value="" placeholder="Escribe tú teléfono" required>
+                                  <div class="valid-feedback">Listo</div>
+                                </div>
+                                <div class="form-group col-md-12 text-right">
+                                  <button type="submit" class="btn btn-success">Actualizar</button>
+                                </div>
+                              </div>
+                            </form>
+                            <hr>
+                            <!-- Datos Tarjeta -->
+                            <form>
+                              <div class="form-group">
+                                <label for="validationDefault01">Nombre de Tarjeta-habiente*</label>
+                                <input type="text" class="form-control" id="validationDefault01" value="" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="validationDefault02">Número de Tarjeta*</label>
+                                <input type="number" class="form-control" id="validationDefault02" maxlength="16" value="" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="datepicker">Fecha de vencimiento*</label>
+                                <input type="text" class="form-control" id="datepicker" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="validationDefault03">Número de verificación de Tarjeta*</label>
+                                <input type="number" class="form-control" id="validationDefault03" maxlength="3" value="" required>
+                              </div>
+                              <div class="form-group text-right">
+                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#pagoRealizado">Realizar Pedido</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-light h-ticket overflow-auto">
+                    <div class="card-header text-center">
+                      RESUMEN DE LA ORDEN
+                      <h4 class="logotipo"><i class="fas fa-shopping-bag"></i> Mi marchante</h2>
+                      <p class="mb-0">Recoger en el puesto</p>
+                      <small>22/JULIO/2020</small>
+                    </div>
+                    <div class="card-body text-muted">
+                      <table class="table table-sm">
+                        <tbody>
+                          <tr>
+                            <td scope="row">Total parcial</td>
+                            <th>$90</th>
+                          </tr>
+                          <tr>
+                            <td scope="row">Costo de Envío</td>
+                            <td>$0</td>
+                          </tr>
+                          <tr>
+                            <td>Total de pedido</td>
+                            <th>$90</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="card-header text-center">
+                        ENVIAR A:
+                      </div>
+                      <table class="table table-sm text-center font-weight-light">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Tamara Soto Osornio</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">México, CDMX</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">Cuauhtémoc, 06400</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">Santa María la Ribera</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">Amado Nervo 131-17</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">5560927609</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- Lista de Artículos -->
+                      <table class="table table-sm text-center font-weight-light">
+                        <thead class="thead-light text-secondary small subtitulo">
+                          <tr>
+                            <td scope="col">ARTÍCULO</td>
+                            <td scope="col">CANTIDAD</td>
+                            <td scope="col">TOTAL PARCIAL</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Melón</th>
+                            <td>1 kg</td>
+                            <td>$ 15</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Naranjas</th>
+                            <td>1 kg</td>
+                            <td>$ 43</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Pepinos</th>
+                            <td>1 kg</td>
+                            <td>$ 25</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Cilantro</th>
+                            <td>1 pz</td>
+                            <td>$ 2</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Apio</th>
+                            <td>1 pz</td>
+                            <td>$ 5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Pago Realizado -->
+    <div class="modal fade" id="pagoRealizado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel01" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content alert-success text-center">
+          <div class="modal-header">
+            <h5 class="modal-title titulo" id="exampleModalLabel01">Pago Realizado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body subtitulo h3">
+            Tu pedido se realizo con éxito
+            <p>¡Gracias!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Modal Ayuda-->
+    <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-black-50">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¡Hola! ¿Tienes alguna duda o aclaración?
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Nos puedes contactar aquí:</p>
+            <a href="#" target="_blank" class="text-success my-3 py-3">
+              WHATSAPP <i class="fab fa-whatsapp"></i>
+              <br>
+              <p class="lead">+52 5531981449</p>
+            </a>
+            <hr>
+            <a href="#" target="_blank" class="text-info lead my-3 py-3">
+              EMAIL <i class="far fa-envelope"></i>
+              <br>
+              <p class="lead">mimarchante@gmail.com</p>
+            </a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="container-fluid bg-secondary">
+       <div class="container">
+           <div class="row justify-content-center">
+               <div class="col-md-4 text-center text-light"> 
+                  <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
+                  <p class="d-inline-flex m-0 p-0"> 2020</p> 
+               </div>
+           </div>
+       </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- DatePicker JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--Wow JS-->
+    <script src="js/wow.min.js"></script>
+    <!-- Opcionales JS -->
+    <script src="js/mimarchante.js"></script>
+  </body>
+  <!-- Body -->
+</html>
+
