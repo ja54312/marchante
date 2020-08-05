@@ -109,7 +109,7 @@ function checkData(){
     if(name.value!=='' && price_pz.value!=='' && price_kg.value!== ''){
         document.getElementById('saveProduct').removeAttribute('disabled')
     }else{
-        document.getElementById('saveProduct').setAttribute('disabled')
+        document.getElementById('saveProduct').setAttribute('disabled',true)
     }
 }
 async function getProducts(){
@@ -204,11 +204,17 @@ async function getProducts(){
               "info": "",
             }
         });
+    }else if(response.msg==="No se encontraron datos"){
+        console.log('No se encontraron datos')
     }else{
-        localStorage.setItem('userCredentials',{})
+        localStorage.setItem('userCredentials',JSON.stringify({}))
         location.replace('index.html')
     }
     console.log(response)
+}
+function signOut(){
+    localStorage.setItem('userCredentials',JSON.stringify({}))
+    location.replace('index.html')
 }
 async function addProduct(){
     const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/add-products/'

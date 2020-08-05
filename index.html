@@ -157,12 +157,13 @@
           <!-- Tipo de Cliente -->
             <div class="form-group">
               <label for="tipoCliente">Selecciona tu tipo</label>
-              <select class="form-control" id="tipoCliente" onblur="checkData()">
+              <select class="form-control" id="tipoCliente" onblur="checkType()">
                 <option>Cliente</option>
                 <option>Locatario</option>
               </select>
             </div>
             <!-- Si es cliente esta parte desaparece -->
+            <div id='disapearCustommer'>
             <div class="form-row form-group">
               <div class="col">
                 <label for="mercadoTianguis">Tu mercado o tianguis</label>
@@ -204,6 +205,7 @@
                 </select>
               </div>
             </div>
+          </div>
             <!-- Si es cliente esta parte desaparece -->
             <div class="form-group">
               <label for="formGroupExampleInput">Escribe tu nombre</label>
@@ -215,7 +217,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Escribe tu contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="*****" onblur="checkData()">
+              <input type="password" class="form-control" id="password" placeholder="*****" onblur="checkPass()">
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="check">
@@ -241,7 +243,7 @@
               <input type="password" class="form-control" id="loginPassword" placeholder="*****" onblur="checkDataLogin()">
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="checkLogin">
               <label class="form-check-label" for="exampleCheck1">Recordar correo</label>
               <p>
                 <a href="#" class="small">Olvide mi contraseña</a>
@@ -313,6 +315,7 @@
     <script src="js/mimarchante.js"></script>
     <script src="js/register.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
 

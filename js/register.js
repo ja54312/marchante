@@ -8,9 +8,13 @@ let mail=document.getElementById('email')
 let pass=document.getElementById('password')
 let mailLogin=document.getElementById('loginEmail')
 let passLogin=document.getElementById('loginPassword')
+let check=document.getElementById('check')
 let customerValue
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
+    const emailUser=JSON.parse(localStorage.getItem('userMail'))
+    mailLogin.value=emailUser
+    console.log(emailUser)
     if(userCredentials.success && userCredentials.data_user.id_rol===1 || userCredentials.success){
         document.getElementById('registroLogin').style.display='none'
         document.getElementById('mercadoPostalCode').style.display='block'
@@ -23,13 +27,33 @@ document.addEventListener('DOMContentLoaded',async function () {
     }
     console.log(userCredentials)
 });
+function checkType(){
+    isCustomer()
+    if(customerValue===2){
+        document.getElementById('disapearCustommer').style.display='none'
+    }else{
+        document.getElementById('disapearCustommer').style.display='block'
+    }
+}
+function checkPass(){
+    if(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)===false){
+        swal({
+            title: "Contraseña inválida",
+            text: "Al menos 1 mayúscula, minúscula, número y carácter especial",
+            icon: "error",
+            button: "Aceptar",
+        })
+    }
+    checkData()
+}
 function checkData(){
     console.log(market.value)
     isCustomer()
     if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)){
         document.getElementById('submit').removeAttribute('disabled')
-    }else{
-        document.getElementById('submit').setAttribute('disabled')
+    }
+    else{
+        document.getElementById('submit').setAttribute('disabled', true)
     }
 }
 
@@ -37,7 +61,7 @@ function checkDataLogin(){
     if( mailLogin.value!=='' && passLogin.value!=='' ){
         document.getElementById('submitLogin').removeAttribute('disabled')
     }else{
-        document.getElementById('submitLogin').setAttribute('disabled')
+        document.getElementById('submitLogin').setAttribute('disabled', true)
     }
 }
 function isCustomer(){
@@ -61,7 +85,10 @@ async function login(register){
     const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/'
     
     if(register){
-        console.log('Hola')
+        const check=document.getElementById('check')
+        if(check.value){
+            localStorage.setItem('userMail',JSON.stringify(mail.value))
+        }
         const request=await fetch(url,{
             method:'POST',
             header:{'Authorization':'Basic '+ btoa(mail.value + ':' + pass.value)},
@@ -84,6 +111,10 @@ async function login(register){
         }
         console.log(response)
     }else{
+        const checkLogin=document.getElementById('checkLogin')
+        if(checkLogin.value){
+            localStorage.setItem('userMail',JSON.stringify(mailLogin.value))
+        }
         const request=await fetch(url,{
             method:'POST',
             header:{'Authorization':'Basic '+ btoa(mailLogin.value + ':' + passLogin.value)},
