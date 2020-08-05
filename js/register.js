@@ -148,6 +148,7 @@ async function login(register){
 async function register(){
     document.getElementById('loader').style.display='block'
     const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/'
+
     userData={
         customer:customerValue.toString(),
         type_market:type_market.value,
