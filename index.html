@@ -56,13 +56,16 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
+          <li class="nav-item" id='panelLocatario' style="display: none;">
+            <button type="button" class="btn text-black-50" data-toggle="modal"><a href="panel_locatario.html">Panel</a></button>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id='buttonRegister'>
             <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id='buttonLogin'>
             <a class="nav-link" href="index.html#login">Iniciar Sesión <i class="far fa-user"></i></a>
           </li>
           <li class="nav-item">
@@ -81,13 +84,13 @@
             <br>
             <span class="logotipo">Mi marchante</span>
           </p>
-          <p class="text-muted">
+          <p class="text-muted" style="display: none;" id='postal_code'>
             Escribe tu código postal qué quieras buscar y disfruta de 
             <b><i>tu mercado en línea</i></b>
           </p>
         </div>
         <!-- Mercados -->
-        <article class="col-md-5 rounded text-center mt-4 py-3 bg-mercados">
+        <article class="col-md-5 rounded text-center mt-4 py-3 bg-mercados" id='mercadoPostalCode' style="display: none;">
           <h3 class="subtitulo rounded p-2 bg-transparencia">MERCADOS <i class="fas fa-warehouse"></i></h3>
           <form>
             <div class="form-row">
@@ -110,7 +113,7 @@
           </form>
         </article>
         <!-- Tianguis -->
-        <article class="col-md-5 rounded text-center py-3 bg-tianguis mt-4">
+        <article class="col-md-5 rounded text-center py-3 bg-tianguis mt-4" id='tianguisPostalCode' style="display: none;">
           <h3 class="subtitulo rounded p-2 bg-transparencia">TIANGUIS <i class="fas fa-store"></i></h3>
           <form>
             <div class="form-row">
@@ -145,17 +148,16 @@
 
 
     <!-- Registro / Log in -->
-    <section class="container mb-5">
+    <section class="container mb-5" id='registroLogin'>
       <div class="row justify-content-around text-center">
         <article class="col-md-5 border-left border-right border-secondary" id="registro">
           <!-- Registro -->
           <h4 class="mb-4 titulo">Regístrate</h4>
           <hr>
           <!-- Tipo de Cliente -->
-          <form>
             <div class="form-group">
               <label for="tipoCliente">Selecciona tu tipo</label>
-              <select class="form-control" id="tipoCliente">
+              <select class="form-control" id="tipoCliente" onblur="checkData()">
                 <option>Cliente</option>
                 <option>Locatario</option>
               </select>
@@ -164,14 +166,14 @@
             <div class="form-row form-group">
               <div class="col">
                 <label for="mercadoTianguis">Tu mercado o tianguis</label>
-                <select class="form-control" id="mercadoTianguis">
+                <select class="form-control" id="mercadoTianguis" onblur="checkData()">
                   <option>Mercado</option>
                   <option>Tianguis</option>
                 </select>
               </div>
               <div class="col">
                 <label for="zonaRegistro">Selecciona tu zona</label>
-                <select class="form-control" id="zonaRegistro">
+                <select class="form-control" id="zonaRegistro" onblur="checkData()">
                   <option>CDMX Centro</option>
                   <option>CDMX Norte</option>
                   <option>CDMX Oriente</option>
@@ -183,7 +185,7 @@
             <div class="form-row form-group">
               <div class="col">
                 <label for="mercado">Selecciona tu mercado</label>
-                <select class="form-control" id="mercado">
+                <select class="form-control" id="mercado" onblur="checkData()">
                   <option>Sullivan</option>
                   <option>El loro</option>
                   <option>Juguetes</option>
@@ -193,7 +195,7 @@
               </div>
               <div class="col">
                 <label for="local">Selecciona tu local</label>
-                <select class="form-control" id="local">
+                <select class="form-control" id="local" onblur="checkData()">
                   <option>001</option>
                   <option>002</option>
                   <option>003</option>
@@ -205,18 +207,18 @@
             <!-- Si es cliente esta parte desaparece -->
             <div class="form-group">
               <label for="formGroupExampleInput">Escribe tu nombre</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">
+              <input type="text" class="form-control" id="name" placeholder="Nombre" onblur="checkData()">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Escribe tu correo</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="micorreo@correo.com">
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="micorreo@correo.com" onblur="checkData()">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Escribe tu contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****">
+              <input type="password" class="form-control" id="password" placeholder="*****" onblur="checkData()">
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="check">
               <label class="form-check-label" for="exampleCheck1">Recordar correo</label>
               <p>
                 <a href="#" class="small">
@@ -224,21 +226,19 @@
                 </a>
               </p>
             </div>
-            <button type="submit" class="btn btn-primary">Registrarme</button>
-          </form>
+            <button onclick="register()" class="btn btn-primary" id='submit' disabled>Registrarme</button>
         </article>
         <article class="col-md-5 border-left border-right border-secondary"  id="login">
           <!-- Log in -->
           <h4 class="mb-4 titulo">Inicia Sesión</h4>
           <hr>
-          <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Escribe tu correo</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="micorreo@correo.com">
+              <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="micorreo@correo.com" onblur="checkDataLogin()">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Escribe tu contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****">
+              <input type="password" class="form-control" id="loginPassword" placeholder="*****" onblur="checkDataLogin()">
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -247,8 +247,7 @@
                 <a href="#" class="small">Olvide mi contraseña</a>
               </p>
             </div>
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-          </form>
+            <button class="btn btn-primary" id='submitLogin' disabled onclick="login(false)">Iniciar Sesión</button>
         </article>
       </div>
     </section>
@@ -312,6 +311,8 @@
     <script src="js/wow.min.js"></script>
     <!-- Opcionales JS -->
     <script src="js/mimarchante.js"></script>
+    <script src="js/register.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>
 

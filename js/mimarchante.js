@@ -4,23 +4,23 @@
         
 $(document).ready(function() {
 
-    dataTable();
+    //dataTable();
 
 });
 
 
   // DataTable JS
-    function dataTable(){
+    /*function dataTable(){
 
       $(".dataTable").DataTable({
       language: {
-        "search": "Buscar",
+        "search": "Buscar", 
         "lengthMenu": "",
         "info": "",
       }
     });
 
-    }
+    }*/
 
   // DatePicker JQ UI
     $('#datepicker').datepicker({

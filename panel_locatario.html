@@ -52,7 +52,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id='register'>
             <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
           </li>
           <li class="nav-item">
@@ -71,12 +71,12 @@
         <!-- Título del Mercado -->
         <div class="col-md-12 bg-warning py-2">
           <p class="h2 mb-0 titulo">
-           TÚ PANEL
+           TU PANEL
           </p>
           <p class="rounded bg-white h4 text-center text-info font-weight-bolder pt-1 pr-5 titulo">
             <i class="fas fa-apple-alt text-danger"></i>
             <i class="fas fa-carrot text-warning"></i>
-            Aquí puedes subir, inactivar, o cambiar tus productos. Y ver tus pedidos.
+            Aquí puedes subir, desactivar, o cambiar tus productos. Y ver tus pedidos.
             <i class="fas fa-seedling text-success"></i>
             <i class="fas fa-wine-bottle text-primary"></i>
           </p>
@@ -96,11 +96,10 @@
             <div class="tab-pane fade show active" id="pills-productos" role="tabpanel" aria-labelledby="pills-productos-tab">
               <!-- Formulario Subir Productos -->
               <div class="col-md-12 rounded border border-primary alert-primary mt-5 p-3">
-                <form>
                   <div class="form-row align-items-center text-center">
                     <div class="form-group col-md-4">
                       <label for="product">Nombre de tu Producto</label>
-                      <input type="text" class="form-control" id="product" pattern="[a-z]" required>
+                      <input type="text" class="form-control" id="product" onblur="checkData()" required>
                     </div>
                     <div class="form-group col-md-3">
                       <label for="prePz">Precio por 1 Pieza</label>
@@ -108,7 +107,7 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-primary text-white">$</div>
                         </div>
-                        <input type="number" class="form-control" id="prePz" required>
+                        <input type="number" class="form-control" id="prePz" onblur="checkData()" required>
                       </div>  
                     </div>
                     <div class="form-group col-md-3">
@@ -117,18 +116,17 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-primary text-white">$</div>
                         </div>
-                        <input type="number" class="form-control" id="prePs" required>
+                        <input type="number" class="form-control" id="prePs" onblur="checkData()" required>
                       </div>  
                     </div>
                     <div class="form-group col-md-2 text-center">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
+                      <button id='saveProduct' disabled class="btn btn-primary" onclick="addProduct()">Guardar</button>
                     </div>
                   </div>
-                </form>
               </div>
               <!-- Listado Productos -->
-              <div class="col-md-12 align-items-center table-responsive my-5 px-0">
-                <table class="table table-hover text-center dataTable">
+              <div class="col-md-12 align-items-center table-responsive my-5 px-0" id='product-table' style="display: none;">
+                <table class="table table-hover text-center dataTable" id='data-table'>
                   <thead class="small table-info text-secondary subtitulo">
                     <tr>
                       <th scope="col">PRODUCTO</th>
@@ -137,77 +135,14 @@
                       <th class="text-right" scope="col">EDITAR / SUSPENDER / ACTIVAR</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr class="alert-secondary text-black-50">
-                      <th class="h4 titulo" scope="row">Melón</th>
-                      <td>
-                        $25
-                      </td>
-                      <td>
-                        $25
-                      </td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPdt1"><i class="fas fa-edit"></i> EDITAR</button>
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i>ACTIVAR</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class="h4 titulo" scope="row">Naranjas</th>
-                      <td>
-                        $5
-                      </td>
-                      <td>
-                        $23.50
-                      </td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPdt1"><i class="fas fa-edit"></i> EDITAR</button>
-                        <button type="button" class="btn btn-sm btn-secondary">SUSPENDER</button>
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i>ACTIVAR</button>
-                      </td>
-                    </tr>
-                    <tr class="alert-secondary text-black-50">
-                      <th class="h4 titulo" scope="row">Pepinos</th>
-                      <td>
-                        $10
-                      </td>
-                      <td>
-                        $35
-                      </td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPdt1"><i class="fas fa-edit"></i> EDITAR</button>
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i>ACTIVAR</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class="h4 titulo" scope="row">Cilantro</th>
-                      <td>
-                        $2
-                      </td>
-                      <td>
-                        $15
-                      </td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPdt1"><i class="fas fa-edit"></i> EDITAR</button>
-                        <button type="button" class="btn btn-sm btn-secondary">SUSPENDER</button>
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i>ACTIVAR</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class="h4 titulo" scope="row">Apio</th>
-                      <td>
-                       $5
-                      </td>
-                      <td>
-                        $22
-                      </td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPdt1"><i class="fas fa-edit"></i> EDITAR</button>
-                        <button type="button" class="btn btn-sm btn-secondary">SUSPENDER</button>
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i>ACTIVAR</button>
-                      </td>
-                    </tr>
+                  <tbody id='table-body'>
                   </tbody>
                 </table>  
+              </div>
+              <div class="col-md-12 align-items-center my-5 px-0" style="padding: 2rem;" id='no-products'>
+                <p class="rounded bg-white h4 text-center text-info font-weight-bolder pt-1 pr-5 titulo">
+                  Aún no tienes productos. Añade uno para que aparezcan aquí.
+                </p>
               </div>
             </div>
             <!-- Pedidos -->
@@ -321,11 +256,10 @@
           </div>
           <div class="modal-body text-center">
             <p class="text-secondary">Cambia tus precios o nombre y guarda al final.</p>
-            <form>
             <div class="form-row align-items-center text-center">
               <div class="form-group col-md-12">
                 <label for="product">Nombre de tu Producto</label>
-                <input type="text" class="form-control text-center" id="product" pattern="[a-z]" placeholder="Melón" required>
+                <input type="text" class="form-control text-center" id="productName" placeholder="Elige un nuevo nombre" required>
               </div>
               <div class="form-group col-md-12">
                 <label for="prePz">Precio por 1 Pieza</label>
@@ -333,7 +267,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text bg-primary text-white">$</div>
                   </div>
-                  <input type="number" class="form-control text-center" id="prePz" placeholder="5" required>
+                  <input type="number" class="form-control text-center" id="productPz" placeholder="$$$" required>
                 </div>  
               </div>
               <div class="form-group col-md-12">
@@ -342,14 +276,13 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text bg-primary text-white">$</div>
                   </div>
-                  <input type="number" class="form-control text-center" id="prePs" placeholder="25" required>
+                  <input type="number" class="form-control text-center" id="productKg" placeholder="$$$" required>
                 </div>  
               </div>
             </div>
-          </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Guardar</button>
+            <button class="btn btn-primary" data-dismiss="modal" aria-label="Close" onclick="updateProduct()">Guardar</button>
           </div>
         </div>
       </div>
@@ -468,7 +401,8 @@
     <script src="js/wow.min.js"></script>
     <!-- Opcionales JS -->
     <script src="js/mimarchante.js"></script>
+    <script src="js/addProduct.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
   <!-- Body -->
 </html>
-
