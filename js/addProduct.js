@@ -113,6 +113,7 @@ function checkData(){
     }
 }
 async function getProducts(){
+    document.getElementById('loader').style.display='block'
     let url= `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${userData.data_user.id_user}`
     const request= await fetch(url,{
         headers:{
@@ -204,9 +205,12 @@ async function getProducts(){
               "info": "",
             }
         });
+        document.getElementById('loader').style.display='none'
     }else if(response.msg==="No se encontraron datos"){
+        document.getElementById('loader').style.display='none'
         console.log('No se encontraron datos')
     }else{
+        document.getElementById('loader').style.display='none'
         localStorage.setItem('userCredentials',JSON.stringify({}))
         location.replace('index.html')
     }

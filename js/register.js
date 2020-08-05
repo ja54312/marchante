@@ -9,12 +9,16 @@ let pass=document.getElementById('password')
 let mailLogin=document.getElementById('loginEmail')
 let passLogin=document.getElementById('loginPassword')
 let check=document.getElementById('check')
-let customerValue
+let customerValue='Cliente'
+
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
     const emailUser=JSON.parse(localStorage.getItem('userMail'))
     mailLogin.value=emailUser
     console.log(emailUser)
+    if(customerValue='Cliente'){
+        document.getElementById('disapearCustommer').style.display='block'
+    }
     if(userCredentials.success && userCredentials.data_user.id_rol===1 || userCredentials.success){
         document.getElementById('registroLogin').style.display='none'
         document.getElementById('mercadoPostalCode').style.display='block'
@@ -82,7 +86,7 @@ let userData={
     pass:''
 }
 async function login(register){
-    const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/'
+    const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/'
     
     if(register){
         const check=document.getElementById('check')
@@ -99,6 +103,7 @@ async function login(register){
         })
         const response= await request.json()
         if(response.success){
+            document.getElementById('loader').style.display='none'
             localStorage.setItem('userCredentials', JSON.stringify(response))
             document.getElementById('registroLogin').style.display='none'
             document.getElementById('buttonRegister').style.display='none'
@@ -111,6 +116,7 @@ async function login(register){
         }
         console.log(response)
     }else{
+        document.getElementById('loader').style.display='block'
         const checkLogin=document.getElementById('checkLogin')
         if(checkLogin.value){
             localStorage.setItem('userMail',JSON.stringify(mailLogin.value))
@@ -125,6 +131,7 @@ async function login(register){
         })
         const response= await request.json()
         if(response.success){
+            document.getElementById('loader').style.display='none'
             localStorage.setItem('userCredentials', JSON.stringify(response))
             document.getElementById('registroLogin').style.display='none'
             document.getElementById('buttonRegister').style.display='none'
@@ -139,7 +146,8 @@ async function login(register){
     }
 }
 async function register(){
-    const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/'
+    document.getElementById('loader').style.display='block'
+    const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/'
     userData={
         customer:customerValue.toString(),
         type_market:type_market.value,
@@ -157,9 +165,29 @@ async function register(){
     const response= await request.json()
     if(response.success){
         login(true)
+    }else if(response.msg===`El usuario ${mail.value} ya ha sido registrado.`){
+        document.getElementById('loader').style.display='none'
+        swal({
+            title: "Upss",
+            text: "El usuario ya ha sido registrado",
+            icon: "info",
+            button: "Aceptar",
+        })
     }
     console.log(response)
+}
+function disableButton(){
+    if(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)){
+        checkData()
+    }else{
+        document.getElementById('submit').setAttribute('disabled', true)
+    }
 }
 function redirect(){
     window.location.href('panel_locatario.html')
 }
+document.getElementById('password').addEventListener('keypress',checkData)
+document.getElementById('email').addEventListener('keypress',checkData)
+document.getElementById('name').addEventListener('keypress',checkData)
+document.getElementById('loginEmail').addEventListener('keypress',checkDataLogin)
+document.getElementById('loginPassword').addEventListener('keypress',checkDataLogin)
