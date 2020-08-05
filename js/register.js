@@ -82,7 +82,7 @@ let userData={
     pass:''
 }
 async function login(register){
-    const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/'
+    const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/';
     
     if(register){
         const check=document.getElementById('check')
@@ -139,7 +139,8 @@ async function login(register){
     }
 }
 async function register(){
-    const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/'
+    //const url='https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/';
+    const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/';
     userData={
         customer:customerValue.toString(),
         type_market:type_market.value,
