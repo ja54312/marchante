@@ -10,7 +10,6 @@ let mailLogin=document.getElementById('loginEmail')
 let passLogin=document.getElementById('loginPassword')
 let check=document.getElementById('check')
 let customerValue='Cliente'
-
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
     const emailUser=JSON.parse(localStorage.getItem('userMail'))
@@ -21,6 +20,8 @@ document.addEventListener('DOMContentLoaded',async function () {
     }
     if(userCredentials.success && userCredentials.data_user.id_rol===1 || userCredentials.success){
         document.getElementById('registroLogin').style.display='none'
+        document.getElementById('buttonRegister').style.display='none'
+        document.getElementById('buttonLogin').style.display='none'
         document.getElementById('mercadoPostalCode').style.display='block'
         document.getElementById('tianguisPostalCode').style.display='block'
         document.getElementById('panelLocatario').style.display='block'
@@ -60,7 +61,6 @@ function checkData(){
         document.getElementById('submit').setAttribute('disabled', true)
     }
 }
-
 function checkDataLogin(){
     if( mailLogin.value!=='' && passLogin.value!=='' ){
         document.getElementById('submitLogin').removeAttribute('disabled')

@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded',async function () {
     userData=userCredentials
     if(userData.success){
         document.getElementById('register').style.display='none'
+        document.getElementById('user-name').innerHTML=userData.data_user.name_user
     }else if(userData.success===undefined){
         location.replace('index.html')
     }
@@ -259,3 +260,6 @@ async function addProduct(){
         })
     }
 }
+document.getElementById('product').addEventListener('keypress',checkData)
+document.getElementById('prePz').addEventListener('keypress',checkData)
+document.getElementById('prePs').addEventListener('keypress',checkData)
