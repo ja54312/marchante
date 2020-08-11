@@ -9,6 +9,7 @@ let pass=document.getElementById('password')
 let mailLogin=document.getElementById('loginEmail')
 let passLogin=document.getElementById('loginPassword')
 let check=document.getElementById('check')
+let mail_forgot_pass=document.getElementById('forgotPassEmail')
 let customerValue='Cliente'
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
@@ -187,8 +188,45 @@ function disableButton(){
 function redirect(){
     window.location.href('panel_locatario.html')
 }
-document.getElementById('password').addEventListener('keypress',checkData)
-document.getElementById('email').addEventListener('keypress',checkData)
-document.getElementById('name').addEventListener('keypress',checkData)
-document.getElementById('loginEmail').addEventListener('keypress',checkDataLogin)
-document.getElementById('loginPassword').addEventListener('keypress',checkDataLogin)
+function checkDataForgot(){
+    if(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail_forgot_pass.value)){
+        document.getElementById('forgotPassButton').removeAttribute('disabled')
+    }else{
+        document.getElementById('forgotPassButton').setAttribute('disabled',true)
+    }
+}
+async function sendForgotPass(){
+    document.getElementById('loader').style.display='block'
+    const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/forgot-password/'
+    const data={
+        mail:mail_forgot_pass.value
+    }
+    const request=await fetch(url,{
+        method:'POST',
+        body:JSON.stringify(data)
+    })
+    const response=await request.json()
+    console.log(response)
+    if(response.success){
+        document.getElementById('loader').style.display='none'
+        swal({
+            title: "Listo",
+            text: 'Mensaje enviado. Por favor revisa tu correo.',
+            icon: "success",
+            button: "Aceptar",
+        })
+    }else{
+        swal({
+            title: "Upss",
+            text: response.msg,
+            icon: "error",
+            button: "Aceptar",
+        })
+    }
+}
+document.getElementById('password').addEventListener('keyup',checkData)
+document.getElementById('email').addEventListener('keyup',checkData)
+document.getElementById('name').addEventListener('keyup',checkData)
+document.getElementById('loginEmail').addEventListener('keyup',checkDataLogin)
+document.getElementById('loginPassword').addEventListener('keyup',checkDataLogin)
+document.getElementById('forgotPassEmail').addEventListener('keyup',checkDataForgot)

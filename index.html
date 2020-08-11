@@ -246,7 +246,7 @@
               <input type="checkbox" class="form-check-input" id="checkLogin">
               <label class="form-check-label" for="exampleCheck1">Recordar correo</label>
               <p>
-                <a href="#" class="small">Olvide mi contraseña</a>
+                <a class="small" data-toggle="modal" data-target="#forgot-password" style="color: dodgerblue; cursor: pointer;">Olvide mi contraseña</a>
               </p>
             </div>
             <button class="btn btn-primary" id='submitLogin' disabled onclick="login(false)">Iniciar Sesión</button>
@@ -282,6 +282,31 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal olviaste contrasena-->
+    <div class="modal fade" id="forgot-password" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-black-50">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Por favor ingresa tu correo electrónico
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="form-group">
+              <label for="forgotPassEmail">Escribe tu correo</label>
+              <input type="email" class="form-control"  id="forgotPassEmail" aria-describedby="emailHelp" placeholder="micorreo@correo.com" onblur="checkDataLogin()">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="forgotPassButton" disabled class="btn btn-sm btn-primary" data-dismiss="modal" onclick="sendForgotPass()">Enviar correo</button>
           </div>
         </div>
       </div>
