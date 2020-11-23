@@ -76,10 +76,12 @@
           <p class="h2 mb-0 titulo">
            TU PANEL
           </p>
-          <p class="rounded bg-white h4 text-center text-info font-weight-bolder pt-1 pr-5 titulo">
+          <p class="rounded bg-white h4 text-center font-weight-bolder fa-2x py-2 pr-5 titulo">
+            Aquí puedes subir, desactivar, o cambiar tus productos.
+            <br>
+            Y ver tus pedidos.
             <i class="fas fa-apple-alt text-danger"></i>
             <i class="fas fa-carrot text-warning"></i>
-            Aquí puedes subir, desactivar, o cambiar tus productos. Y ver tus pedidos.
             <i class="fas fa-seedling text-success"></i>
             <i class="fas fa-wine-bottle text-primary"></i>
           </p>
@@ -99,33 +101,42 @@
             <div class="tab-pane fade show active" id="pills-productos" role="tabpanel" aria-labelledby="pills-productos-tab">
               <!-- Formulario Subir Productos -->
               <div class="col-md-12 rounded border border-primary alert-primary mt-5 p-3">
-                  <div class="form-row align-items-center text-center">
-                    <div class="form-group col-md-4">
-                      <label for="product">Nombre de tu Producto</label>
-                      <input type="text" class="form-control" id="product" onblur="checkData()" required>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="prePz">Precio por 1 Pieza</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text bg-primary text-white">$</div>
-                        </div>
-                        <input type="number" class="form-control" id="prePz" onblur="checkData()" required>
-                      </div>  
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="prePs">Precio por 1 Kilo</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text bg-primary text-white">$</div>
-                        </div>
-                        <input type="number" class="form-control" id="prePs" onblur="checkData()" required>
-                      </div>  
-                    </div>
-                    <div class="form-group col-md-2 text-center">
-                      <button id='saveProduct' disabled class="btn btn-primary" onclick="addProduct()">Guardar</button>
-                    </div>
+                <p class="rounded bg-white h4 text-center font-weight-bolder fa-2x pt-1 pr-5 titulo">
+                  SUBIR PRODUCTOS
+                </p>
+                <div class="form-group col-md-4">
+                  <label for="tipoCliente">Selecciona una categoría</label>
+                  <select class="form-control" id="productCategory">
+                    <option>Selecciona una categoría...</option>
+                  </select>
+                </div>
+                <div class="form-row align-items-center text-center">
+                  <div class="form-group col-md-4">
+                    <label for="product">Nombre de tu Producto</label>
+                    <input type="text" class="form-control" id="product" onblur="checkData()" required>
                   </div>
+                  <div class="form-group col-md-3">
+                    <label for="prePz">Precio por 1 Pieza</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text bg-primary text-white">$</div>
+                      </div>
+                      <input type="number" class="form-control" id="prePz" onblur="checkData()" required>
+                    </div>  
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="prePs">Precio por 1 Kilo</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text bg-primary text-white">$</div>
+                      </div>
+                      <input type="number" class="form-control" id="prePs" onblur="checkData()" required>
+                    </div>  
+                  </div>
+                  <div class="form-group col-md-2 text-center">
+                    <button id='saveProduct' disabled class="btn btn-primary" onclick="addProduct()">Guardar</button>
+                  </div>
+                </div>
               </div>
               <!-- Listado Productos -->
               <div class="col-md-12 align-items-center table-responsive my-5 px-0" id='product-table' style="display: none;">
@@ -356,16 +367,16 @@
           </div>
           <div class="modal-body text-center">
             <p>Nos puedes contactar aquí:</p>
-            <a href="#" target="_blank" class="text-success my-3 py-3">
+            <a href="https://api.whatsapp.com/send?phone=525560927609&text=Hola!%20quería%20preguntar..." target="_blank" class="text-success my-3 py-3">
               WHATSAPP <i class="fab fa-whatsapp"></i>
               <br>
-              <p class="lead">+52 5531981449</p>
+              <p class="lead">+52 5560927609</p>
             </a>
             <hr>
             <a href="#" target="_blank" class="text-info lead my-3 py-3">
               EMAIL <i class="far fa-envelope"></i>
               <br>
-              <p class="lead">mimarchante@gmail.com</p>
+              <p class="lead">contacto@mimarchante.mx</p>
             </a>
           </div>
           <div class="modal-footer">
@@ -377,16 +388,37 @@
 
     <!--Footer-->
     <footer class="container-fluid bg-secondary">
-       <div class="container">
+       <div class="container py-3">
            <div class="row justify-content-center">
                <div class="col-md-4 text-center text-light">
-                  <small>Contribuciones: 
-                    <br>
-                    <a href='https://www.freepik.es/fotos/marco' class="text-white" target="_blank">Foto de Marco creado por freepik - www.freepik.es</a>
-                   </small> 
-                   <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
+                  <p class="d-inline-flex m-0 p-0 logotipo">
+                    <a href="index.html" class="text-light">
+                      <i class="fas fa-shopping-bag text-mm2"></i>
+                      Mi marchante
+                    </a> - 
+                  </p>
                   <p class="d-inline-flex m-0 p-0"> 2020</p> 
+                  <p class="m-0 p-0">
+                    <img src="img/indautor.png" alt="indautor" class="indautor text-center">
+                  </p>
                </div>
+           </div>
+           <div class="row justify-content-center text-center mt-3">
+             <div class="col-md-4">
+               <a href="avisoPrivacidad.html" target="_blank" class="text-dark">
+                 <img src="img/inai.png" alt="inai" class="inai"> Aviso de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="politicaPrivacidad.html" target="_blank" class="text-dark">
+                 Política de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="terminosYCondicionesUso.html" target="_blank" class="text-dark">
+                 Términos y Condiciones
+               </a>
+             </div>
            </div>
        </div>
     </footer>

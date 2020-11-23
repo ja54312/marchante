@@ -56,7 +56,7 @@
             <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#login">Ofelia González <i class="far fa-user"></i></a>
+            <a class="nav-link" href="index.html#login" id='username'><i class="far fa-user"></i></a>
           </li>
           <li class="nav-item">
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
@@ -71,7 +71,7 @@
         <!-- Título del Mercado -->
         <div class="col-md-12 bg-warning mb-3 py-2">
           <p class="h2 mb-0 titulo">
-            <i class="fas fa-warehouse"></i> Mercado San Cosme
+            <i class="fas fa-warehouse"></i> <i id="market-title">Mercado San Cosme</i></p>
           </p>
         </div>
         <!-- Pasillos -->
@@ -91,7 +91,7 @@
                 <i class="fas fa-carrot fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo1" aria-expanded="true" aria-controls="pasillo1">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo1" aria-expanded="true" aria-controls="pasillo1" onclick="renderData(0, 'pasillo1-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -110,47 +110,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id='pasillo1-content'>
                     </tbody>
                   </table>
                 </div>
@@ -170,7 +130,7 @@
                   <i class="fas fa-fish fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo2" aria-expanded="true" aria-controls="pasillo2">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo2" aria-expanded="true" aria-controls="pasillo2" onclick="renderData(1, 'pasillo2-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -189,47 +149,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo2-content">
                     </tbody>
                   </table>
                 </div>
@@ -249,7 +169,7 @@
                   <i class="fas fa-cheese fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo3" aria-expanded="true" aria-controls="pasillo3">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo3" aria-expanded="true" aria-controls="pasillo3" onclick="renderData(2, 'pasillo3-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -268,47 +188,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo3-content">
                     </tbody>
                   </table>
                 </div>
@@ -328,7 +208,7 @@
                   <i class="fas fa-seedling fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo4" aria-expanded="true" aria-controls="pasillo4">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo4" aria-expanded="true" aria-controls="pasillo4" onclick="renderData(3, 'pasillo4-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -347,47 +227,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo4-content">
                     </tbody>
                   </table>
                 </div>
@@ -407,7 +247,7 @@
                   <i class="fas fa-hamburger fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo5" aria-expanded="true" aria-controls="pasillo5">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo5" aria-expanded="true" aria-controls="pasillo5" onclick="renderData(4, 'pasillo5-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -426,47 +266,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo5-content">
                     </tbody>
                   </table>
                 </div>
@@ -486,7 +286,7 @@
                   <i class="fas fa-glass-whiskey fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo6" aria-expanded="true" aria-controls="pasillo6">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo6" aria-expanded="true" aria-controls="pasillo6" onclick="renderData(5, 'pasillo6-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -505,47 +305,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo6-content">
                     </tbody>
                   </table>
                 </div>
@@ -565,7 +325,7 @@
                   <i class="fas fa-leaf fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo7" aria-expanded="true" aria-controls="pasillo7">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo7" aria-expanded="true" aria-controls="pasillo7" onclick="renderData(6, 'pasillo7-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -584,47 +344,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo7-content">
                     </tbody>
                   </table>
                 </div>
@@ -644,7 +364,7 @@
                   <i class="fas fa-paw fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo8" aria-expanded="true" aria-controls="pasillo8">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo8" aria-expanded="true" aria-controls="pasillo8" onclick="renderData(7, 'pasillo8-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -663,47 +383,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo8-content">
                     </tbody>
                   </table>
                 </div>
@@ -723,7 +403,7 @@
                   <i class="fas fa-user-tie fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo9" aria-expanded="true" aria-controls="pasillo9">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo9" aria-expanded="true" aria-controls="pasillo9" onclick="renderData(8, 'pasillo9-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -742,47 +422,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo9-content">
                     </tbody>
                   </table>
                 </div>
@@ -802,7 +442,7 @@
                   <i class="fas fa-mask fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo10" aria-expanded="true" aria-controls="pasillo10">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo10" aria-expanded="true" aria-controls="pasillo10" onclick="renderData(9, 'pasillo10-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -821,47 +461,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo10-content">
                     </tbody>
                   </table>
                 </div>
@@ -880,7 +480,7 @@
                   <i class="fas fa-paperclip fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo11" aria-expanded="true" aria-controls="pasillo11">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo11" aria-expanded="true" aria-controls="pasillo11" onclick="renderData(10, 'pasillo11-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -899,125 +499,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <!-- Pasillo 12 PELUQERÍAS -->
-            <div class="card border-info">
-              <div class="card-header bg-white text-center text-secondary" id="headingTwelve">
-                <h5 class="card-title lead d-inline">
-                  PELUQERÍAS
-                </h5>
-                <p class="float-right">
-                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
-                </p>
-                <p>
-                  <i class="fas fa-cut fa-2x text-dark"></i>
-                </p>
-                <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo12" aria-expanded="true" aria-controls="pasillo12">
-                    VER LOCALES
-                    <br>
-                    <i class="fas fa-angle-down"></i>
-                  </button>
-                </h2>
-              </div>
-              <!-- Locales de Pasillo 12 PELUQERÍAS -->
-              <div id="pasillo12" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
-                <div class="card-body table-responsive overflow-auto h-300">
-                  <table class="table table-hover dataTable">
-                    <thead class="small table-info text-secondary">
-                      <tr>
-                        <th scope="col"># LOCAL</th>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">PEDIDO</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo11-content">
                     </tbody>
                   </table>
                 </div>
@@ -1037,7 +519,7 @@
                   <i class="fas fa-hard-hat fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo13" aria-expanded="true" aria-controls="pasillo13">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo13" aria-expanded="true" aria-controls="pasillo13" onclick="renderData(11, 'pasillo12-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -1056,47 +538,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo12-content">
                     </tbody>
                   </table>
                 </div>
@@ -1116,7 +558,7 @@
                   <i class="fas fa-tshirt fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo14" aria-expanded="true" aria-controls="pasillo14">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo14" aria-expanded="true" aria-controls="pasillo14" onclick="renderData(12, 'pasillo13-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -1135,47 +577,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo13-content">
                     </tbody>
                   </table>
                 </div>
@@ -1195,7 +597,7 @@
                   <i class="fas fa-boxes fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo15" aria-expanded="true" aria-controls="pasillo15">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo15" aria-expanded="true" aria-controls="pasillo15" onclick="renderData(13, 'pasillo14-content')">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -1214,47 +616,7 @@
                         <th scope="col">PEDIDO</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">203</th>
-                        <td>Don Mario</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">20</th>
-                        <td>Doña Mari</td>
-                        <td>Verdulería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3-B</th>
-                        <td>Don Arturo</td>
-                        <td>Semillas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">85</th>
-                        <td>Don Panchito</td>
-                        <td>Hierbas</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">05</th>
-                        <td>Don Pedro</td>
-                        <td>Frutería</td>
-                        <td>
-                          <a href="local.html" class="btn btn-block btn-outline-primary">PEDIR <span class="badge badge-secondary"><i class="fas fa-minus"></i></span></a>
-                        </td>
-                      </tr>
+                    <tbody id="pasillo14-content">
                     </tbody>
                   </table>
                 </div>
@@ -1279,16 +641,16 @@
           </div>
           <div class="modal-body text-center">
             <p>Nos puedes contactar aquí:</p>
-            <a href="#" target="_blank" class="text-success my-3 py-3">
+            <a href="https://api.whatsapp.com/send?phone=525560927609&text=Hola!%20quería%20preguntar..." target="_blank" class="text-success my-3 py-3">
               WHATSAPP <i class="fab fa-whatsapp"></i>
               <br>
-              <p class="lead">+52 5531981449</p>
+              <p class="lead">+52 5560927609</p>
             </a>
             <hr>
             <a href="#" target="_blank" class="text-info lead my-3 py-3">
               EMAIL <i class="far fa-envelope"></i>
               <br>
-              <p class="lead">mimarchante@gmail.com</p>
+              <p class="lead">contacto@mimarchante.mx</p>
             </a>
           </div>
           <div class="modal-footer">
@@ -1300,21 +662,46 @@
 
     <!--Footer-->
     <footer class="container-fluid bg-secondary">
-       <div class="container">
+       <div class="container py-3">
            <div class="row justify-content-center">
                <div class="col-md-4 text-center text-light">
-                  <small>Contribuciones: 
-                    <br>
-                    <a href='https://www.freepik.es/fotos/marco' class="text-white" target="_blank">Foto de Marco creado por freepik - www.freepik.es</a>
-                   </small> 
-                   <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
+                  <p class="d-inline-flex m-0 p-0 logotipo">
+                    <a href="index.html" class="text-light">
+                      <i class="fas fa-shopping-bag text-mm2"></i>
+                      Mi marchante
+                    </a> - 
+                  </p>
                   <p class="d-inline-flex m-0 p-0"> 2020</p> 
+                  <p class="m-0 p-0">
+                    <img src="img/indautor.png" alt="indautor" class="indautor text-center">
+                  </p>
                </div>
+           </div>
+           <div class="row justify-content-center text-center mt-3">
+             <div class="col-md-4">
+               <a href="avisoPrivacidad.html" target="_blank" class="text-dark">
+                 <img src="img/inai.png" alt="inai" class="inai"> Aviso de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="politicaPrivacidad.html" target="_blank" class="text-dark">
+                 Política de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="terminosYCondicionesUso.html" target="_blank" class="text-dark">
+                 Términos y Condiciones
+               </a>
+             </div>
            </div>
        </div>
     </footer>
     <!-- Footer -->
-
+    <div style="display:none;" id='loader'>
+      <div class="conte_loader_MyStyle" style="display:flex;">
+        <div class="loader_MyStyle"></div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -11,7 +11,21 @@ let passLogin=document.getElementById('loginPassword')
 let check=document.getElementById('check')
 let mail_forgot_pass=document.getElementById('forgotPassEmail')
 let customerValue='Cliente'
+const markets = {}
+let userData={
+    customer:0,
+    type_market:'',
+    zone:'',
+    market:'',
+    local:'',
+    name:'',
+    mail:'',
+    pass:''
+}
 document.addEventListener('DOMContentLoaded',async function () {
+    console.log( 'Hi there' )
+    await getMarkets( 0 )
+    renderOptions()
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
     const emailUser=JSON.parse(localStorage.getItem('userMail'))
     mailLogin.value=emailUser
@@ -20,19 +34,64 @@ document.addEventListener('DOMContentLoaded',async function () {
         document.getElementById('disapearCustommer').style.display='block'
     }
     if(userCredentials.success && userCredentials.data_user.id_rol===1 || userCredentials.success){
-        document.getElementById('registroLogin').style.display='none'
-        document.getElementById('buttonRegister').style.display='none'
-        document.getElementById('buttonLogin').style.display='none'
-        document.getElementById('mercadoPostalCode').style.display='block'
-        document.getElementById('tianguisPostalCode').style.display='block'
-        document.getElementById('panelLocatario').style.display='block'
+        document.getElementById('registroLogin').style.display = 'none'
+        document.getElementById('buttonRegister').style.display = 'none'
+        document.getElementById('buttonLogin').style.display = 'none'
+        document.getElementById('mercadoPostalCode').style.display = 'block'
+        document.getElementById('tianguisPostalCode').style.display = 'block'
+        document.getElementById('panelLocatario').style.display = 'block'
     }else if(userCredentials.success===undefined){
-        document.getElementById('registroLogin').style.display='block'
-        document.getElementById('mercadoPostalCode').style.display='none'
-        document.getElementById('tianguisPostalCode').style.display='none'
+        document.getElementById('registroLogin').style.display = 'block'
+        document.getElementById('mercadoPostalCode').style.display = 'none'
+        document.getElementById('tianguisPostalCode').style.display = 'none'
     }
-    console.log(userCredentials)
+    
 });
+
+const verifyTypeMarket = () => {
+    if( type_market.value === 'Tianguis' ) {
+        renderOptions( 1 )
+    } else {
+        renderOptions( 0 )
+    }
+}
+
+const renderOptions = type => {
+    for ( let i = 0; i < market.length; i ++ ) {
+        market.remove( i )
+    }
+    if( type === 1 ) {
+        for ( let i = 0; i < markets.Tianguis.length; i++ ) {
+            const option = document.createElement('option')
+            option.innerHTML = markets.Tianguis[i].name
+            market.appendChild( option )
+        }
+    } else {
+        for ( let i = 0; i < markets.Mercado.length; i++ ) {
+            const option = document.createElement('option')
+            option.innerHTML = markets.Mercado[i].name
+            market.appendChild( option )
+        }
+    }
+}
+
+const getMarkets = async () => {
+    document.getElementById('loader').style.display='block'
+    const url = 'https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-markets-register/'
+    const requestMercados = await fetch( url + 'mercado' )
+    const responseMercados = await requestMercados.json()
+    if( responseMercados.success ) {
+        markets.Mercado = responseMercados.row
+    }
+    const requestTianguis = await fetch( url + 'tianguis' )
+    const responseTianguis = await requestTianguis.json()
+    if ( responseTianguis.success ) {
+        markets.Tianguis = responseTianguis.row
+    }
+    console.log( markets )
+    document.getElementById('loader').style.display='none'
+
+}
 function checkType(){
     isCustomer()
     if(customerValue===2){
@@ -53,7 +112,6 @@ function checkPass(){
     checkData()
 }
 function checkData(){
-    console.log(market.value)
     isCustomer()
     if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)){
         document.getElementById('submit').removeAttribute('disabled')
@@ -76,27 +134,18 @@ function isCustomer(){
         customerValue=1
     }
 }
-let userData={
-    customer:0,
-    type_market:'',
-    zone:'',
-    market:'',
-    local:'',
-    name:'',
-    mail:'',
-    pass:''
-}
+
+
 async function login(register){
     const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/login/'
     
-    if(register){
+    if( register ){
         const check=document.getElementById('check')
-        if(check.value){
+        if( check.value ){
             localStorage.setItem('userMail',JSON.stringify(mail.value))
         }
-        const request=await fetch(url,{
+        const request=await fetch( url,{
             method:'POST',
-            header:{'Authorization':'Basic '+ btoa(mail.value + ':' + pass.value)},
             headers:{
                 'Authorization':'Basic '+ btoa(mail.value + ':' + pass.value),
                 'Content-Type': 'application/json'
@@ -142,14 +191,23 @@ async function login(register){
             if(response.data_user.id_rol===1){
                 document.getElementById('panelLocatario').style.display='block'
             }
+        } else {
+            document.getElementById('loader').style.display='none'
+            swal({
+                title: "Upss",
+                text: "El usuario no ha sido registrado o datos incorrectos",
+                icon: "info",
+                button: "Aceptar",
+            })
         }
-        console.log(response)
+        window.location.reload()
     }
 }
 async function register(){
     document.getElementById('loader').style.display='block'
     const url='https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/register/'
-
+    const filterMarket = markets[type_market.value].filter( item => item.name === market.value )
+    const id_market = filterMarket[0].id_product
     userData={
         customer:customerValue.toString(),
         type_market:type_market.value,
@@ -158,8 +216,10 @@ async function register(){
         local:local.value,
         name:name.value,
         mail:mail.value,
-        pass:pass.value
+        pass:pass.value,
+        id_market
     }
+    console.log( userData )
     const request= await fetch(url,{
         method:'POST',
         body:JSON.stringify(userData)
@@ -172,6 +232,14 @@ async function register(){
         swal({
             title: "Upss",
             text: "El usuario ya ha sido registrado",
+            icon: "info",
+            button: "Aceptar",
+        })
+    }else if( response.msg === 'Error al guardar los datos, intentelo nuevamente.' ) {
+        document.getElementById('loader').style.display='none'
+        swal({
+            title: "Upss",
+            text: response.msg,
             icon: "info",
             button: "Aceptar",
         })

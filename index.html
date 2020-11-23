@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"> 
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -96,20 +96,16 @@
             <div class="form-row">
               <div class="col">
                 <label for="inputZipMercados" class="text-white text-shadow">Código Postal</label>
-                <input type="text" class="form-control" id="inputZipMercados">
+                <input type="text" class="form-control" id="cpMercados" onkeypress="findSuggestions('mercado')">
+                <div class="container-results" id="suggestions-mercados"></div>
               </div>
               <div class="col">
                 <label for="mercados" class="text-white text-shadow">Selecciona tu mercado</label>
                 <select class="form-control" id="mercados">
-                  <option>San Cosme</option>
-                  <option>La Dalia</option>
-                  <option>Martínez</option>
-                  <option>Roma</option>
-                  <option>Coyoacan</option>
                 </select>
               </div>
             </div>
-            <a href="mandado.html" class="btn btn-primary mt-4">ENTRAR</a>
+            <button class="btn btn-primary mt-4 enter--button" id="enter-mercado">ENTRAR</button>
           </form>
         </article>
         <!-- Tianguis -->
@@ -119,20 +115,16 @@
             <div class="form-row">
               <div class="col">
                 <label for="inputZipTianguis" class="text-white text-shadow">Código Postal</label>
-                <input type="text" class="form-control" id="inputZipTianguis">
+                <input type="text" class="form-control" id="cpTianguis" onkeypress="findSuggestions('tianguis')">
+                <div class="container-results" id="suggestions-tianguis"></div>
               </div>
               <div class="col">
                 <label for="tianguis" class="text-white text-shadow">Selecciona tu tianguis</label>
                 <select class="form-control" id="tianguis">
-                  <option>Sullivan</option>
-                  <option>El loro</option>
-                  <option>Juguetes</option>
-                  <option>Roma</option>
-                  <option>Coyoacan</option>
                 </select>
               </div>
             </div>
-            <a href="mandado.html" class="btn btn-primary mt-4">ENTRAR</a>
+            <button class="btn btn-primary mt-4 enter--button" id="enter-tianguis">ENTRAR</button>
           </form>
         </article>
       </div>
@@ -157,53 +149,40 @@
           <!-- Tipo de Cliente -->
             <div class="form-group">
               <label for="tipoCliente">Selecciona tu tipo</label>
-              <select class="form-control" id="tipoCliente" onblur="checkType()">
-                <option>Cliente</option>
+              <select class="form-control" id="tipoCliente" onblur="checkType()" onchange="checkType()">
                 <option>Locatario</option>
+                <option>Cliente</option>
               </select>
             </div>
             <!-- Si es cliente esta parte desaparece -->
             <div id='disapearCustommer'>
-            <div class="form-row form-group">
-              <div class="col">
-                <label for="mercadoTianguis">Tu mercado o tianguis</label>
-                <select class="form-control" id="mercadoTianguis" onblur="checkData()">
-                  <option>Mercado</option>
-                  <option>Tianguis</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="zonaRegistro">Selecciona tu zona</label>
-                <select class="form-control" id="zonaRegistro" onblur="checkData()">
-                  <option>CDMX Centro</option>
-                  <option>CDMX Norte</option>
-                  <option>CDMX Oriente</option>
-                  <option>CDMX Poninete</option>
-                  <option>CDMX Sur</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="mercadoTianguis">Tu mercado o tianguis</label>
+              <select class="form-control" id="mercadoTianguis" onblur="checkData()" onchange="verifyTypeMarket()">
+                <option>Mercado</option>
+                <option>Tianguis</option>
+              </select>
+              <label for="zonaRegistro">Selecciona tu zona</label>
+              <select class="form-control" id="zonaRegistro" onblur="checkData()">
+                <option>CDMX Centro</option>
+                <option>CDMX Norte</option>
+                <option>CDMX Oriente</option>
+                <option>CDMX Poninete</option>
+                <option>CDMX Sur</option>
+              </select>
             </div>
-            <div class="form-row form-group">
-              <div class="col">
-                <label for="mercado">Selecciona tu mercado</label>
-                <select class="form-control" id="mercado" onblur="checkData()">
-                  <option>Sullivan</option>
-                  <option>El loro</option>
-                  <option>Juguetes</option>
-                  <option>Roma</option>
-                  <option>Coyoacan</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="local">Selecciona tu local</label>
-                <select class="form-control" id="local" onblur="checkData()">
-                  <option>001</option>
-                  <option>002</option>
-                  <option>003</option>
-                  <option>004</option>
-                  <option>005</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="mercado">Selecciona tu mercado</label>
+              <select class="form-control" id="mercado" onblur="checkData()">
+              </select>
+              <label for="local">Selecciona tu local</label>
+              <select class="form-control" id="local" onblur="checkData()">
+                <option>001</option>
+                <option>002</option>
+                <option>003</option>
+                <option>004</option>
+                <option>005</option>
+              </select>
             </div>
           </div>
             <!-- Si es cliente esta parte desaparece -->
@@ -232,7 +211,7 @@
         </article>
         <article class="col-md-5 border-left border-right border-secondary"  id="login">
           <!-- Log in -->
-          <h4 class="mb-4 titulo">Inicia Sesión</h4>
+          <h4 class="mb-4 mt-5 mt-md-0 titulo">Inicia Sesión</h4>
           <hr>
             <div class="form-group">
               <label for="exampleInputEmail1">Escribe tu correo</label>
@@ -268,16 +247,16 @@
           </div>
           <div class="modal-body text-center">
             <p>Nos puedes contactar aquí:</p>
-            <a href="#" target="_blank" class="text-success my-3 py-3">
+            <a href="https://api.whatsapp.com/send?phone=525560927609&text=Hola!%20quería%20preguntar..." target="_blank" class="text-success my-3 py-3">
               WHATSAPP <i class="fab fa-whatsapp"></i>
               <br>
-              <p class="lead">+52 5531981449</p>
+              <p class="lead">+52 5560927609</p>
             </a>
             <hr>
             <a href="#" target="_blank" class="text-info lead my-3 py-3">
               EMAIL <i class="far fa-envelope"></i>
               <br>
-              <p class="lead">mimarchante@gmail.com</p>
+              <p class="lead">contacto@mimarchante.mx</p>
             </a>
           </div>
           <div class="modal-footer">
@@ -314,19 +293,45 @@
 
     <!--Footer-->
     <footer class="container-fluid bg-secondary">
-       <div class="container">
+       <div class="container py-3">
            <div class="row justify-content-center">
                <div class="col-md-4 text-center text-light">
+                  <p class="d-inline-flex m-0 p-0 logotipo">
+                    <a href="index.html" class="text-light">
+                      <i class="fas fa-shopping-bag text-mm2"></i>
+                      Mi marchante 
+                    </a> - 
+                  </p>
+                  <p class="d-inline-flex m-0 p-0"> 2020</p> 
+                  <p class="m-0 p-0">
+                    <img src="img/indautor.png" alt="indautor" class="indautor text-center">
+                  </p>
                   <small>Contribuciones: 
                     <br>
                     <a href='https://www.freepik.es/fotos/marco' class="text-white" target="_blank">Foto de Marco creado por freepik - www.freepik.es</a>
                    </small> 
-                   <p class="d-inline-flex m-0 p-0">Mi marchante - </p>
-                  <p class="d-inline-flex m-0 p-0"> 2020</p> 
                </div>
+           </div>
+           <div class="row justify-content-center text-center mt-3">
+             <div class="col-md-4">
+               <a href="avisoPrivacidad.html" target="_blank" class="text-dark">
+                 <img src="img/inai.png" alt="inai" class="inai"> Aviso de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="politicaPrivacidad.html" target="_blank" class="text-dark">
+                 Política de Privacidad
+               </a>
+             </div>
+             <div class="col-md-4">
+               <a href="terminosYCondicionesUso.html" target="_blank" class="text-dark">
+                 Términos y Condiciones
+               </a>
+             </div>
            </div>
        </div>
     </footer>
+
     <div style="display:none;" id='loader'>
       <div class="conte_loader_MyStyle" style="display:flex;">
         <div class="loader_MyStyle"></div>
@@ -342,6 +347,7 @@
     <!--Wow JS-->
     <script src="js/wow.min.js"></script>
     <!-- Opcionales JS -->
+    <script src="js/commerceMaganement.js"></script>
     <script src="js/mimarchante.js"></script>
     <script src="js/register.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

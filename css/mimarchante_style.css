@@ -335,4 +335,16 @@
     @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-    }
+}
+.container-results {
+    position: absolute;
+    z-index: 100000;
+    margin-top: 2.5rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+}
