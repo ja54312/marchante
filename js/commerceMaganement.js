@@ -16,6 +16,7 @@ document.addEventListener( 'DOMContentLoaded', async function () {
     enterMercadoButton.addEventListener('click', e => findSellers( e, 'mercado' ))
     enterTianguisButton.addEventListener('click', e => findSellers( e, 'tianguis' ))
     await getCPs()
+    alert( 'Changes have been displayed' )
 })
 const findSellers = ( e, about ) => {
     e.preventDefault()
@@ -58,6 +59,7 @@ const getCPs = async () => {
     const resultsMercados = await requestcpMercados.json()
     if( resultsMercados.success ) {
         CPs.mercados = resultsMercados.row
+        renderSuggestions('mercado')
         const requestcpTianguis = await fetch( url + 'tianguis', {
             headers: {
                 'Authorization': `Bearer ${ userAccount.token }`
@@ -66,21 +68,38 @@ const getCPs = async () => {
         const resultsTianguis = await requestcpTianguis.json()
         if( resultsTianguis.success ) {
             CPs.tianguis = resultsTianguis.row
+            renderSuggestions('tianguis')
+            $('.selectpicker1').selectpicker('refresh');
+            $(".selectpicker1").selectpicker();
+            $('.selectpicker2').selectpicker('refresh');
+            $(".selectpicker2").selectpicker();
         }
     }
 }
 
+const hideSuggestions = id => {
+    document.getElementById( id ).style.display = 'none'
+}
+
+const showSuggestions = id => {
+    document.getElementById( id ).style.display = 'block'
+}
+
 const findSuggestions = about => {
     if( about === 'mercado' ) {
+        document.getElementById( 'suggestions-mercados' ).style.display = 'block'
         const regex = new RegExp(`${cpMercado.value}`, 'i')
         const suggestions = CPs.mercados.filter( cp => regex.test( cp.name ) )
         cpSuggestions = suggestions
         removeSuggestions( 'mercado' )
+        
     } else {
+        document.getElementById( 'suggestions-tianguis' ).style.display = 'block'
         const regex = new RegExp(`${cpTianguis.value}`, 'i')
         const suggestions = CPs.tianguis.filter( cp => regex.test( cp.name ) )
         cpSuggestions = suggestions
         removeSuggestions( 'tianguis' )
+        
     }
 }
 
@@ -102,7 +121,6 @@ const findMarketsByCP = async about => {
         }
     })
     const response = await request.json()
-    console.log( response )
     if( response.success ) { 
         marketSuggestions = response.row
         renderMarketSuggestions( about )
@@ -132,41 +150,44 @@ const renderMarketSuggestions = about => {
         }
     }
 }
-  
+ 
+const setMarketToFind = async about => {
+    document.getElementById('loader').style.display = 'block'
+    if( about === 'mercado' ) {
+        if( mercadosSuggestionsContainer.value === '' ){
+            document.getElementById('loader').style.display = 'none'
+            return false
+        }
+        cpToFind = mercadosSuggestionsContainer.value
+        await findMarketsByCP(about)
+        document.getElementById('loader').style.display = 'none'
+    } else {
+        if( tianguisSuggestionsContainer.value === '' ){
+            document.getElementById('loader').style.display = 'none'
+            return false
+        }
+        cpToFind = tianguisSuggestionsContainer.value
+        await findMarketsByCP(about)
+        document.getElementById('loader').style.display = 'none'
+    }
+}
+
 const renderSuggestions = about => {
     if( about === 'mercado' ){
-        for( let i = 0; i < cpSuggestions.length; i ++ ) {
-            const option = document.createElement('button')
-            option.className = 'btn btn-primary btn-sm btn-block'
-            option.innerHTML = cpSuggestions[i].name
-            option.addEventListener('click', async e => {
-                e.preventDefault()
-                document.getElementById('loader').style.display = 'block'
-                cpMercado.value = cpSuggestions[i].name
-                cpToFind = cpSuggestions[i].id_product
-                await findMarketsByCP('mercado')
-                document.getElementById('loader').style.display = 'none'
-                mercados.focus()
-                mercadosSuggestionsContainer.innerHTML = ''
-            })
+        for( let i = 0; i < CPs.mercados.length; i ++ ) {
+            const option = document.createElement('option')
+            option.innerHTML = CPs.mercados[i].name
+            option.value = CPs.mercados[i].id_product
             mercadosSuggestionsContainer.appendChild( option )
         }
+
     } else {
-        for( let i = 0; i < cpSuggestions.length; i ++ ) {
-            const option = document.createElement('button')
-            option.className = 'btn btn-primary btn-sm btn-block'
-            option.innerHTML = cpSuggestions[i].name
-            option.addEventListener('click', async e => {
-                e.preventDefault()
-                document.getElementById('loader').style.display = 'block'
-                cpTianguis.value = cpSuggestions[i].name
-                cpToFind = cpSuggestions[i].id_product
-                await findMarketsByCP('tianguis')
-                document.getElementById('loader').style.display = 'none'
-                tianguis.focus()
-                tianguisSuggestionsContainer.innerHTML = ''
-            })
+        for( let i = 0; i < CPs.tianguis.length; i ++ ) {
+            const option = document.createElement('option')
+            option.innerHTML = CPs.tianguis[i].name
+            option.value = CPs.tianguis[i].id_product
             tianguisSuggestionsContainer.appendChild( option )
         }
     }
+
 }

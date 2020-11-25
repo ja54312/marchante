@@ -259,10 +259,6 @@ async function getProducts() {
     }
     console.log(response)
 }
-function signOut() {
-    localStorage.setItem('userCredentials', JSON.stringify({}))
-    location.replace('index.html')
-}
 async function addProduct() {
     document.getElementById('loader').style.display = 'block'
     if (id_type_category.value === 'Selecciona una categoría...') {

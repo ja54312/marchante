@@ -61,8 +61,8 @@
           <li class="nav-item">
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
           </li>
-          <li class="nav-item" id='logOut' style="cursor: pointer;">
-            <button type="button" class="btn text-black-50" onclick="signOut()">Cerrar Sesión <i class="fas fa-power-off"></i> </button>
+          <li class="nav-item" id='logOut' style="cursor: pointer;" id="logOut">
+            <button type="button" class="btn text-black-50" onclick="signOut()">Cerrar Sesión <i class="fas fa-power-off"></i></button>
           </li>
         </ul>
       </div>
@@ -104,16 +104,22 @@
                 <p class="rounded bg-white h4 text-center font-weight-bolder fa-2x pt-1 pr-5 titulo">
                   SUBIR PRODUCTOS
                 </p>
-                <div class="form-group col-md-4">
-                  <label for="tipoCliente">Selecciona una categoría</label>
-                  <select class="form-control" id="productCategory">
-                    <option>Selecciona una categoría...</option>
-                  </select>
+                <div class="form-row align-items-center text-center">
+                  <div class="form-group col-md-4 d-flex">
+                    <div>
+                      <label for="tipoCliente">Selecciona una categoría</label>
+                      <select class="form-control" id="productCategory">
+                        <option>Selecciona una categoría...</option>
+                        <option>0</option>
+                      </select>
+                    </div>
+                    <button disabled class="btn rounded-circle text-center tooltip"><p class="h5 mb-0 titulo"><i class="fas fa-info-circle"></i></p><span class="tooltiptext">Seleccione una categoría y si su producto no entra en alguna opción, coloque "0".</span></button>
+                  </div>
                 </div>
                 <div class="form-row align-items-center text-center">
                   <div class="form-group col-md-4">
                     <label for="product">Nombre de tu Producto</label>
-                    <input type="text" class="form-control" id="product" onblur="checkData()" required>
+                    <input type="text" class="form-control" id="product" onchange="checkData()" required>
                   </div>
                   <div class="form-group col-md-3">
                     <label for="prePz">Precio por 1 Pieza</label>
@@ -121,7 +127,7 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text bg-primary text-white">$</div>
                       </div>
-                      <input type="number" class="form-control" id="prePz" onblur="checkData()" required>
+                      <input type="number" class="form-control" id="prePz" onchange="checkData()" required>
                     </div>  
                   </div>
                   <div class="form-group col-md-3">
@@ -130,11 +136,14 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text bg-primary text-white">$</div>
                       </div>
-                      <input type="number" class="form-control" id="prePs" onblur="checkData()" required>
+                      <input type="number" class="form-control" id="prePs" onchange="checkData()" required>
                     </div>  
                   </div>
-                  <div class="form-group col-md-2 text-center">
-                    <button id='saveProduct' disabled class="btn btn-primary" onclick="addProduct()">Guardar</button>
+                  <div class="form-group col-md-2">
+                    <div class="tooltip">
+                      Hover over me                      
+                    </div>
+                    <button id='saveProduct' disabled class="btn btn-primary form-control text-center" onclick="addProduct()">Guardar</button>
                   </div>
                 </div>
               </div>

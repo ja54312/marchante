@@ -191,6 +191,7 @@ async function login(register){
             if(response.data_user.id_rol===1){
                 document.getElementById('panelLocatario').style.display='block'
             }
+            window.location.reload()
         } else {
             document.getElementById('loader').style.display='none'
             swal({

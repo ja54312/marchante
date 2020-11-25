@@ -23,14 +23,27 @@ $(document).ready(function() {
     }*/
 
   // DatePicker JQ UI
-    $('#datepicker').datepicker({
+    /*$('#datepicker').datepicker({
       changeMonth: true,
       changeYear: true
-    });
+    });*/
 
+  function signOut() {
+    localStorage.setItem('userCredentials', JSON.stringify({}))
+    location.replace('index.html')
+    document.getElementById('logOut').style.display = 'none'
+  }
    // Validate Bootstrap
     'use strict';
     window.addEventListener('load', function() {
+      const userCredentials = JSON.parse(localStorage.getItem('userCredentials'))
+      if ( userCredentials.success) {
+          document.getElementById('register').style.display = 'none'
+          document.getElementById('user-name').innerHTML = userData.data_user.name_user
+      } else {
+        document.getElementById('logOut').style.display = 'none'
+        document.getElementById('register').style.display = 'block'
+      }
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission

@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
 
     <!-- Required links CSS -->
-    <!-- Bootstrap CSS-->
+    <!-- Bootstrap CSS-->    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Favicon CSS-->
     <link rel="icon" type="image/ico" href="img/mimarchante.ico">
@@ -71,6 +71,9 @@
           <li class="nav-item">
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
           </li>
+          <li class="nav-item" id='logOut' style="cursor: pointer;" id="logOut">
+            <button type="button" class="btn text-black-50" onclick="signOut()">Cerrar Sesión <i class="fas fa-power-off"></i> </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -95,9 +98,10 @@
           <form>
             <div class="form-row">
               <div class="col">
-                <label for="inputZipMercados" class="text-white text-shadow">Código Postal</label>
-                <input type="text" class="form-control" id="cpMercados" onkeypress="findSuggestions('mercado')">
-                <div class="container-results" id="suggestions-mercados"></div>
+                <label for="suggestions-mercados" class="text-white text-shadow">Selecciona tu código postal</label>
+                <select  class="selectpicker1 form-control" data-live-search="true" id="suggestions-mercados" onchange="setMarketToFind('mercado')">
+                  <option value="">CP...</option>
+                </select>
               </div>
               <div class="col">
                 <label for="mercados" class="text-white text-shadow">Selecciona tu mercado</label>
@@ -113,10 +117,11 @@
           <h3 class="subtitulo rounded p-2 bg-transparencia">TIANGUIS <i class="fas fa-store"></i></h3>
           <form>
             <div class="form-row">
-              <div class="col">
-                <label for="inputZipTianguis" class="text-white text-shadow">Código Postal</label>
-                <input type="text" class="form-control" id="cpTianguis" onkeypress="findSuggestions('tianguis')">
-                <div class="container-results" id="suggestions-tianguis"></div>
+              <div class="col wrapper-results">
+                <label for="suggestions-mercados" class="text-white text-shadow">Selecciona tu código postal</label>
+                <select  class="selectpicker2 form-control" data-live-search="true" id="suggestions-tianguis" onchange="setMarketToFind('tianguis')">
+                  <option value="">CP...</option>
+                </select>
               </div>
               <div class="col">
                 <label for="tianguis" class="text-white text-shadow">Selecciona tu tianguis</label>
@@ -352,6 +357,13 @@
     <script src="js/register.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- bootstrap-select additional library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/css/bootstrap-select.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/js/bootstrap-select.min.js"></script>
   </body>
 </html>
 
