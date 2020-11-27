@@ -62,7 +62,7 @@
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
           </li>
           <li class="nav-item" id='logOut' style="cursor: pointer;" id="logOut">
-            <button type="button" class="btn text-black-50" onclick="signOut()">Cerrar Sesión <i class="fas fa-power-off"></i></button>
+            <button type="button" class="btn text-black-50" onclick="signOut()"><i class="fas fa-sign-out-alt"></i> </button>
           </li>
         </ul>
       </div>
@@ -110,10 +110,10 @@
                       <label for="tipoCliente">Selecciona una categoría</label>
                       <select class="form-control" id="productCategory">
                         <option>Selecciona una categoría...</option>
-                        <option>0</option>
+                        <option value="0">Otro...</option>
                       </select>
                     </div>
-                    <button disabled class="btn rounded-circle text-center tooltip"><p class="h5 mb-0 titulo"><i class="fas fa-info-circle"></i></p><span class="tooltiptext">Seleccione una categoría y si su producto no entra en alguna opción, coloque "0".</span></button>
+                    <button disabled class="btn rounded-circle text-center tooltip"><p class="h5 mb-0 titulo"><i class="fas fa-info-circle"></i></p><span class="tooltiptext">Seleccione una categoría y si su producto no entra en alguna opción, coloque "Otro...".</span></button>
                   </div>
                 </div>
                 <div class="form-row align-items-center text-center">

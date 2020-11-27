@@ -16,7 +16,6 @@ document.addEventListener( 'DOMContentLoaded', async function () {
     enterMercadoButton.addEventListener('click', e => findSellers( e, 'mercado' ))
     enterTianguisButton.addEventListener('click', e => findSellers( e, 'tianguis' ))
     await getCPs()
-    alert( 'Changes have been displayed' )
 })
 const findSellers = ( e, about ) => {
     e.preventDefault()
@@ -114,6 +113,8 @@ const removeSuggestions = about => {
 }
 
 const findMarketsByCP = async about => {
+    mercados.innerHTML = ''
+    tianguis.innerHTML = ''
     const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-cat-markets/${cpToFind}`
     const request = await fetch( url, {
         headers: {
@@ -121,15 +122,25 @@ const findMarketsByCP = async about => {
         }
     })
     const response = await request.json()
+    console.log( response )
     if( response.success ) { 
         marketSuggestions = response.row
         renderMarketSuggestions( about )
-    } else {
+    } else if( response.success === false ) {
+        if( response.msg === 'No se encontraron datos' ) {
+            swal({
+                title: "Upss",
+                text: `No hay ningún ${about} asociado a este C.P.`,
+                icon: "info",
+                button: "Aceptar",
+            })
+        }
         if( about === 'mercado' ) {
             mercados.innerHTML = ''
         } else {
             tianguis.innerHTML = ''
         }
+        signOut()
     }
 }
 
