@@ -270,17 +270,19 @@ async function addProduct() {
             button: "Aceptar",
         })
     } else {
-        const url = 'https://cors-anywhere.herokuapp.com/https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/add-products/'
+        const url = 'https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/add-products/'
         const priceKg = parseFloat(price_kg.value)
         const pricePz = parseFloat(price_pz.value)
+        const idCategory = parseInt( id_type_category.value )
         const data = {
             name: name.value,
             price_kg: priceKg,
             price_pz: pricePz,
             id_user: userData.data_user.id_user,
-            id_roll: userData.data_user.id_roll,
-            id_type_category: id_type_category.value
+            id_roll: userData.data_user.id_rol,
+            id_type_category: idCategory
         }
+        console.log( data )
         const request = await fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),

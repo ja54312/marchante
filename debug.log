@@ -1,2 +1,17 @@
 [1122/140648.587:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
 [1123/103858.243:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/092454.106:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/141045.746:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[1127/141045.777:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[1127/141045.789:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[1127/141045.789:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[1127/141045.800:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1127/141045.803:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1127/141045.777:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1127/141045.746:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1127/141045.879:ERROR:exception_snapshot_win.cc(99)] thread ID 3412 not found in process
+[1127/141045.879:ERROR:exception_snapshot_win.cc(99)] thread ID 116 not found in process
+[1127/141045.879:ERROR:exception_snapshot_win.cc(99)] thread ID 7588 not found in process
+[1127/141045.791:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1127/141045.879:ERROR:exception_snapshot_win.cc(99)] thread ID 2572 not found in process
+[1127/141045.880:ERROR:exception_snapshot_win.cc(99)] thread ID 4800 not found in process
