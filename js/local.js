@@ -118,6 +118,7 @@ const recursiveRender = ( count = 0, length = 1 ) => {
             formRadios.modality = this.value
             console.log( formRadios.modality )
             priceColumn.innerHTML = `$ ${products[count].price_kg}/kg` 
+            quantityInput.step = 'any'
         } )
 
         radioPz.addEventListener( 'change', function() {
@@ -125,6 +126,7 @@ const recursiveRender = ( count = 0, length = 1 ) => {
             formRadios.modality = this.value
             console.log( formRadios.modality )
             priceColumn.innerHTML = `$ ${products[count].price_pz}/pz`
+            quantityInput.step = '1'
         } )
 
         addToCartButton.addEventListener( 'click', () => {
