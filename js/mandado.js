@@ -44,9 +44,12 @@ const renderData = ( menu, toMenu ) => {
         category.innerHTML = 'Frutas'
         const buy = document.createElement( 'td' )
         const buyButton = document.createElement( 'a' )
-        buyButton.addEventListener('click', e => {
+        buyButton.addEventListener('click', async e => {
             e.preventDefault()
-            window.location.href = 'local.html'
+            const tenant_data = tablesData[menu].tenants_array[i]
+            await getProductsToBuy( tenant_data )
+            console.log( tenant_data )
+            //window.location.href = 'local.html'
         })
         buyButton.className = 'btn btn-block btn-outline-primary'
         buyButton.innerHTML = 'PEDIR'
@@ -62,6 +65,37 @@ const renderData = ( menu, toMenu ) => {
         tableRow.appendChild( category )
         tableRow.appendChild( buy )
         document.getElementById( toMenu ).appendChild( tableRow )
+    }
+}
+
+const getProductsToBuy = async ( tenant_data, tries = 0 ) => {
+    const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${tenant_data.id_tenant}`
+    console.log( 'Getting response' )
+    try {
+        const request = await fetch( url, {
+            headers: {
+                'Authorization': `Bearer ${userData.token}`
+            }
+        })
+        const response = await request.json()
+        if( response.success ) {
+            localStorage.setItem( 'products', JSON.stringify( response.row ) )
+            localStorage.setItem( 'id_tenant', tenant_data.id_tenant )
+            window.location.href = 'local.html'
+        }
+    } catch (error) {
+        if( tries === 5 ) {
+            return(
+                swal({
+                    title: "Ooooops",
+                    text: "Asegurate de tener conexión a internet",
+                    icon: "info",
+                    button: "Aceptar",
+                })
+            )
+        } else {
+            return getProductsToBuy( tenant_data, tries + 1 )
+        }
     }
 }
 

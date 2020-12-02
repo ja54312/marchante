@@ -1,11 +1,176 @@
 let userData
 let currentProduct
+let products
+let prev = null;
+let id_tenant
+const cart = []
+const table = document.getElementById( 'table-data' )
 document.addEventListener('DOMContentLoaded',async function () {
-    const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
-    userData=userCredentials
-    if(userData.success){
-        document.getElementById('register').style.display='none'
-    }else if(userData.success===undefined){
-        location.replace('index.html')
+    const userCredentials = JSON.parse( localStorage.getItem( 'userCredentials' ) )
+    userData = userCredentials
+    products = JSON.parse( localStorage.getItem( 'products' ) )
+    id_tenant = localStorage.getItem( 'id_tenant' )
+    recursiveRender()
+    console.log( products )
+    //renderProducts()
+    if( userData.success ) {
+        document.getElementById( 'register' ).style.display = 'none'
+        //renderProducts()
+    }else if( userData.success === undefined ) {
+        location.replace( 'index.html' )
     }
-});
+})
+
+const recursiveRender = ( count = 0, length = 1 ) => {
+    //console.log( count, length )
+    if( length > products.length ) {
+        return
+    } else {
+        const product = {}
+        const row = document.createElement( 'tr' )
+        const productName = document.createElement( 'th' )
+        productName.scope = 'row'
+        productName.className = 'titulo'
+        productName.innerHTML = products[count].name
+        const formColumn = document.createElement( 'td' )
+        const formRadios = document.createElement( 'form' )
+        formRadios.modality = 'pz'
+        const radioPzContainer = document.createElement( 'div' )
+        radioPzContainer.className = 'custom-control custom-radio'
+        const radioPz = document.createElement( 'input' )
+        radioPz.type = 'radio'
+        radioPz.className = 'custom-control-input'
+        radioPz.id = products[count].id_product + 'pz'
+        radioPz.name = "radio-stacked"
+        radioPz.value = 'pz'
+        radioPz.name = 'radio-stacked'
+        radioPz.required = true
+        radioPz.checked = true
+        
+        const labelPz = document.createElement( 'label' )
+        labelPz.className = 'custom-control-label'
+        labelPz.htmlFor =  products[count].id_product + 'pz'
+        labelPz.innerHTML = 'Pieza'
+
+        const radioKgContainer = document.createElement( 'div' )
+        radioKgContainer.className = 'custom-control custom-radio'
+        const radioKg = document.createElement( 'input' )
+        radioKg.type = 'radio'
+        radioKg.className = 'custom-control-input'
+        radioKg.id = products[count].id_product + 'kg'
+        radioKg.name = "radio-stacked"
+        radioKg.value = 'kg'
+        radioKg.name = 'radio-stacked'
+        radioKg.required = true
+       
+        const labelKg = document.createElement( 'label' )
+        labelKg.className = 'custom-control-label'
+        labelKg.htmlFor =  products[count].id_product + 'kg'
+        labelKg.innerHTML = 'Peso'
+
+        const quantityContainer = document.createElement( 'td' )
+        const formQuantity = document.createElement( 'form' )
+        formQuantity.addEventListener( 'submit', e => {
+            e.preventDefault()
+        } )
+        const selectQuantityContainer = document.createElement( 'div' )
+        selectQuantityContainer.className = 'form-group'
+        const labelQuantity = document.createElement( 'label' )
+        labelQuantity.htmlFor = products[count].id_product + 'quantity'
+        labelQuantity.innerHTML = 'Cantidad'
+        const quantityInput = document.createElement( 'input' )
+        quantityInput.type = 'number'
+        quantityInput.min = '1'
+        quantityInput.max = '50'
+        quantityInput.step = '1'
+        quantityInput.className = 'form-control'
+        quantityInput.defaultValue = 1
+        quantityInput.addEventListener( 'change', function() {
+            if( this.value <= 50 ) {
+                this.value = this.value
+            } else if ( this.value < 1 ) {
+                this.value = 1
+            } else {
+                this.value = 50
+            }
+        } )
+
+        const priceColumn = document.createElement( 'td' )
+        priceColumn.className = 'titulo h4'
+        priceColumn.innerHTML = `$ ${products[count].price_pz}/pz` 
+
+        const addToCartColumn = document.createElement( 'td' )
+        const addToCartButton = document.createElement( 'a' )
+        addToCartButton.className = 'btn btn-block btn-outline-primary'
+        addToCartButton.innerHTML = 'AGREGAR'
+        addToCartButton.style.color = '#3b9aff'
+        const buttonSpan = document.createElement( 'span' )
+        buttonSpan.className = 'badge badge-success'
+        buttonSpan.style.marginLeft = '4px'
+        const buttonI = document.createElement( 'i' )
+        buttonI.className = 'fas fa-check'
+        buttonSpan.appendChild( buttonI )
+        addToCartButton.appendChild( buttonSpan )
+        //<span class="badge badge-success"><i class="fas fa-check"></i></span>
+
+        radioKg.addEventListener( 'change', function() {
+            console.log( this.value )
+            formRadios.modality = this.value
+            console.log( formRadios.modality )
+            priceColumn.innerHTML = `$ ${products[count].price_kg}/kg` 
+        } )
+
+        radioPz.addEventListener( 'change', function() {
+            console.log( this.value )
+            formRadios.modality = this.value
+            console.log( formRadios.modality )
+            priceColumn.innerHTML = `$ ${products[count].price_pz}/pz`
+        } )
+
+        addToCartButton.addEventListener( 'click', () => {
+            product.quantity = quantityInput.value
+            product.id_product = products[count].id_product
+            product.id_tenant = id_tenant
+            product.price_pz = formRadios.modality === 'pz' ? products[count].price_pz : 0
+            product.price_kg = formRadios.modality === 'kg' ? products[count].price_kg : 0
+            addToCart( products[count].id_product, product )
+        } )
+
+        addToCartColumn.appendChild( addToCartButton )
+        selectQuantityContainer.appendChild( labelQuantity )
+        selectQuantityContainer.appendChild( quantityInput )
+        formQuantity.appendChild( selectQuantityContainer )
+        quantityContainer.appendChild( formQuantity )
+        radioPzContainer.appendChild( radioPz )
+        radioPzContainer.appendChild( labelPz )
+        radioKgContainer.appendChild( radioKg )
+        radioKgContainer.appendChild( labelKg )
+        formRadios.appendChild( radioPzContainer )
+        formRadios.appendChild( radioKgContainer )
+        formColumn.appendChild( formRadios )
+        row.appendChild( productName )
+        row.appendChild( formColumn )
+        row.appendChild( quantityContainer )
+        row.appendChild( priceColumn )
+        row.appendChild( addToCartColumn )
+        table.appendChild( row )
+        return recursiveRender( count + 1, length + 1  )
+    }
+}
+const addToCart = ( id_product, product ) => {
+    if ( cart.length < 1 ) {
+        cart.push ( product )
+        console.log( cart )
+    } else {
+        let inCartProduct = cart.find( element => element.id_product === id_product )
+        if ( inCartProduct ) {
+            console.log( inCartProduct )
+            inCartProduct = { ...inCartProduct, quantity: product.quantity }
+            console.log( cart )
+        } else {
+            cart.push( product )
+            console.log( cart )
+        }
+    }
+    localStorage.setItem( 'cart', JSON.stringify( cart ) )
+}
