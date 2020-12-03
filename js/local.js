@@ -1,28 +1,35 @@
 let userData
 let currentProduct
 let products
-let prev = null;
 let id_tenant
-const cart = []
+let id_market
+let user_cart = {}
+
+let cart = []
 const table = document.getElementById( 'table-data' )
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials = JSON.parse( localStorage.getItem( 'userCredentials' ) )
     userData = userCredentials
+    document.getElementById('user-name').innerHTML = userData.data_user.name_user
     products = JSON.parse( localStorage.getItem( 'products' ) )
     id_tenant = localStorage.getItem( 'id_tenant' )
+    const retrieve_cart = JSON.parse( localStorage.getItem( 'cart' ) )
+    if ( retrieve_cart !== null || undefined ) {
+        user_cart = retrieve_cart
+        cart = retrieve_cart.cart
+    }
+    const idMarket = JSON.parse(localStorage.getItem('id_market'))
+    id_market = idMarket
+    document.getElementById('market-title').innerHTML = idMarket.marketData.name
     recursiveRender()
-    console.log( products )
-    //renderProducts()
     if( userData.success ) {
         document.getElementById( 'register' ).style.display = 'none'
-        //renderProducts()
     }else if( userData.success === undefined ) {
         location.replace( 'index.html' )
     }
 })
 
 const recursiveRender = ( count = 0, length = 1 ) => {
-    //console.log( count, length )
     if( length > products.length ) {
         return
     } else {
@@ -127,14 +134,16 @@ const recursiveRender = ( count = 0, length = 1 ) => {
             console.log( formRadios.modality )
             priceColumn.innerHTML = `$ ${products[count].price_pz}/pz`
             quantityInput.step = '1'
+            quantityInput.value = Math.round( quantityInput.value )
         } )
 
         addToCartButton.addEventListener( 'click', () => {
-            product.quantity = quantityInput.value
-            product.id_product = products[count].id_product
-            product.id_tenant = id_tenant
-            product.price_pz = formRadios.modality === 'pz' ? products[count].price_pz : 0
-            product.price_kg = formRadios.modality === 'kg' ? products[count].price_kg : 0
+            product.quantity = formRadios.modality === 'kg' ? parseFloat( quantityInput.value ) : parseInt( quantityInput.value )
+            product.id_product =  parseInt( products[count].id_product )
+            product.id_tenant = parseInt( id_tenant )
+            product.price_pz = formRadios.modality === 'pz' ? parseInt( products[count].price_pz ) : 0
+            product.price_kg = formRadios.modality === 'kg' ? parseInt( products[count].price_kg ) : 0
+            product.name = products[count].name
             addToCart( products[count].id_product, product )
         } )
 
@@ -166,13 +175,29 @@ const addToCart = ( id_product, product ) => {
     } else {
         let inCartProduct = cart.find( element => element.id_product === id_product )
         if ( inCartProduct ) {
-            console.log( inCartProduct )
             inCartProduct = { ...inCartProduct, quantity: product.quantity }
-            console.log( cart )
         } else {
             cart.push( product )
-            console.log( cart )
         }
     }
-    localStorage.setItem( 'cart', JSON.stringify( cart ) )
+    if ( user_cart.id_market === id_market.marketData.id_product ) {
+        user_cart.id_market = id_market.marketData.id_product
+        user_cart.cart = cart
+        user_cart.id_user = userData.data_user.id_user
+        localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
+        swal({
+            title: "Okay",
+            text: "El producto se ha agregado a tu carrito",
+            icon: "success",
+            button: "Aceptar",
+        })
+    } else {
+        swal({
+            title: "Upss",
+            text: "No se puede agregar un producto de otro mercado/tianguis. Los productos en tu carrito deben ser del mismo mercado/tianguis",
+            icon: "info",
+            button: "Aceptar",
+        })
+    }
+    console.log( user_cart )
 }

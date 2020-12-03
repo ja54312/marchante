@@ -53,10 +53,10 @@
             <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
+            <a class="nav-link" href="index.html#registro" id="register">Registrarse <i class="far fa-edit"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#login">Antonia Flores <i class="far fa-user"></i></a>
+            <a class="nav-link" href="index.html#login" id="user-name"><i class="far fa-user"></i></a>
           </li>
           <li class="nav-item">
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
@@ -72,7 +72,8 @@
         <div class="col-md-12 bg-warning py-2">
           <a href="mandado.html" class="text-decoration-none">
             <p class="h2 text-dark mb-0 titulo">
-              <i class="fas fa-warehouse"></i> Mercado San Cosme
+              <i class="fas fa-warehouse"></i>
+              <i id="market-title">Mercado San Cosme</i>
             </p>
           </a>  
           <p class="rounded bg-white h4 text-right text-info font-weight-bolder pt-1 pr-5 titulo">
@@ -184,6 +185,7 @@
     <!-- Opcionales JS -->
     <script src="js/mimarchante.js"></script>
     <script src='js/local.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
   <!-- Body -->
 </html>

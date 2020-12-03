@@ -4,9 +4,9 @@ let currentMarketId
 let tablesData
 const tableOneContent = document.getElementById('pasillo1-content')
 document.addEventListener('DOMContentLoaded',async () => {
-    document.getElementById('loader').style.display='block'
+    document.getElementById('loader').style.display = 'block'
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
-    userData=userCredentials
+    userData = userCredentials
     document.getElementById('username').innerHTML = userData.data_user.name_user
     const idMarket = JSON.parse(localStorage.getItem('id_market'))
     document.getElementById('market-title').innerHTML = idMarket.marketData.name
@@ -49,7 +49,8 @@ const renderData = ( menu, toMenu ) => {
             const tenant_data = tablesData[menu].tenants_array[i]
             await getProductsToBuy( tenant_data )
             console.log( tenant_data )
-            //window.location.href = 'local.html'
+            //localStorage.setItem( 'tenant_data', JSON.stringify( tenant_data ) )
+            window.location.href = 'local.html'
         })
         buyButton.className = 'btn btn-block btn-outline-primary'
         buyButton.innerHTML = 'PEDIR'
@@ -70,7 +71,7 @@ const renderData = ( menu, toMenu ) => {
 
 const getProductsToBuy = async ( tenant_data, tries = 0 ) => {
     const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${tenant_data.id_tenant}`
-    console.log( 'Getting response' )
+    //console.log( 'Getting response' )
     try {
         const request = await fetch( url, {
             headers: {
@@ -79,9 +80,11 @@ const getProductsToBuy = async ( tenant_data, tries = 0 ) => {
         })
         const response = await request.json()
         if( response.success ) {
+
             localStorage.setItem( 'products', JSON.stringify( response.row ) )
             localStorage.setItem( 'id_tenant', tenant_data.id_tenant )
-            window.location.href = 'local.html'
+            console.log( tenant_data )
+            //window.location.href = 'local.html'
         }
     } catch (error) {
         if( tries === 5 ) {

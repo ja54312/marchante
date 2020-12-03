@@ -52,10 +52,10 @@
             <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#registro">Registrarse <i class="far fa-edit"></i></a>
+            <a class="nav-link" href="index.html#registro" id="register">Registrarse <i class="far fa-edit"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#login">Juanita Pérez <i class="far fa-user"></i></a>
+            <a class="nav-link" href="index.html#login" id="user-name">Juanita Pérez <i class="far fa-user"></i></a>
           </li>
           <li class="nav-item">
             <button type="button" class="btn text-black-50" data-toggle="modal" data-target="#ayuda">Ayuda <i class="fas fa-question"></i></button>
@@ -91,38 +91,38 @@
             <div class="tab-pane fade show active" id="pills-envio" role="tabpanel" aria-labelledby="pills-envio-tab">
               <div class="row">
                 <div class="col-md-8 border-right">
-                  <form class="needs-validation" novalidate>
+                  <form class="needs-validation" novalidate id="address-form">
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="name">Nombre*</label>
-                        <input type="text" class="form-control" id="name" value="" placeholder="Escribe tu nombre" required>
+                        <input type="text" class="form-control" id="name" name="name" value="" placeholder="Escribe tu nombre" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="lastname">Apellidos*</label>
-                        <input type="text" class="form-control" id="lastname" value="" placeholder="Escribe tus apellidos" required>
+                        <input type="text" class="form-control" id="lastname" name="lastname" value="" placeholder="Escribe tus apellidos" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputAddress">Dirección* <small class="text-muted"> Calle, número exterior, número interior</small></label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Amado Nervo 131-17" required>
+                        <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Amado Nervo 131-17" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputColonia">Colonia*</label>
-                        <input type="text" class="form-control" id="inputColonia" required>
+                        <input type="text" class="form-control" id="inputColonia" name="colonia" required>
                         <div class="invalid-feedback">Por favor escribe una colonia valida</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputAlcaldia">Alcaldía*</label>
-                        <input type="text" class="form-control" id="inputAlcaldia" required>
+                        <input type="text" class="form-control" id="inputAlcaldia" name="alcaldia" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="inputState">Estado*</label>
-                        <select id="inputState" class="form-control" required>
+                        <select id="inputState" class="form-control" name="estado" required>
                           <option selected disabled value="">Selecciona...</option>
                           <option>...</option>
                         </select>
@@ -130,17 +130,17 @@
                       </div>
                       <div class="form-group col-md-2">
                         <label for="inputZip">Zip*</label>
-                        <input type="text" class="form-control" id="inputZip" required>
+                        <input type="text" class="form-control" id="inputZip" name="zip" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPais">País*</label>
-                        <input type="text" class="form-control" id="inputPais" required>
+                        <input type="text" class="form-control" id="inputPais" name="pais" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="phone">Número de Teléfono</label>
-                        <input type="number" class="form-control" id="phone" value="" placeholder="Escribe tú teléfono" required>
+                        <input type="number" class="form-control" name="phone" id="phone" value="" placeholder="Escribe tú teléfono" required>
                         <div class="valid-feedback">Listo</div>
                       </div>
                     </div>
@@ -161,32 +161,7 @@
                             <td scope="col">TOTAL PARCIAL</td>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Melón</th>
-                            <td>1 kg</td>
-                            <td>$ 15</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Naranjas</th>
-                            <td>1 kg</td>
-                            <td>$ 43</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Pepinos</th>
-                            <td>1 kg</td>
-                            <td>$ 25</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Cilantro</th>
-                            <td>1 pz</td>
-                            <td>$ 2</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Apio</th>
-                            <td>1 pz</td>
-                            <td>$ 5</td>
-                          </tr>
+                        <tbody id="products-table">
                         </tbody>
                       </table>
                     </div>
@@ -352,7 +327,7 @@
                       RESUMEN DE LA ORDEN
                       <h4 class="logotipo"><i class="fas fa-shopping-bag"></i> Mi marchante</h2>
                       <p class="mb-0">Recoger en el puesto</p>
-                      <small>22/JULIO/2020</small>
+                      <small id="current-date">22/JULIO/2020</small>
                     </div>
                     <div class="card-body text-muted">
                       <table class="table table-sm">
@@ -405,7 +380,7 @@
                             <td scope="col">TOTAL PARCIAL</td>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="products-table">
                           <tr>
                             <th scope="row">Melón</th>
                             <td>1 kg</td>
@@ -531,7 +506,11 @@
        </div>
     </footer>
     <!-- Footer -->
-
+    <div style="display:none;" id='loader'>
+      <div class="conte_loader_MyStyle" style="display:flex;">
+        <div class="loader_MyStyle"></div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -543,8 +522,10 @@
     <!--Wow JS-->
     <script src="js/wow.min.js"></script>
     <!-- Opcionales JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="js/mimarchante.js"></script>
     <script src="js/envio.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
   <!-- Body -->
 </html>
