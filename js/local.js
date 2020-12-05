@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',async function () {
     products = JSON.parse( localStorage.getItem( 'products' ) )
     id_tenant = localStorage.getItem( 'id_tenant' )
     const retrieve_cart = JSON.parse( localStorage.getItem( 'cart' ) )
-    if ( retrieve_cart !== null || undefined ) {
+    if ( retrieve_cart.cart !== undefined ) {
         user_cart = retrieve_cart
         cart = retrieve_cart.cart
     }
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded',async function () {
     }else if( userData.success === undefined ) {
         location.replace( 'index.html' )
     }
+    console.log( id_market, user_cart, cart )
 })
 
 const recursiveRender = ( count = 0, length = 1 ) => {
@@ -169,7 +170,17 @@ const recursiveRender = ( count = 0, length = 1 ) => {
     }
 }
 const addToCart = ( id_product, product ) => {
-    if ( cart.length < 1 ) {
+    if (  cart === undefined || cart.length < 1 ) {
+        user_cart.id_market = id_market.marketData.id_product
+        user_cart.cart = cart
+        user_cart.id_user = userData.data_user.id_user
+        localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
+        swal({
+            title: "Okay",
+            text: "El producto se ha agregado a tu carrito",
+            icon: "success",
+            button: "Aceptar",
+        })
         cart.push ( product )
         console.log( cart )
     } else {
@@ -177,6 +188,16 @@ const addToCart = ( id_product, product ) => {
         if ( inCartProduct ) {
             inCartProduct = { ...inCartProduct, quantity: product.quantity }
         } else {
+            user_cart.id_market = id_market.marketData.id_product
+            user_cart.cart = cart
+            user_cart.id_user = userData.data_user.id_user
+            localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
+            swal({
+                title: "Okay",
+                text: "El producto se ha agregado a tu carrito",
+                icon: "success",
+                button: "Aceptar",
+            })
             cart.push( product )
         }
     }

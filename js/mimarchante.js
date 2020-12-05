@@ -30,6 +30,7 @@ $(document).ready(function() {
 
   function signOut() {
     localStorage.setItem('userCredentials', JSON.stringify({}))
+    localStorage.setItem('cart', JSON.stringify({}))
     location.replace('index.html')
     document.getElementById('logOut').style.display = 'none'
   }
