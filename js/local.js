@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded',async function () {
     products = JSON.parse( localStorage.getItem( 'products' ) )
     id_tenant = localStorage.getItem( 'id_tenant' )
     const retrieve_cart = JSON.parse( localStorage.getItem( 'cart' ) )
-    if ( retrieve_cart.cart !== undefined ) {
+    if ( retrieve_cart !== null ) {
         user_cart = retrieve_cart
         cart = retrieve_cart.cart
     }
+    console.log( user_cart )
     const idMarket = JSON.parse(localStorage.getItem('id_market'))
     id_market = idMarket
     document.getElementById('market-title').innerHTML = idMarket.marketData.name
@@ -170,10 +171,12 @@ const recursiveRender = ( count = 0, length = 1 ) => {
     }
 }
 const addToCart = ( id_product, product ) => {
+    console.log( id_market )
     if (  cart === undefined || cart.length < 1 ) {
         user_cart.id_market = id_market.marketData.id_product
+        cart.push ( product )
         user_cart.cart = cart
-        user_cart.id_user = userData.data_user.id_user
+        //user_cart.id_user = userData.data_user.id_user
         localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
         swal({
             title: "Okay",
@@ -181,16 +184,17 @@ const addToCart = ( id_product, product ) => {
             icon: "success",
             button: "Aceptar",
         })
-        cart.push ( product )
         console.log( cart )
-    } else {
-        let inCartProduct = cart.find( element => element.id_product === id_product )
+    } else {   
+        if ( user_cart.id_market === id_market.marketData.id_product ) {
+            let inCartProduct = cart.find( element => element.id_product === id_product )
         if ( inCartProduct ) {
             inCartProduct = { ...inCartProduct, quantity: product.quantity }
         } else {
-            user_cart.id_market = id_market.marketData.id_product
+            //user_cart.id_market = id_market.marketData.id_product
+            cart.push( product )
             user_cart.cart = cart
-            user_cart.id_user = userData.data_user.id_user
+            //user_cart.id_user = userData.data_user.id_user
             localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
             swal({
                 title: "Okay",
@@ -198,27 +202,15 @@ const addToCart = ( id_product, product ) => {
                 icon: "success",
                 button: "Aceptar",
             })
-            cart.push( product )
         }
-    }
-    if ( user_cart.id_market === id_market.marketData.id_product ) {
-        user_cart.id_market = id_market.marketData.id_product
-        user_cart.cart = cart
-        user_cart.id_user = userData.data_user.id_user
-        localStorage.setItem( 'cart', JSON.stringify( user_cart ) )
-        swal({
-            title: "Okay",
-            text: "El producto se ha agregado a tu carrito",
-            icon: "success",
-            button: "Aceptar",
-        })
-    } else {
-        swal({
-            title: "Upss",
-            text: "No se puede agregar un producto de otro mercado/tianguis. Los productos en tu carrito deben ser del mismo mercado/tianguis",
-            icon: "info",
-            button: "Aceptar",
-        })
+        } else {
+            swal({
+                title: "Upss",
+                text: "No se puede agregar un producto de otro mercado/tianguis. Los productos en tu carrito deben ser del mismo mercado/tianguis",
+                icon: "info",
+                button: "Aceptar",
+            })
+        }
     }
     console.log( user_cart )
 }
