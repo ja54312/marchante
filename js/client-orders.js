@@ -37,6 +37,7 @@ const getUserOrders = async ( tries = 0 ) => {
             const response = await request.json()
             if ( response.success ) {
                 orders = response.orders
+                console.log( response.orders )
                 renderOrdersClient()
                 $(".dataTable2").DataTable({
                     language: {
@@ -72,6 +73,12 @@ const renderOrdersClient = ( count = 0, length = 1 ) => {
         const orderStatus = document.createElement( 'td' )
         orderStatus.innerHTML = orders[count].name_status
 
+        const tenants = document.createElement( 'td' )
+
+        for ( let i = 0; i < orders[count].detail_order.length; i ++ ) {
+            tenants.innerHTML = `${ tenants.innerHTML } ${ orders[count].detail_order[i].name_tenant }`
+        }
+
         const totalOrder = document.createElement( 'td' )
         totalOrder.className = 'h4 titulo'
         totalOrder.innerHTML = `$ ${orders[count].total}`
@@ -80,6 +87,7 @@ const renderOrdersClient = ( count = 0, length = 1 ) => {
         row.appendChild( orderDate )
         row.appendChild( mercadoTianguis )
         row.appendChild( orderStatus )
+        row.appendChild( tenants )
         row.appendChild( totalOrder )
         table.appendChild( row )
 
