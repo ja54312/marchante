@@ -2,6 +2,7 @@ let userData
 let currentProduct
 let currentMarketId
 let tablesData
+let categories
 const tableOneContent = document.getElementById('pasillo1-content')
 document.addEventListener('DOMContentLoaded',async () => {
     document.getElementById('loader').style.display = 'block'
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded',async () => {
     if( idMarket ) {
         currentMarketId = idMarket
         await getProductsMarket()
+        await getCategories()
         document.getElementById('loader').style.display='none'
     } else {
         document.getElementById('loader').style.display='none'
@@ -24,6 +26,37 @@ document.addEventListener('DOMContentLoaded',async () => {
         location.replace('index.html')
     }
 })
+
+const getCategories = async ( tries = 0 ) => {
+    if ( tries === 5 ) {
+        document.getElementById( 'loader' ).style.display = 'none'
+        return (
+            swal({
+                title: "Ooooops",
+                text: "Asegurate de tener conexión a internet",
+                icon: "info",
+                button: "Aceptar",
+            })
+        )
+    } else {
+        try {
+            const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-category-product/${currentMarketId.type}`
+            const request = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${userData.token}`
+                }
+            })
+            const response = await request.json()
+            if ( response.success ) {
+                console.log( response )
+                categories = response.row
+                //await getProductsByCategory()
+            }
+        } catch (error) {
+            return getCategories( tries + 1 )
+        }
+    }
+}
 
 const renderData = ( menu, toMenu ) => {
     /*for ( let i = 0; i < tablesData.length; i ++ ) {
@@ -67,6 +100,17 @@ const renderData = ( menu, toMenu ) => {
         tableRow.appendChild( buy )
         document.getElementById( toMenu ).appendChild( tableRow )
     }
+}
+
+const getProductsByCategory = async ( tries = 1, id_category ) => {
+    const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${tablesData[13].id_category}`
+    const request = await fetch( url, {
+        headers: {
+            'Authorization': `Bearer ${userData.token}`
+        }
+    } )
+    const response = await request.json()
+    console.log( response )
 }
 
 const getProductsToBuy = async ( tenant_data, tries = 0 ) => {

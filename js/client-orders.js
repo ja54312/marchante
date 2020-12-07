@@ -1,5 +1,6 @@
 let userData
 let orders
+const detailsOrder = document.getElementById( 'details-order' )
 const table = document.getElementById( 'user-orders' )
 document.addEventListener('DOMContentLoaded',async () => {
     document.getElementById('loader').style.display = 'block'
@@ -76,12 +77,23 @@ const renderOrdersClient = ( count = 0, length = 1 ) => {
         const tenants = document.createElement( 'td' )
 
         for ( let i = 0; i < orders[count].detail_order.length; i ++ ) {
-            tenants.innerHTML = `${ tenants.innerHTML } ${ orders[count].detail_order[i].name_tenant }`
+            tenants.innerHTML = `${ tenants.innerHTML } ${ orders[count].detail_order[i].name_tenant },`
         }
 
+        //data-toggle="modal" data-target="#domPdt1"
         const totalOrder = document.createElement( 'td' )
         totalOrder.className = 'h4 titulo'
         totalOrder.innerHTML = `$ ${orders[count].total}`
+
+        const actionsContainer = document.createElement( 'td' )
+        const buttonShowMore = document.createElement( 'button' )
+        buttonShowMore.className = 'btn btn-sm btn-success'
+        buttonShowMore.innerHTML = 'VER DETALLES'
+        buttonShowMore.setAttribute("data-toggle", "modal")
+        buttonShowMore.setAttribute("data-target", "#domPdt1")
+        buttonShowMore.addEventListener( 'click', () => renderDetails(orders[count].detail_order))
+        actionsContainer.appendChild( buttonShowMore )
+
 
         row.appendChild( idOrder )
         row.appendChild( orderDate )
@@ -89,8 +101,40 @@ const renderOrdersClient = ( count = 0, length = 1 ) => {
         row.appendChild( orderStatus )
         row.appendChild( tenants )
         row.appendChild( totalOrder )
+        row.appendChild( actionsContainer )
         table.appendChild( row )
 
         return renderOrdersClient( count + 1, length + 1 )
     }
+}
+
+const renderDetails = ( details, count = 0, length = 1 ) => {
+    if( length > details.length ) {
+        return
+    } else {
+        console.log( details[count] )
+        const nameContainer = document.createElement( 'tr' )
+        const name = document.createElement( 'td' )
+        name.scope = 'row'
+        name.innerHTML = details[count].name_product
+        nameContainer.appendChild( name )
+
+        const quantityContainer = document.createElement( 'tr' )
+        const quantity = document.createElement( 'td' )
+        quantity.scope = 'row'
+        quantity.innerHTML = details[count].price_pz !== 0 ? `Cantidad: ${details[count].quantity}pz` : `Cantidad: ${details[count].quantity}kg`
+        //`Cantidad: ${details[count].quantity}`
+        quantityContainer.appendChild( quantity )
+
+        const priceContainer = document.createElement( 'tr' )
+        const price = document.createElement( 'td' )
+        price.innerHTML = `Subtotal: $ ${details[count].subtotal}`
+        priceContainer.appendChild( price )
+
+        detailsOrder.appendChild( nameContainer )
+        detailsOrder.appendChild( quantityContainer )
+        detailsOrder.appendChild( priceContainer )
+        return renderDetails ( details, count + 1, length + 1 )
+    }
+    
 }

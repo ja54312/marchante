@@ -106,6 +106,7 @@
                       <th scope="col">ESTATUS</th>
                       <th scope="col">LOCATARIOS</th>
                       <th scope="col">TOTAL</th>
+                      <th scope="col">DETALLES</th>
                     </tr>
                   </thead>
                   <tbody id="user-orders">
@@ -170,7 +171,7 @@
         <div class="modal-content alert-primary border border-primary">
           <div class="modal-header bg-primary text-black-50">
             <h5 class="modal-title" id="exampleModalLabel">
-              DOMICILIO DE CLIENTE
+              DETALLES DE LA ORDEN
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -180,35 +181,11 @@
             <div class="card bg-light">
               <div class="card-body text-muted">
                 <table class="table table-sm table-borderless text-center font-weight-light">
-                  <tbody>
-                    <tr>
-                      <td scope="row">José García Pérez</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">México, CDMX</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Cuauhtémoc, 06400</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Santa María la Ribera</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Amado Nervo 131-17</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">5560927609</td>
-                    </tr>
+                  <tbody id="details-order">
                   </tbody>
                 </table>
-                <blockquote class="blockquote font-weight-light small mb-0">
-                  <small>Entre las calles Fresno y Cedro</small>
-                </blockquote>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Guardar</button>
           </div>
         </div>
       </div>
