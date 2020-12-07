@@ -3,6 +3,7 @@ let currentProduct
 let cart
 const addressForm = document.getElementById( 'address-form' )
 const table = document.getElementById('products-table')
+const table2 = document.getElementById( 'products-table-2' )
 document.addEventListener( 'DOMContentLoaded', async function () {
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
     userData=userCredentials
@@ -41,6 +42,7 @@ const renderDetails = ( count = 0, length = 1 ) => {
         row.appendChild( quantityContainer )
         row.appendChild( parcialPriceContaier )
         table.appendChild( row )
+        //table2.appendChild( row )
         return renderDetails( count + 1, length + 1  )
     }
 }

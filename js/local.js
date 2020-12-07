@@ -172,7 +172,8 @@ const recursiveRender = ( count = 0, length = 1 ) => {
 }
 const addToCart = ( id_product, product ) => {
     console.log( id_market )
-    if (  cart === undefined || cart.length < 1 ) {
+    if (  cart === undefined ||  cart.length < 1 ) {
+        cart = []
         user_cart.id_market = id_market.marketData.id_product
         cart.push ( product )
         user_cart.cart = cart
