@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded',async function () {
     if( userData.success ) {
         document.getElementById( 'register' ).style.display = 'none'
     }else if( userData.success === undefined ) {
-        location.replace( 'index.html' )
+        console.log( 'No access' )
+        //location.replace( 'index.html' )
     }
     console.log( id_market, user_cart, cart )
 })
