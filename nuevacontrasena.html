@@ -66,10 +66,11 @@
             <span class="logotipo">Mi marchante</span>
           </p>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="form-group text-center">
-            <label for="inputPassword1" class="col-form-label font-weight-light text-secondary text-center">Escribe tu nueva contraseña</label>
-            <input type="password" id="inputPassword1" class="form-control" onblur="checkPass()">
+        <div class="col-12 col-md-6 text-center">
+          <label for="inputPassword1" class="col-form-label font-weight-light text-secondary text-center">Escribe tu nueva contraseña</label>
+          <div class="form-group text-center d-flex">
+              <input type="password" id="inputPassword1" class="form-control" onblur="checkPass()">
+              <button style="z-index: 0;" disabled class="btn rounded-circle text-center tooltip"><p class="h5 mb-0 titulo"><i class="fas fa-info-circle"></i></p><span class="tooltiptext retrieve-pass">La contraseña debe tener al menos una minúscula, una mayúscula un número y un caracter especial e.j @</span></button>
           </div>
           <div class="form-group text-center">
             <label for="inputPassword2" class="col-form-label font-weight-light text-secondary text-center">Confirmar nueva contraseña</label>

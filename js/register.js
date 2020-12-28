@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded',async function () {
     await getMarkets( 0 )
     renderOptions()
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
+    console.log(userCredentials)
     const emailUser=JSON.parse(localStorage.getItem('userMail'))
     mailLogin.value=emailUser
     console.log(emailUser)
@@ -162,9 +163,11 @@ async function login(register){
             document.getElementById('tianguisPostalCode').style.display='block'
             if(response.data_user.id_rol===1){
                 document.getElementById('panelLocatario').style.display='block'
+                window.location.href = 'panel_locatario.html'
+            } else {
+                window.location.reload()
             }
         }
-        console.log(response)
     }else{
         document.getElementById('loader').style.display='block'
         const checkLogin=document.getElementById('checkLogin')
@@ -179,7 +182,7 @@ async function login(register){
                 'Content-Type': 'application/json'
             }
         })
-        const response= await request.json()
+        const response = await request.json()
         if(response.success){
             document.getElementById('loader').style.display='none'
             localStorage.setItem('userCredentials', JSON.stringify(response))
@@ -190,8 +193,10 @@ async function login(register){
             document.getElementById('tianguisPostalCode').style.display='block'
             if(response.data_user.id_rol===1){
                 document.getElementById('panelLocatario').style.display='block'
+                window.location.href = 'panel_locatario.html'
+            } else {
+                window.location.reload()
             }
-            window.location.reload()
         } else {
             document.getElementById('loader').style.display='none'
             swal({
@@ -201,7 +206,6 @@ async function login(register){
                 button: "Aceptar",
             })
         }
-        window.location.reload()
     }
 }
 async function register(){

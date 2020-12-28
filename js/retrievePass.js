@@ -2,6 +2,10 @@ let newPass=document.getElementById('inputPassword1')
 let confirmNewPass=document.getElementById('inputPassword2')
 let buttonNewPass=document.getElementById('submitforgotPass')
 let mail=document.getElementById('mail')
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await validateCode()
+})
 function checkNewPass(){
     if(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(newPass.value) && newPass.value===confirmNewPass.value){
         buttonNewPass.removeAttribute('disabled')
@@ -60,6 +64,20 @@ async function sendNewPass(){
             icon: "error",
             button: "Aceptar",
         })
+    }
+}
+
+const validateCode = async () => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const code = urlParams.get('code')
+    const url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/verify-code-pass/${code}`
+    const request = await fetch(url)
+    const response = await request.json()
+    console.log(response)
+    if ( response.success ) {
+        return
+    } else {
+        window.location.replace('index.html')
     }
 }
 document.getElementById('inputPassword1').addEventListener('keyup',checkNewPass)

@@ -140,7 +140,7 @@ const findMarketsByCP = async about => {
         } else {
             tianguis.innerHTML = ''
         }
-        signOut()
+        // signOut()
     }
 }
 

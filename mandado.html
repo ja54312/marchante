@@ -81,20 +81,20 @@
         <div class="col-md-12 mb-5 px-0">
           <div class="accordion" id="accordionExample">
             <!-- Pasillo 1 FRUTAS - VERDURAS - HIERBAS -SEMILLAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="1">
               <div class="card-header bg-white text-center text-secondary" id="headingOne">
                 <h5 class="card-title lead d-inline">
                   FRUTAS - VERDURAS - HIERBAS -SEMILLAS
                 </h5>
                 <p class="float-right">
-                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">3</sup>
+                  <i class="fas fa-shopping-bag fa-3x text-mm2"></i><sup class="badge badge-primary align-top">0</sup>
                 </p>
                 <p>
                 <i class="fas fa-apple-alt fa-2x text-danger"></i>
                 <i class="fas fa-carrot fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo1" aria-expanded="true" aria-controls="pasillo1" onclick="renderData(0, 'pasillo1-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo1" aria-expanded="true" aria-controls="pasillo1" onclick="renderData(0, 'pasillo1-content', 0)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -120,7 +120,7 @@
               </div>
             </div>
             <!-- Pasillo 2 RES - POLLO - PESCADO - CARNE -->
-            <div class="card border-info">
+            <div class="card border-info" id="2">
               <div class="card-header bg-white text-center text-secondary" id="headingTwo">
                 <h5 class="card-title lead d-inline">
                   RES - POLLO - PESCADO - CARNE
@@ -133,7 +133,7 @@
                   <i class="fas fa-fish fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo2" aria-expanded="true" aria-controls="pasillo2" onclick="renderData(1, 'pasillo2-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo2" aria-expanded="true" aria-controls="pasillo2" onclick="renderData(1, 'pasillo2-content', 1)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -159,7 +159,7 @@
               </div>
             </div>
             <!-- Pasillo 3 LÁCTEOS - HUEVO - SALCHICHONERÍA -->
-            <div class="card border-info">
+            <div class="card border-info" id="3">
               <div class="card-header bg-white text-center text-secondary" id="headingThree">
                 <h5 class="card-title lead d-inline">
                   LÁCTEOS - HUEVO - SALCHICHONERÍA
@@ -172,7 +172,7 @@
                   <i class="fas fa-cheese fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo3" aria-expanded="true" aria-controls="pasillo3" onclick="renderData(2, 'pasillo3-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo3" aria-expanded="true" aria-controls="pasillo3" onclick="renderData(2, 'pasillo3-content', 2)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -198,7 +198,7 @@
               </div>
             </div>
             <!-- Pasillo 4 ABARROTES - ESPECIAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="4">
               <div class="card-header bg-white text-center text-secondary" id="headingFour">
                 <h5 class="card-title lead d-inline">
                   ABARROTES - ESPECIAS
@@ -211,7 +211,7 @@
                   <i class="fas fa-seedling fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo4" aria-expanded="true" aria-controls="pasillo4" onclick="renderData(3, 'pasillo4-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo4" aria-expanded="true" aria-controls="pasillo4" onclick="renderData(3, 'pasillo4-content', 3)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -237,7 +237,7 @@
               </div>
             </div>
             <!-- Pasillo 5 COMIDAS PREPARADAS - GARNACHAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="5">
               <div class="card-header bg-white text-center text-secondary" id="headingFive">
                 <h5 class="card-title lead d-inline">
                   COMIDAS PREPARADAS - GARNACHAS
@@ -250,7 +250,7 @@
                   <i class="fas fa-hamburger fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo5" aria-expanded="true" aria-controls="pasillo5" onclick="renderData(4, 'pasillo5-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo5" aria-expanded="true" aria-controls="pasillo5" onclick="renderData(4, 'pasillo5-content', 4)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -276,7 +276,7 @@
               </div>
             </div>
             <!-- Pasillo 6 DULCERÍAS - DESECHABLES - MATERIAS PRIMAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="6">
               <div class="card-header bg-white text-center text-secondary" id="headingSix">
                 <h5 class="card-title lead d-inline">
                   DULCERÍAS - DESECHABLES - MATERIAS PRIMAS
@@ -289,7 +289,7 @@
                   <i class="fas fa-glass-whiskey fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo6" aria-expanded="true" aria-controls="pasillo6" onclick="renderData(5, 'pasillo6-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo6" aria-expanded="true" aria-controls="pasillo6" onclick="renderData(5, 'pasillo6-content', 5)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -315,7 +315,7 @@
               </div>
             </div>
             <!-- Pasillo 7 FLORERÍAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="7">
               <div class="card-header bg-white text-center text-secondary" id="headingSeven">
                 <h5 class="card-title lead d-inline">
                   FLORERÍAS
@@ -328,7 +328,7 @@
                   <i class="fas fa-leaf fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo7" aria-expanded="true" aria-controls="pasillo7" onclick="renderData(6, 'pasillo7-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo7" aria-expanded="true" aria-controls="pasillo7" onclick="renderData(6, 'pasillo7-content', 6)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -354,7 +354,7 @@
               </div>
             </div>
             <!-- Pasillo 8 MASCOTAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="8">
               <div class="card-header bg-white text-center text-secondary" id="headingEight">
                 <h5 class="card-title lead d-inline">
                  MASCOTAS
@@ -367,7 +367,7 @@
                   <i class="fas fa-paw fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo8" aria-expanded="true" aria-controls="pasillo8" onclick="renderData(7, 'pasillo8-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo8" aria-expanded="true" aria-controls="pasillo8" onclick="renderData(7, 'pasillo8-content', 7)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -393,7 +393,7 @@
               </div>
             </div>
             <!-- Pasillo 9 ROPA - UNIFORMES - CALZADO - MOCHILAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="9">
               <div class="card-header bg-white text-center text-secondary" id="headingNine">
                 <h5 class="card-title lead d-inline">
                   ROPA - UNIFORMES - CALZADO - MOCHILAS
@@ -406,7 +406,7 @@
                   <i class="fas fa-user-tie fa-2x text-success"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo9" aria-expanded="true" aria-controls="pasillo9" onclick="renderData(8, 'pasillo9-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo9" aria-expanded="true" aria-controls="pasillo9" onclick="renderData(8, 'pasillo9-content', 8)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -432,7 +432,7 @@
               </div>
             </div>
             <!-- Pasillo 10 REGALOS - DISFRACES -->
-            <div class="card border-info">
+            <div class="card border-info" id="10">
               <div class="card-header bg-white text-center text-secondary" id="headingTen">
                 <h5 class="card-title lead d-inline">
                   REGALOS - DISFRACES
@@ -445,7 +445,7 @@
                   <i class="fas fa-mask fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo10" aria-expanded="true" aria-controls="pasillo10" onclick="renderData(9, 'pasillo10-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo10" aria-expanded="true" aria-controls="pasillo10" onclick="renderData(9, 'pasillo10-content', 9)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -471,7 +471,7 @@
               </div>
             </div>
             <!-- Pasillo 11 PAPELERÍAS -->
-            <div class="card border-info">
+            <div class="card border-info" id="11">
               <div class="card-header bg-white text-center text-secondary" id="headingEleven">
                 <h5 class="card-title lead d-inline">
                   PAPELERÍAS
@@ -483,7 +483,7 @@
                   <i class="fas fa-paperclip fa-2x text-dark"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo11" aria-expanded="true" aria-controls="pasillo11" onclick="renderData(10, 'pasillo11-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo11" aria-expanded="true" aria-controls="pasillo11" onclick="renderData(10, 'pasillo11-content', 10)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -509,7 +509,7 @@
               </div>
             </div>
             <!-- Pasillo 13 FERRETERÍA - CONSTRUCCIÓN -->
-            <div class="card border-info">
+            <div class="card border-info" id="12">
               <div class="card-header bg-white text-center text-secondary" id="headingThirteen">
                 <h5 class="card-title lead d-inline">
                   FERRETERÍA - CONSTRUCCIÓN
@@ -522,7 +522,7 @@
                   <i class="fas fa-hard-hat fa-2x text-warning"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo13" aria-expanded="true" aria-controls="pasillo13" onclick="renderData(11, 'pasillo12-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo12" aria-expanded="true" aria-controls="pasillo13" onclick="renderData(11, 'pasillo12-content', 11)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -530,7 +530,7 @@
                 </h2>
               </div>
               <!-- Locales de Pasillo 13 FERRETERÍA - CONSTRUCCIÓN -->
-              <div id="pasillo13" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
+              <div id="pasillo12" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
                 <div class="card-body table-responsive overflow-auto h-300">
                   <table class="table table-hover dataTable">
                     <thead class="small table-info text-secondary">
@@ -548,7 +548,7 @@
               </div>
             </div>
             <!-- Pasillo 14 MERCERÍA - HILOS - TELAS - BORDADOS -->
-            <div class="card border-info">
+            <div class="card border-info" id="13">
               <div class="card-header bg-white text-center text-secondary" id="headingFourteen">
                 <h5 class="card-title lead d-inline">
                   MERCERÍA - HILOS - TELAS - BORDADOS
@@ -561,7 +561,7 @@
                   <i class="fas fa-tshirt fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo14" aria-expanded="true" aria-controls="pasillo14" onclick="renderData(12, 'pasillo13-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo13" aria-expanded="true" aria-controls="pasillo14" onclick="renderData(12, 'pasillo13-content', 12)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -569,7 +569,7 @@
                 </h2>
               </div>
               <!-- Locales de Pasillo 14 MATERIAS PRIMAS - HILOS - TELAS - BORDADOS -->
-              <div id="pasillo14" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+              <div id="pasillo13" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
                 <div class="card-body table-responsive overflow-auto h-300">
                   <table class="table table-hover dataTable">
                     <thead class="small table-info text-secondary">
@@ -587,7 +587,7 @@
               </div>
             </div>
             <!-- Pasillo 15 HOGAR - OTROS -->
-            <div class="card border-info">
+            <div class="card border-info" id="14">
               <div class="card-header bg-white text-center text-secondary" id="headingFiveteen">
                 <h5 class="card-title lead d-inline">
                   HOGAR - OTROS
@@ -600,7 +600,7 @@
                   <i class="fas fa-boxes fa-2x text-primary"></i>
                 </p>
                 <h2 class="mb-0 mt-3">
-                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo15" aria-expanded="true" aria-controls="pasillo15" onclick="renderData(13, 'pasillo14-content')">
+                  <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#pasillo14" aria-expanded="true" aria-controls="pasillo15" onclick="renderData(13, 'pasillo14-content', 13)">
                     VER LOCALES
                     <br>
                     <i class="fas fa-angle-down"></i>
@@ -608,7 +608,7 @@
                 </h2>
               </div>
               <!-- Locales de Pasillo 15 HOGAR - OTROS -->
-              <div id="pasillo15" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordionExample">
+              <div id="pasillo14" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordionExample">
                 <div class="card-body table-responsive overflow-auto h-300">
                   <table class="table table-hover dataTable">
                     <thead class="small table-info text-secondary">

@@ -10,10 +10,12 @@ const table = document.getElementById( 'table-data' )
 document.addEventListener('DOMContentLoaded',async function () {
     const userCredentials = JSON.parse( localStorage.getItem( 'userCredentials' ) )
     userData = userCredentials
+    renderTenantData()
     document.getElementById('user-name').innerHTML = userData.data_user.name_user
     products = JSON.parse( localStorage.getItem( 'products' ) )
     id_tenant = localStorage.getItem( 'id_tenant' )
     const retrieve_cart = JSON.parse( localStorage.getItem( 'cart' ) )
+    console.log( retrieve_cart )
     if ( retrieve_cart !== null ) {
         user_cart = retrieve_cart
         cart = retrieve_cart.cart
@@ -31,6 +33,21 @@ document.addEventListener('DOMContentLoaded',async function () {
     }
     console.log( id_market, user_cart, cart )
 })
+
+const renderTenantData = () => {
+    const tenant = JSON.parse(localStorage.getItem('tenant_data'))
+    const icons = JSON.parse(localStorage.getItem('icons'))
+    const icon1 = document.createElement('i')
+    icon1.className = icons[0]
+    const icon2 = document.createElement('i')
+    icon2.className = icons[1]
+    const p = document.createElement('i')
+    p.innerHTML = `Local ${tenant.local_number} - ${tenant.name_tenenant}`
+    const dataContainer = document.getElementById('tenant-data')
+    dataContainer.appendChild(icon1)
+    dataContainer.appendChild(icon2)
+    dataContainer.appendChild(p)
+}
 
 const recursiveRender = ( count = 0, length = 1 ) => {
     if( length > products.length ) {
@@ -72,7 +89,6 @@ const recursiveRender = ( count = 0, length = 1 ) => {
         radioKg.value = 'kg'
         radioKg.name = 'radio-stacked'
         radioKg.required = true
-       
         const labelKg = document.createElement( 'label' )
         labelKg.className = 'custom-control-label'
         labelKg.htmlFor =  products[count].id_product + 'kg'
@@ -83,6 +99,15 @@ const recursiveRender = ( count = 0, length = 1 ) => {
         formQuantity.addEventListener( 'submit', e => {
             e.preventDefault()
         } )
+        if ( products[count].price_kg <= 0 ) {
+            radioKg.style.display = 'none'
+            labelKg.style.display = 'none'
+        }
+
+        if ( products[count].price_pz <= 0 ) {
+            radioPz.style.display = 'none'
+            labelPz.style.display = 'none'
+        }
         const selectQuantityContainer = document.createElement( 'div' )
         selectQuantityContainer.className = 'form-group'
         const labelQuantity = document.createElement( 'label' )
@@ -176,6 +201,7 @@ const addToCart = ( id_product, product ) => {
     if (  cart === undefined ||  cart.length < 1 ) {
         cart = []
         user_cart.id_market = id_market.marketData.id_product
+        product.id_category = JSON.parse( localStorage.getItem('id-category') )
         cart.push ( product )
         user_cart.cart = cart
         //user_cart.id_user = userData.data_user.id_user
@@ -194,6 +220,7 @@ const addToCart = ( id_product, product ) => {
             inCartProduct = { ...inCartProduct, quantity: product.quantity }
         } else {
             //user_cart.id_market = id_market.marketData.id_product
+            product.id_category = JSON.parse( localStorage.getItem('id-category') )
             cart.push( product )
             user_cart.cart = cart
             //user_cart.id_user = userData.data_user.id_user

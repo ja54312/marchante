@@ -160,7 +160,7 @@ function checkData() {
     }
 }
 async function getProducts() {
-    let url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${userData.data_user.id_user}`
+    let url = `https://vyw6a2f0fj.execute-api.us-east-2.amazonaws.com/Prod/get-products/${userData.data_user.id_user}/${userData.data_user.id_market}`
     const request = await fetch(url, {
         headers: {
             'Authorization': 'Bearer ' + userData.token
@@ -280,7 +280,8 @@ async function addProduct() {
             price_pz: pricePz,
             id_user: userData.data_user.id_user,
             id_roll: userData.data_user.id_rol,
-            id_type_category: idCategory
+            id_type_category: idCategory,
+            id_market: userData.data_user.id_market
         }
         console.log( data )
         const request = await fetch(url, {

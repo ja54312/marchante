@@ -36,6 +36,7 @@ const getOrders = async ( tries = 0 ) => {
             if ( response.success ) {
                 document.getElementById('loader').style.display = 'none'
                 orders = response.orders
+                console.log(orders)
                 renderOrders()
                 $(".dataTable2").DataTable({
                     language: {
@@ -62,7 +63,7 @@ const renderOrders = ( count = 0, length = 1 ) => {
 
         const nameClient = document.createElement( 'th' )
         nameClient.scope = 'row'
-        nameClient.innerHTML = 'Carlitos'
+        nameClient.innerHTML = orders[count].name_user
 
         const nameProduct = document.createElement( 'th' )
         nameProduct.className = 'h4 titulo'
