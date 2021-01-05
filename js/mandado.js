@@ -98,8 +98,6 @@ const renderData = ( menu, toMenu, category ) => {
         localNumber.innerHTML = tablesData[menu].tenants_array[i].local_number
         const nameTenant = document.createElement( 'td' )
         nameTenant.innerHTML = tablesData[menu].tenants_array[i].name_tenenant
-        const category = document.createElement( 'td' )
-        category.innerHTML = 'Frutas'
         const buy = document.createElement( 'td' )
         const buyButton = document.createElement( 'a' )
         buyButton.addEventListener('click', async e => {
@@ -129,7 +127,6 @@ const renderData = ( menu, toMenu, category ) => {
         buy.appendChild( buyButton )
         tableRow.appendChild( localNumber )
         tableRow.appendChild( nameTenant )
-        tableRow.appendChild( category )
         tableRow.appendChild( buy )
         document.getElementById( toMenu ).appendChild( tableRow )
     }

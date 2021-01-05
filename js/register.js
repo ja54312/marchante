@@ -1,3 +1,4 @@
+// Versión 1.0
 let customer=document.getElementById('tipoCliente')
 let type_market=document.getElementById('mercadoTianguis')
 let zone=document.getElementById('zonaRegistro')
@@ -23,14 +24,12 @@ let userData={
     pass:''
 }
 document.addEventListener('DOMContentLoaded',async function () {
-    console.log( 'Hi there' )
-    await getMarkets( 0 )
-    renderOptions()
+    console.log( 'Actualización 1.0 28-12-20' )
+    await getMarkets()
+    // renderOptions()
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
-    console.log(userCredentials)
     const emailUser=JSON.parse(localStorage.getItem('userMail'))
     mailLogin.value=emailUser
-    console.log(emailUser)
     if(customerValue='Cliente'){
         document.getElementById('disapearCustommer').style.display='block'
     }
@@ -54,6 +53,7 @@ const verifyTypeMarket = () => {
         renderOptions( 1 )
     } else {
         renderOptions( 0 )
+
     }
 }
 
@@ -74,6 +74,8 @@ const renderOptions = type => {
             market.appendChild( option )
         }
     }
+    $('#mercado').selectpicker('refresh');
+    $("#mercado").selectpicker();
 }
 
 const getMarkets = async () => {
@@ -91,7 +93,7 @@ const getMarkets = async () => {
     }
     console.log( markets )
     document.getElementById('loader').style.display='none'
-
+    renderOptions(0)
 }
 function checkType(){
     isCustomer()
@@ -114,7 +116,7 @@ function checkPass(){
 }
 function checkData(){
     isCustomer()
-    if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)){
+    if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value) && local.value){
         document.getElementById('submit').removeAttribute('disabled')
     }
     else{
@@ -300,6 +302,7 @@ async function sendForgotPass(){
 document.getElementById('password').addEventListener('keyup',checkData)
 document.getElementById('email').addEventListener('keyup',checkData)
 document.getElementById('name').addEventListener('keyup',checkData)
+document.getElementById('local').addEventListener('keyup',checkData)
 document.getElementById('loginEmail').addEventListener('keyup',checkDataLogin)
 document.getElementById('loginPassword').addEventListener('keyup',checkDataLogin)
 document.getElementById('forgotPassEmail').addEventListener('keyup',checkDataForgot)

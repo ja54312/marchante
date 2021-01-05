@@ -230,7 +230,7 @@ const addToCart = ( id_product, product ) => {
                 text: "El producto se ha agregado a tu carrito",
                 icon: "success",
                 button: "Aceptar",
-            })
+            }).then(() => window.location.reload())
         }
         } else {
             swal({
