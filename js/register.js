@@ -24,7 +24,7 @@ let userData={
     pass:''
 }
 document.addEventListener('DOMContentLoaded',async function () {
-    console.log( 'Actualización 1.0 28-12-20' )
+    console.log( 'Actualización 1.0.3 16-01-21' )
     await getMarkets()
     // renderOptions()
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
@@ -116,7 +116,7 @@ function checkPass(){
 }
 function checkData(){
     isCustomer()
-    if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value) && local.value){
+    if( name.value!=='' && mail.value!=='' && pass.value!=='' && /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g.test(pass.value)){
         document.getElementById('submit').removeAttribute('disabled')
     }
     else{
@@ -306,3 +306,5 @@ document.getElementById('local').addEventListener('keyup',checkData)
 document.getElementById('loginEmail').addEventListener('keyup',checkDataLogin)
 document.getElementById('loginPassword').addEventListener('keyup',checkDataLogin)
 document.getElementById('forgotPassEmail').addEventListener('keyup',checkDataForgot)
+$('#mercado').selectpicker('refresh');
+    $("#mercado").selectpicker();

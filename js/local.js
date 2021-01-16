@@ -211,7 +211,7 @@ const addToCart = ( id_product, product ) => {
             text: "El producto se ha agregado a tu carrito",
             icon: "success",
             button: "Aceptar",
-        })
+        }).then(() => window.location.reload())
         console.log( cart )
     } else {   
         if ( user_cart.id_market === id_market.marketData.id_product ) {
