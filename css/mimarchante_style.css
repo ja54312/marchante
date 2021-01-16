@@ -41,6 +41,7 @@
     background-position: center;
     background-attachment: inherit;
     background-size: cover;
+    opacity: 0.5;
 }
 .bg-transparencia{
     background-color: rgba(248, 249, 250, 0.7);
@@ -134,6 +135,12 @@
 
 .h-ticket{
     max-height: 550px;
+}
+.inai{
+    width: 3%;
+}
+.indautor{
+    width: 12%;
 }
 /*******************
 4. Media Queries
