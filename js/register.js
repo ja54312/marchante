@@ -24,7 +24,7 @@ let userData={
     pass:''
 }
 document.addEventListener('DOMContentLoaded',async function () {
-    console.log( 'Actualización 1.0.3 16-01-21' )
+    console.log( 'Actualización 1.0.5 31-01-21' )
     await getMarkets()
     // renderOptions()
     const userCredentials=JSON.parse(localStorage.getItem('userCredentials'))
@@ -98,8 +98,10 @@ const getMarkets = async () => {
 function checkType(){
     isCustomer()
     if(customerValue===2){
+        document.getElementById('label--name').innerHTML = 'Escribe el nombre de tu local'
         document.getElementById('disapearCustommer').style.display='none'
     }else{
+        document.getElementById('label--name').innerHTML = 'Escribe tu nombre'
         document.getElementById('disapearCustommer').style.display='block'
     }
 }
