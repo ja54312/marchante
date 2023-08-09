@@ -9,3 +9,92 @@
 .logotipo {
     font-family: 'ShadowsIntoLight', normal;
 }
+
+//NavbBar
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.navbar-collapse {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.navbar-expand-lg {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+
+    .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+.navbar-light {
+    .navbar-brand {
+        color: rgba(0,0,0,.9);
+    }
+    .navbar-toggler {
+        color: rgba(0,0,0,.5);
+        border-color: rgba(0,0,0,.1);
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .navbar-nav{
+        .nav-link {
+            color: rgba(0,0,0,.5);
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+.fa-shopping-bag:before {
+    content: "\f290";
+}
+.fa-edit:before {
+    content: "\f044";
+}
+.fa-user:before {
+    content: "\f007";
+}
+.fa-question:before {
+    content: "\f128";
+}
