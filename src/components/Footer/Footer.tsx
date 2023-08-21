@@ -16,21 +16,21 @@ const Footer = () => {
           </div>
           <div className="col-md-6 text-right small text-light">
             <a
-              href="avisoPrivacidad.html"
+              href="avisoPrivacidad"
               target="_blank"
               className="text-dark"
             >
               Aviso de Privacidad |
             </a>
             <a
-              href="politicaPrivacidad.html"
+              href="politicaPrivacidad"
               target="_blank"
               className="text-dark"
             >
               Política de Privacidad |
             </a>
             <a
-              href="terminosYCondicionesUso.html"
+              href="terminosYCondicionesUso"
               target="_blank"
               className="text-dark"
             >

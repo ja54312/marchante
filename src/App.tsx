@@ -1,6 +1,9 @@
 //Pages
 import Home from "./pages/home/Home";
-import Registro from "./pages/registro/Registro";
+import AvisoDePrivacidad from "./pages/avisoDePrivacidad/AvisoDePrivacidad";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
+import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
+//import Registro from "./pages/registro/Registro";
 //Components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -36,8 +39,16 @@ function App() {
           element: <Home />
         },
         {
-          path: "registro",
-          element: <Registro />
+          path: "avisoPrivacidad",
+          element: <AvisoDePrivacidad />
+        },
+        {
+          path: "politicaPrivacidad",
+          element: <PoliticaPrivacidad />
+        },
+        {
+          path: "terminosYCondicionesUso",
+          element: <TerminosYCondiciones />
         },
       ]
     },
