@@ -4,6 +4,118 @@ import "./Home.scss";
 const Home = () => {
   return (
     <>
+      <section className="container my-5">
+        <div className="row justify-content-around">
+          <div className="col-md-8 text-center mb-2">
+            <p className="h2 subtitulo">
+              ¡Hola! Bienvenidx a
+              <br />
+              <span className="logotipo">Mi marchante</span>
+            </p>
+            <p
+              className="text-muted"
+              style={{ display: "none" }}
+              id="postal_code"
+            >
+              Escribe tu código postal qué quieras buscar y disfruta de
+              <b>
+                <i>tu mercado en línea</i>
+              </b>
+            </p>
+          </div>
+
+          <article
+            className="col-md-5 rounded text-center mt-4 py-3 bg-mercados"
+            id="mercadoPostalCode"
+            style={{ display: "none" }}
+          >
+            <h3 className="subtitulo rounded p-2 bg-transparencia">
+              MERCADOS <i className="fas fa-warehouse"></i>
+            </h3>
+            <form>
+              <div className="form-row">
+                <div className="col-md-6">
+                  <label
+                    for="suggestions-mercados"
+                    className="text-white text-shadow"
+                  >
+                    Selecciona tu código postal
+                  </label>
+                  <select
+                    className="selectpicker1 form-control"
+                    data-live-search="true"
+                    id="suggestions-mercados"
+                    // onChange="setMarketToFind('mercado')"
+                  >
+                    <option value="">CP...</option>
+                  </select>
+                </div>
+                <div className="col-md-6 mt-2 mt-md-0">
+                  <label for="mercados" className="text-white text-shadow">
+                    Selecciona tu mercado
+                  </label>
+                  <select
+                    className="form-control mt-md-4"
+                    id="mercados"
+                  ></select>
+                </div>
+              </div>
+              <button
+                className="btn btn-primary mt-4 enter--button"
+                id="enter-mercado"
+              >
+                ENTRAR
+              </button>
+            </form>
+          </article>
+
+          <article
+            className="col-md-5 rounded text-center py-3 bg-tianguis mt-4"
+            id="tianguisPostalCode"
+            style={{ display: "none" }}
+          >
+            <h3 className="subtitulo rounded p-2 bg-transparencia">
+              TIANGUIS <i className="fas fa-store"></i>
+            </h3>
+            <form>
+              <div className="form-row">
+                <div className="col-md-6 wrapper-results">
+                  <label
+                    for="suggestions-mercados"
+                    className="text-white text-shadow"
+                  >
+                    Selecciona tu código postal
+                  </label>
+                  <select
+                    className="selectpicker2 form-control"
+                    data-live-search="true"
+                    id="suggestions-tianguis"
+                    onchange="setMarketToFind('tianguis')"
+                  >
+                    <option value="">CP...</option>
+                  </select>
+                </div>
+                <div className="col-md-6 mt-2 mt-md-0">
+                  <label for="tianguis" className="text-white text-shadow">
+                    Selecciona tu tianguis
+                  </label>
+                  <select
+                    className="form-control mt-md-4"
+                    id="tianguis"
+                  ></select>
+                </div>
+              </div>
+              <button
+                className="btn btn-primary mt-4 enter--button"
+                id="enter-tianguis"
+              >
+                ENTRAR
+              </button>
+            </form>
+          </article>
+        </div>
+      </section>
+
       <section className="container mb-5" id="registroLogin">
         <div className="row justify-content-around text-center">
           <article
@@ -32,7 +144,7 @@ const Home = () => {
                 <select
                   className="form-control"
                   id="mercadoTianguis"
-                  onblur="checkData()"
+                  // onblur="checkData()"
                   onchange="verifyTypeMarket()"
                 >
                   <option>Mercado</option>
@@ -42,7 +154,7 @@ const Home = () => {
                 <select
                   className="form-control"
                   id="zonaRegistro"
-                  onblur="checkData()"
+                  // onblur="checkData()"
                 >
                   <option>CDMX Centro</option>
                   <option>CDMX Norte</option>
@@ -57,14 +169,14 @@ const Home = () => {
                   className="form-control"
                   id="mercado"
                   data-live-search="true"
-                  onblur="checkData()"
+                  // onblur="checkData()"
                 ></select>
                 <label for="local">Escribe el número de tu local</label>
                 <input
                   type="number"
                   className="form-control"
                   id="local"
-                  onblur="checkData()"
+                  // onblur="checkData()"
                 />
               </div>
             </div>
@@ -78,7 +190,7 @@ const Home = () => {
                 className="form-control"
                 id="name"
                 placeholder="Nombre"
-                onblur="checkData()"
+                // onblur="checkData()"
               />
             </div>
             <div className="form-group">
@@ -99,7 +211,7 @@ const Home = () => {
                 className="form-control"
                 id="password"
                 placeholder="*****"
-                onblur="checkPass()"
+                // onblur="checkPass()"
               />
             </div>
             <div className="form-group form-check text-black-50 small">
@@ -109,7 +221,7 @@ const Home = () => {
               </label>
             </div>
             <button
-              onclick="register()"
+              // onclick="register()"
               className="btn btn-primary"
               id="submit"
               disabled
@@ -132,7 +244,7 @@ const Home = () => {
                 id="loginEmail"
                 aria-describedby="emailHelp"
                 placeholder="micorreo@correo.com"
-                onblur="checkDataLogin()"
+                // onblur="checkDataLogin()"
               />
             </div>
             <div className="form-group">
@@ -142,7 +254,7 @@ const Home = () => {
                 className="form-control"
                 id="loginPassword"
                 placeholder="*****"
-                onblur="checkDataLogin()"
+                // onblur="checkDataLogin()"
               />
             </div>
             <div className="form-group form-check">
@@ -169,7 +281,7 @@ const Home = () => {
               className="btn btn-primary"
               id="submitLogin"
               disabled
-              onclick="login(false)"
+              // onclick="login(false)"
             >
               Iniciar Sesión
             </button>
