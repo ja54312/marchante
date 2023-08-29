@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Home.scss";
 
 const Home = () => {
@@ -36,7 +36,7 @@ const Home = () => {
               <div className="form-row">
                 <div className="col-md-6">
                   <label
-                    for="suggestions-mercados"
+                    htmlFor="suggestions-mercados"
                     className="text-white text-shadow"
                   >
                     Selecciona tu código postal
@@ -45,13 +45,13 @@ const Home = () => {
                     className="selectpicker1 form-control"
                     data-live-search="true"
                     id="suggestions-mercados"
-                    // onChange="setMarketToFind('mercado')"
+                  // onChange="setMarketToFind('mercado')"
                   >
                     <option value="">CP...</option>
                   </select>
                 </div>
                 <div className="col-md-6 mt-2 mt-md-0">
-                  <label for="mercados" className="text-white text-shadow">
+                  <label htmlFor="mercados" className="text-white text-shadow">
                     Selecciona tu mercado
                   </label>
                   <select
@@ -81,7 +81,7 @@ const Home = () => {
               <div className="form-row">
                 <div className="col-md-6 wrapper-results">
                   <label
-                    for="suggestions-mercados"
+                    htmlFor="suggestions-mercados"
                     className="text-white text-shadow"
                   >
                     Selecciona tu código postal
@@ -90,13 +90,13 @@ const Home = () => {
                     className="selectpicker2 form-control"
                     data-live-search="true"
                     id="suggestions-tianguis"
-                    onchange="setMarketToFind('tianguis')"
+                  //onChange="setMarketToFind('tianguis')"
                   >
                     <option value="">CP...</option>
                   </select>
                 </div>
                 <div className="col-md-6 mt-2 mt-md-0">
-                  <label for="tianguis" className="text-white text-shadow">
+                  <label htmlFor="tianguis" className="text-white text-shadow">
                     Selecciona tu tianguis
                   </label>
                   <select
@@ -126,12 +126,12 @@ const Home = () => {
             <hr />
 
             <div className="form-group">
-              <label for="tipoCliente">Selecciona tu tipo</label>
+              <label htmlFor="tipoCliente">Selecciona tu tipo</label>
               <select
                 className="form-control"
                 id="tipoCliente"
-                // onBlur="checkType()"
-                // onChange="checkType()"
+              // onBlur="checkType()"
+              // onChange="checkType()"
               >
                 <option>Locatario</option>
                 <option>Cliente</option>
@@ -140,21 +140,21 @@ const Home = () => {
 
             <div id="disapearCustommer">
               <div className="form-group">
-                <label for="mercadoTianguis">Tu mercado o tianguis</label>
+                <label htmlFor="mercadoTianguis">Tu mercado o tianguis</label>
                 <select
                   className="form-control"
                   id="mercadoTianguis"
-                  // onblur="checkData()"
-                  onchange="verifyTypeMarket()"
+                // onblur="checkData()"
+                //onChange={verifyTypeMarket()}
                 >
                   <option>Mercado</option>
                   <option>Tianguis</option>
                 </select>
-                <label for="zonaRegistro">Selecciona tu zona</label>
+                <label htmlFor="zonaRegistro">Selecciona tu zona</label>
                 <select
                   className="form-control"
                   id="zonaRegistro"
-                  // onblur="checkData()"
+                // onblur="checkData()"
                 >
                   <option>CDMX Centro</option>
                   <option>CDMX Norte</option>
@@ -164,25 +164,25 @@ const Home = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label for="mercado">Selecciona tu mercado</label>
+                <label htmlFor="mercado">Selecciona tu mercado</label>
                 <select
                   className="form-control"
                   id="mercado"
                   data-live-search="true"
-                  // onblur="checkData()"
+                // onblur="checkData()"
                 ></select>
-                <label for="local">Escribe el número de tu local</label>
+                <label htmlFor="local">Escribe el número de tu local</label>
                 <input
                   type="number"
                   className="form-control"
                   id="local"
-                  // onblur="checkData()"
+                // onblur="checkData()"
                 />
               </div>
             </div>
 
             <div className="form-group">
-              <label for="formGroupExampleInput" id="label--name">
+              <label htmlFor="formGroupExampleInput" id="label--name">
                 Escribe el nombre de tu local
               </label>
               <input
@@ -190,33 +190,33 @@ const Home = () => {
                 className="form-control"
                 id="name"
                 placeholder="Nombre"
-                // onblur="checkData()"
+              // onblur="checkData()"
               />
             </div>
             <div className="form-group">
-              <label for="exampleInputEmail1">Escribe tu correo</label>
+              <label htmlFor="exampleInputEmail1">Escribe tu correo</label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
                 aria-describedby="emailHelp"
                 placeholder="micorreo@correo.com"
-                onblur="checkData()"
+              //onBlur="checkData()"
               />
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Escribe tu contraseña</label>
+              <label htmlFor="exampleInputPassword1">Escribe tu contraseña</label>
               <input
                 type="password"
                 className="form-control"
                 id="password"
                 placeholder="*****"
-                // onblur="checkPass()"
+              // onblur="checkPass()"
               />
             </div>
             <div className="form-group form-check text-black-50 small">
               <input type="checkbox" className="form-check-input" id="check" />
-              <label className="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" htmlFor="exampleCheck1">
                 Acepto Términos y Condiciones
               </label>
             </div>
@@ -237,24 +237,24 @@ const Home = () => {
             <h4 className="mb-4 mt-5 mt-md-0 titulo">Inicia Sesión</h4>
             <hr />
             <div className="form-group">
-              <label for="exampleInputEmail1">Escribe tu correo</label>
+              <label htmlFor="exampleInputEmail1">Escribe tu correo</label>
               <input
                 type="email"
                 className="form-control"
                 id="loginEmail"
                 aria-describedby="emailHelp"
                 placeholder="micorreo@correo.com"
-                // onblur="checkDataLogin()"
+              // onblur="checkDataLogin()"
               />
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Escribe tu contraseña</label>
+              <label htmlFor="exampleInputPassword1">Escribe tu contraseña</label>
               <input
                 type="password"
                 className="form-control"
                 id="loginPassword"
                 placeholder="*****"
-                // onblur="checkDataLogin()"
+              // onblur="checkDataLogin()"
               />
             </div>
             <div className="form-group form-check">
@@ -263,7 +263,7 @@ const Home = () => {
                 className="form-check-input"
                 id="checkLogin"
               />
-              <label className="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" htmlFor="exampleCheck1">
                 Recordar correo
               </label>
               <p>
@@ -281,7 +281,7 @@ const Home = () => {
               className="btn btn-primary"
               id="submitLogin"
               disabled
-              // onclick="login(false)"
+            // onclick="login(false)"
             >
               Iniciar Sesión
             </button>
