@@ -1,6 +1,8 @@
-
+import Modal from "../../Modal/Modal";
+import useModal from "../../../hooks/useModal";
 
 const NavBar = () => {
+    const [isOpenModal, openModal, closeModal] = useModal(true);
     return (
         <nav className="navbar navbar-expand-lg navbar-light sticky-top bg-mm1">
             <a className="navbar-brand logotipo" href="/">
@@ -13,6 +15,9 @@ const NavBar = () => {
             <button className="navbar-toggler">
                 <span className="navbar-toggler-icon"></span>
             </button>
+            <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                <span>modalito</span>
+            </Modal>
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav">
                     <li className="nav-item" id="panelLocatario" style={{ display: "none" }}>
