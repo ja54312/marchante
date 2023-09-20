@@ -2,7 +2,7 @@
 isOpen = estado inicial del modal (abierto o cerrado)
 children = contenido del modal
 */
-
+import './Modal.scss'
 const Modal = ({ isOpen, closeModal, children }: any) => {
     const handleModalDialogClick = (e: any) => {
         e.stopPropagation()

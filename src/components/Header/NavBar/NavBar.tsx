@@ -15,9 +15,6 @@ const NavBar = () => {
             <button className="navbar-toggler">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                <span>modalito</span>
-            </Modal>
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav">
                     <li className="nav-item" id="panelLocatario" style={{ display: "none" }}>
@@ -38,7 +35,7 @@ const NavBar = () => {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <button className="btn text-black-50">Ayuda
+                        <button className="btn text-black-50" onClick={openModal}>Ayuda
                             <i className="far fa-question"></i>
                         </button>
                     </li>
@@ -49,6 +46,9 @@ const NavBar = () => {
                     </li>
                 </ul>
             </div>
+            <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                <span>modalito</span>
+            </Modal>
         </nav>
     )
 }

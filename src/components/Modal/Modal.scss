@@ -1,0 +1,40 @@
+.modal-react {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-react__dialog {
+    background-color: #fff;
+    padding: 10px;
+    width: 450px;
+    height: 450px;
+    color: #000;
+}
+
+.modal-react__dialog--button-close {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: 'Montserrat';
+}
+
+.modal-react__dialog--children {
+    padding-top: 20px;
+}
+
+.modal-react-open {
+    display: grid;
+}
+
+.container-right {
+    padding: 50px 0px;
+}
