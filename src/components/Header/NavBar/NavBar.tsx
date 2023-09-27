@@ -47,7 +47,34 @@ const NavBar = () => {
                 </ul>
             </div>
             <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                <span>modalito</span>
+                <div className="modal-body text-center">
+                    <p>Nos puedes contactar aquí:</p>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <a href="https://api.whatsapp.com/send?phone=525560927609&text=Hola!%20quería%20preguntar..." target="_blank" className="text-success my-3 py-3">
+                                WHATSAPP <i className="fab fa-whatsapp"></i>
+                                <br />
+                                <p className="lead">+52 5560927609</p>
+                            </a>
+                        </div>
+                        <div className="col-md-6">
+                            <a href="https://www.facebook.com/Mi-marchante-100779191802852" target="_blank" className="text-primary my-3 py-3">
+                                FACEBOOK <i className="fab fa-facebook"></i>
+                                <br />
+                                <p className="lead logotipo">Mi marchante</p>
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                    <a href="#" target="_blank" className="text-info lead my-3 py-3">
+                        EMAIL <i className="far fa-envelope"></i>
+                        <br />
+                        <p className="lead">contacto@mimarchante.mx</p>
+                    </a>
+                </div>
+                <div className="modal-footer">
+                    <button onClick={closeModal} type="button" className="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </Modal>
         </nav>
     )
