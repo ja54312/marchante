@@ -2,7 +2,7 @@ import Modal from "../../Modal/Modal";
 import useModal from "../../../hooks/useModal";
 
 const NavBar = () => {
-    const [isOpenModal, openModal, closeModal] = useModal(true);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
     return (
         <nav className="navbar navbar-expand-lg navbar-light sticky-top bg-mm1">
             <a className="navbar-brand logotipo" href="/">
