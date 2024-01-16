@@ -16,21 +16,21 @@ const Footer = () => {
           </div>
           <div className="col-md-6 text-right small text-light">
             <a
-              href="avisoPrivacidad"
+              href="/avisoPrivacidad"
               target="_blank"
               className="text-dark"
             >
               Aviso de Privacidad |
             </a>
             <a
-              href="politicaPrivacidad"
+              href="/politicaPrivacidad"
               target="_blank"
               className="text-dark"
             >
               Política de Privacidad |
             </a>
             <a
-              href="terminosYCondicionesUso"
+              href="/terminosYCondicionesUso"
               target="_blank"
               className="text-dark"
             >
@@ -48,7 +48,7 @@ const Footer = () => {
               </a>
             </p>
             <p className="d-inline-flex m-0 p-0 ">
-              <a href="index.html" className="text-light logotipo">
+              <a href="/" className="text-light logotipo">
                 <i className="fas fa-shopping-bag text-mm2"></i>
                 Mi marchante
               </a>{" "}
