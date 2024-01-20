@@ -39,15 +39,15 @@ function App() {
           element: <Home />
         },
         {
-          path: "avisoPrivacidad",
+          path: "/avisoPrivacidad",
           element: <AvisoDePrivacidad />
         },
         {
-          path: "politicaPrivacidad",
+          path: "/politicaPrivacidad",
           element: <PoliticaPrivacidad />
         },
         {
-          path: "terminosYCondicionesUso",
+          path: "/terminosYCondicionesUso",
           element: <TerminosYCondiciones />
         },
       ]
