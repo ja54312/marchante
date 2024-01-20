@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import "./Footer.scss";
 
 const Footer = () => {
@@ -14,28 +15,10 @@ const Footer = () => {
               Contribuciones: Foto de Marco creado por freepik - www.freepik.es
             </a>
           </div>
-          <div className="col-md-6 text-right small text-light">
-            <a
-              href="/avisoPrivacidad"
-              target="_blank"
-              className="text-dark"
-            >
-              Aviso de Privacidad |
-            </a>
-            <a
-              href="/politicaPrivacidad"
-              target="_blank"
-              className="text-dark"
-            >
-              Política de Privacidad |
-            </a>
-            <a
-              href="/terminosYCondicionesUso"
-              target="_blank"
-              className="text-dark"
-            >
-              Términos y Condiciones
-            </a>
+          <div className="col-md-6 text-right small text-light containerLinksFooter">
+            <Link to="/avisoPrivacidad">Aviso de Privacidad |</Link>
+            <Link to="/politicaPrivacidad">Política de Privacidad |</Link>
+            <Link to="/terminosYCondicionesUso">Términos y Condiciones</Link>
           </div>
           <div className="col-md-12 bg-dark text-center text-light pb-2">
             <p className="m-0 p-0">
@@ -56,7 +39,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </footer>
+      </footer >
 
       <div style={{ display: "none" }} id="loader">
         <div className="conte_loader_MyStyle" style={{ display: "flex" }}>
