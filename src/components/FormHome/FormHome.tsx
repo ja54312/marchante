@@ -2,8 +2,6 @@
 
 import { useState ,useEffect} from "react"
 
-useState
-
 const FormHome = () => {
     const [form, setForm] = useState({});
     const [typeClient,setTypeClient]= useState("Locatario")
