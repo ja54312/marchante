@@ -1,8 +1,7 @@
-"use client"
-
 import { useState ,useEffect} from "react"
-
+import { useNavigate  } from 'react-router-dom';
 const FormHome = () => {
+    const navigate = useNavigate();
     const [form, setForm] = useState({});
     const [typeClient,setTypeClient]= useState("Locatario")
     //console.log("Tipo de cliente",typeClient)
@@ -34,7 +33,19 @@ const FormHome = () => {
     
       const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        //console.log("e",e.target.id)
+        const formElement = e.target as HTMLFormElement;
+        if(formElement.id === "FormRegistro"){
+            console.log("Registro")
+            if(typeClient === "Cliente"){
+                navigate('/user');
+            }else{
+                navigate('/comercio');
+            }
+        }
+        if(formElement.id === "FormLogin"){
+            navigate('/comercio');
+            console.log("Login")
+        }
         console.log("Formulario Enviado",form)
       };
 
