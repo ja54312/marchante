@@ -3,6 +3,8 @@ import Home from "./pages/home/Home";
 import AvisoDePrivacidad from "./pages/avisoDePrivacidad/AvisoDePrivacidad";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
 import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
+import User from "./pages/user/User";
+import Comercio from "./pages/Comercio/Comercio";
 //import Registro from "./pages/registro/Registro";
 //Components
 import Header from "./components/Header/Header";
@@ -49,6 +51,14 @@ function App() {
         {
           path: "/terminosYCondicionesUso",
           element: <TerminosYCondiciones />
+        },
+        {
+          path: "user",
+          element: <User />
+        },
+        {
+          path: "comercio",
+          element: <Comercio />
         },
       ]
     },
