@@ -67,19 +67,19 @@ const FormHome = () => {
   const validationsFormLocatario = (form: initialformProps) => {
     let count: number = 0
 
-    if (form.local.length === 0) {
+    if (form.local && form.local.length === 0) {
       count = + 1
     }
 
-    if (form.nameLocal.length === 0) {
+    if (form.nameLocal && form.nameLocal.length === 0) {
       count = + 1
     }
 
-    if (form.email.length === 0) {
+    if (form.email && form.email.length === 0) {
       count = + 1
     }
 
-    if (form.password.length === 0) {
+    if (form.password && form.password.length === 0) {
       count = + 1
     }
 
@@ -142,11 +142,7 @@ const FormHome = () => {
       console.log("Formulario Enviado", form)
       if (formElement.id === "FormRegistro") {
         console.log("Registro")
-        if (typeClient === "Cliente") {
-          navigate('/user');
-        } else {
-          navigate('/comercio');
-        }
+        navigate('/miPanel');
       }
     }
     // if (formElement.id === "FormLogin") {
