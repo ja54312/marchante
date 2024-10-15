@@ -6,8 +6,8 @@ import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondicio
 import MiPanel from "./pages/MiPanel/MiPanel";
 //import Registro from "./pages/registro/Registro";
 //Components
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/shared/Header/Header";
+import Footer from "./components/shared/Footer/Footer";
 //Styles
 import "./styles/global.scss"
 //Router

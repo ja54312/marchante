@@ -1,5 +1,5 @@
 import Modal from "../../Modal/Modal";
-import useModal from "../../../hooks/useModal";
+import useModal from "../../../../hooks/useModal";
 
 const NavBar = () => {
     const [isOpenModal, openModal, closeModal] = useModal(false);

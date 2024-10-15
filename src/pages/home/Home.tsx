@@ -1,5 +1,5 @@
 
-import FormHome from "../../components/FormHome/FormHome";
+import FormHome from "../../components/Home/FormHome/FormHome";
 import "./Home.scss";
 
 const Home = () => {
@@ -116,7 +116,7 @@ const Home = () => {
           </article>
         </div>
       </section>
-      <FormHome/>
+      <FormHome />
     </>
   );
 };
