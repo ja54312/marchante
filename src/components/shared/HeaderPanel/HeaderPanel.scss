@@ -1,0 +1,16 @@
+.sectionHeaderPanel{
+    width: 100%;
+    height: auto;
+    @media screen and (max-width: 768px){
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .titulo{
+        @media screen and (max-width: 768px){
+            padding-right: 0 !important;
+        }
+    }
+    .icons{
+        padding: 0 10px;
+    }
+}

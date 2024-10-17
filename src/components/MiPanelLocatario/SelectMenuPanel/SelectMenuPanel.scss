@@ -1,0 +1,39 @@
+.sectionSelectMenuPanel{
+    width: 100%;
+    height: auto;
+    .containerSelectMenuPanel{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+        @media screen and (min-width: 768px){
+            margin-top: 0;
+        }
+        .containerOption{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            @media screen and (min-width: 768px){
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                margin: 3rem 0;
+            }
+            .option{
+                width: 340px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @media screen and (min-width: 768px){
+                    cursor: pointer;
+                }
+            }
+            .selected{
+                color: #fff;
+                background-color: #007bff;
+                border-radius: 0.25rem;
+            }
+        }
+    }
+}

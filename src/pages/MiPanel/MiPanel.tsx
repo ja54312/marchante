@@ -1,6 +1,6 @@
 //componets
-import { Cliente } from "../../components/MiPanel/Cliente"
-import { Locatario } from "../../components/MiPanel/Locatario"
+import { Cliente } from "../../components/MiPanelCliente/Cliente"
+import { Locatario } from "../../components/MiPanelLocatario/Locatario"
 
 const MiPanel = () => {
 
