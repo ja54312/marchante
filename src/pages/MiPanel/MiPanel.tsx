@@ -1,15 +1,20 @@
 //componets
 import { Cliente } from "../../components/MiPanelCliente/Cliente"
 import { Locatario } from "../../components/MiPanelLocatario/Locatario"
+//Hooks
+import useLocalStorage from "../../hooks/useLocalStorage"
 
 const MiPanel = () => {
 
-  let typeClient: string = 'Locatario'
+  //let typeClient: string = 'Locatario'
+  const [clientTypeStorage] = useLocalStorage(
+    'ClientType', "Locatario"
+  )
 
   return (
     <section className="sectionMipanel">
-      {typeClient === 'Cliente' && <Cliente typeClient={typeClient} />}
-      {typeClient === 'Locatario' && <Locatario typeClient={typeClient} />}
+      {clientTypeStorage === 'Cliente' && <Cliente typeClient={clientTypeStorage} />}
+      {clientTypeStorage === 'Locatario' && <Locatario typeClient={clientTypeStorage} />}
     </section>
   )
 }

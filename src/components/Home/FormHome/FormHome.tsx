@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 //Hooks
 import { useNavigate } from 'react-router-dom';
-//import useLocalStorage from '../../hooks/useLocalStorage'
+import useLocalStorage from '../../../hooks/useLocalStorage';
 //Styles
 import "./FormHome.scss"
 //Types
@@ -32,19 +32,16 @@ const FormHome = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState(initialformLocatario || initialformCliente);
   const [typeClient, setTypeClient] = useState("Locatario")
-  // const [clientTypeStorage, setClientTypeStorage] = useLocalStorage(
-  //   'ClientType', "Locatario"
-  // )
+  const [clientTypeStorage, setClientTypeStorage] = useLocalStorage(
+    'ClientType', "Locatario"
+  )
   const [errors, setErrors] = useState(errores)
   const [count, setCount] = useState(0)
-  //console.log("Tipo de cliente", typeClient)
-  //console.log("form", form)
-  //console.log("localStorage", clientTypeStorage)
-
+  console.log(clientTypeStorage)
   // /*VALIDACIONES*/
   const validationsForm = (form: initialformProps) => {
     let errors: initialErrorProps = {}
-    //console.log(0, form.local)
+
     if (typeClient === "Locatario" && !form.local) {
       errors.local = '**Inserte un Numero de Local**'
     }
@@ -103,8 +100,10 @@ const FormHome = () => {
   useEffect(() => {
     if (typeClient === "Locatario") {
       setCount(validationsFormLocatario(form))
+      setClientTypeStorage("Locatario")
     } else {
       setCount(validationsFormClient(form))
+      setClientTypeStorage("Cliente")
     }
   }, [form, typeClient])
 
@@ -118,7 +117,7 @@ const FormHome = () => {
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "Locatario" || e.target.value === "Cliente") {
       setTypeClient(e.target.value)
-      //setClientTypeStorage(e.target.value)
+      setClientTypeStorage(e.target.value)
     }
     setForm({
       ...form,
@@ -137,18 +136,14 @@ const FormHome = () => {
     e.preventDefault();
     setErrors(validationsForm(form))
     const formElement = e.target as HTMLFormElement;
-    //console.log("errors", errors)
+
     if (Object.keys(errors).length === 0 && form.checkTyC === true && count === 0) {
-      console.log("Formulario Enviado", form)
+      //console.log("Formulario Enviado", form)
       if (formElement.id === "FormRegistro") {
-        console.log("Registro")
+        //console.log("Registro")
         navigate('/miPanel');
       }
     }
-    // if (formElement.id === "FormLogin") {
-    //   navigate('/comercio');
-    //   console.log("Login")
-    // }
   };
 
   useEffect(() => {
