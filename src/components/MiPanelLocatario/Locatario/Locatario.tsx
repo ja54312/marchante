@@ -1,6 +1,8 @@
 //Components
 import { HeaderPanel } from '../../shared/HeaderPanel/HeaderPanel';
+import { MisProductos } from '../MisProductos';
 import { SelectMenuPanel } from '../SelectMenuPanel';
+import { SubirProductos } from '../SubirProductos';
 //Styles
 import './Locatario.scss';
 //Types
@@ -14,6 +16,8 @@ export const Locatario: React.FC<LocatarioProps> = ({ typeClient }) => {
         <section className='sectionLocatario container mb-5'>
             <HeaderPanel typeClient={typeClient} />
             <SelectMenuPanel />
+            <SubirProductos />
+            <MisProductos />
         </section>
     )
 }

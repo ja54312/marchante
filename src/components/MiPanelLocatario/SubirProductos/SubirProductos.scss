@@ -1,0 +1,10 @@
+.tooltip{
+    position: relative !important;
+}
+.btn:disabled{
+    position: relative;
+    color: initial;
+    pointer-events: inherit;
+    background-color: inherit;
+    border: none;
+}
