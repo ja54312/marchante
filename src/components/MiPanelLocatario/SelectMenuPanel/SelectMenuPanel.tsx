@@ -1,10 +1,12 @@
-//Librerias
-import { useState } from 'react';
 //Styles
 import './SelectMenuPanel.scss';
+//Types
+interface SelectMenuPanelProps {
+    selectedOption: string;
+    setSelectedOption: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export const SelectMenuPanel = () => {
-    const [selectedOption, setSelectedOption] = useState<string>('productos')
+export const SelectMenuPanel: React.FC<SelectMenuPanelProps> = ({ selectedOption, setSelectedOption }) => {
 
     const getClassName = (option: string, selectedOption: string) => {
         return option === selectedOption ? 'option selected' : 'option';

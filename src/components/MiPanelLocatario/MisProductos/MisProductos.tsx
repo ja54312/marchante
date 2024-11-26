@@ -1,15 +1,26 @@
+//Component
+import ModalProducts from "./components/ModalProducts";
 //Hooks
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useLocalStorage from "../../../hooks/useLocalStorage";
+import useModal from "../../../hooks/useModal";
 //Style
 import './MisProductos.scss'
 //Models
-import { initialProductProps } from "../SubirProductos/SubirProductos.model";
+import { initialProductProps } from "../Locatario/SubirProductos.model";
+interface misProductosProps {
+    product: initialProductProps;
+    setProduct: React.Dispatch<React.SetStateAction<initialProductProps>>;
+}
 
-export const MisProductos = () => {
+export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct }) => {
 
     const [products, setProducts] = useLocalStorage<initialProductProps[]>('products', []);
+    console.log(setProduct)
 
+    const [isOpenModal, openModal, closeModal] = useModal(false);
+
+    const [caseModal, setCaseModal] = useState('');
 
 
     useEffect(() => {
@@ -27,7 +38,37 @@ export const MisProductos = () => {
         };
     }, [setProducts]);
 
+    useEffect(() => {
+        const storedProducts = localStorage.getItem('products');
+        if (storedProducts) {
+            setProducts(JSON.parse(storedProducts));
+        }
+    }, [product]);
 
+
+    const handleEditar = () => {
+        console.log('Editando producto')
+        openModal();
+        setCaseModal('edit');
+    }
+
+    const handleActivar = () => {
+        console.log('Activando producto')
+        openModal();
+        setCaseModal('active');
+    }
+
+    const handleSuspender = () => {
+        console.log('Suspender producto')
+        openModal();
+        setCaseModal('desactive');
+    }
+
+    const handleBorrar = () => {
+        console.log('Borrando producto')
+        openModal();
+        setCaseModal('delete');
+    }
 
 
     return (
@@ -57,7 +98,7 @@ export const MisProductos = () => {
                                 <th scope="col">PRECIO POR 1 PIEZA</th>
                                 <th scope="col">PRECIO POR 1 KILO</th>
                                 <th className="text-right" scope="col">
-                                    EDITAR / SUSPENDER / ACTIVAR
+                                    EDITAR / SUSPENDER / ACTIVAR / BORRAR
                                 </th>
                             </tr>
                         </thead>
@@ -69,16 +110,18 @@ export const MisProductos = () => {
                                     <td>{product.prePs}</td>
                                     <td className="text-right">
                                         <button
-                                            className="btn btn-warning btn-sm"
+                                            className="btn btn-primary btn-sm"
                                             data-toggle="modal"
                                             data-target="#editProductModal"
+                                            onClick={handleEditar}
                                         >
                                             Editar
                                         </button>
                                         <button
-                                            className="btn btn-danger btn-sm"
+                                            className="btn btn-warning btn-sm"
                                             data-toggle="modal"
                                             data-target="#suspendProductModal"
+                                            onClick={handleSuspender}
                                         >
                                             Suspender
                                         </button>
@@ -86,8 +129,17 @@ export const MisProductos = () => {
                                             className="btn btn-success btn-sm"
                                             data-toggle="modal"
                                             data-target="#activateProductModal"
+                                            onClick={handleActivar}
                                         >
                                             Activar
+                                        </button>
+                                        <button
+                                            className="btn btn-danger btn-sm"
+                                            data-toggle="modal"
+                                            data-target="#eraseProductModal"
+                                            onClick={handleBorrar}
+                                        >
+                                            Borrar
                                         </button>
                                     </td>
                                 </tr>
@@ -95,6 +147,7 @@ export const MisProductos = () => {
                         </tbody>
                     </table>
                 </div>)}
-        </section>
+            <ModalProducts isOpen={isOpenModal} closeModal={closeModal} caseModal={caseModal} />
+        </section >
     )
 }

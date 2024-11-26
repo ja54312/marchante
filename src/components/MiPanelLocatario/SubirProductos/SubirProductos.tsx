@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 //Styles
 import "./SubirProductos.scss";
-//Model
-import { initialProductProps } from "./SubirProductos.model";
+//
+import { initialProductProps } from "../Locatario/SubirProductos.model";
+interface subirProductosProps {
+    product: initialProductProps;
+    setProduct: React.Dispatch<React.SetStateAction<initialProductProps>>;
+}
 
-export const SubirProductos = () => {
+export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProduct }) => {
 
     const initialProduct: initialProductProps = {
         product: "",
@@ -18,8 +22,7 @@ export const SubirProductos = () => {
 
     const [productCategory, setProductCategory] = useState('');
     console.log('productCategory', productCategory);
-    const [product, setProduct] = useState<initialProductProps>(initialProduct);
-    console.log('product', product);
+    //console.log('product', product);
     const [isSaveButtonDisabled, setIsSaveButtonDisabled] = useState(true);
 
     const handleNameProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
