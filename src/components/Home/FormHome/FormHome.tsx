@@ -46,7 +46,7 @@ const FormHome = () => {
       errors.local = '**Inserte un Numero de Local**'
     }
 
-    if (typeClient === "Locatario" && !form.nameLocal.trim()) {
+    if (typeClient === "Locatario" && !(form.nameLocal?.trim())) {
       errors.nameLocal = '**Inserte un Nombre de Local**'
     }
 
@@ -64,7 +64,7 @@ const FormHome = () => {
   const validationsFormLocatario = (form: initialformProps) => {
     let count: number = 0
 
-    if (form.local && form.local.length === 0) {
+    if (typeof form.local === "string" && form.local.length === 0) {
       count = + 1
     }
 

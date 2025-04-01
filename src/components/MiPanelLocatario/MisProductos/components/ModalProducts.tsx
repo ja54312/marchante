@@ -10,8 +10,8 @@ import ContainerModal from './ContainerModal'
 import './Modal.scss'
 
 interface ModalProductsProps {
-    isOpen: boolean;
-    closeModal: () => void;
+    isOpen: boolean | (() => void);
+    closeModal: boolean | (() => void);
     caseModal: 'edit' | 'active' | 'delete' | 'desactive';
 }
 

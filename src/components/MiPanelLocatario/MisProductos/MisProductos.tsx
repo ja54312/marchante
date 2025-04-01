@@ -20,7 +20,7 @@ export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct 
 
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
-    const [caseModal, setCaseModal] = useState('');
+    const [caseModal, setCaseModal] = useState<'edit' | 'active' | 'delete' | 'desactive'>('edit');
 
 
     useEffect(() => {
@@ -48,25 +48,33 @@ export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct 
 
     const handleEditar = () => {
         console.log('Editando producto')
-        openModal();
+        if (typeof openModal === 'function') {
+                            openModal();
+        }
         setCaseModal('edit');
     }
 
     const handleActivar = () => {
         console.log('Activando producto')
-        openModal();
+        if (typeof openModal === 'function') {
+            openModal();
+        }
         setCaseModal('active');
     }
 
     const handleSuspender = () => {
         console.log('Suspender producto')
-        openModal();
+        if (typeof openModal === 'function') {
+            openModal();
+        }
         setCaseModal('desactive');
     }
 
     const handleBorrar = () => {
         console.log('Borrando producto')
-        openModal();
+        if (typeof openModal === 'function') {
+            openModal();
+        }
         setCaseModal('delete');
     }
 

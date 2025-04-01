@@ -36,7 +36,7 @@ const NavBar = () => {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <button className="btn text-black-50" onClick={openModal}>Ayuda
+                        <button className="btn text-black-50" onClick={() => openModal()}>Ayuda
                             <i className="far fa-question"></i>
                         </button>
                     </li>
