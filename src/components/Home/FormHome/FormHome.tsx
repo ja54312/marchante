@@ -40,7 +40,7 @@ const FormHome = () => {
   console.log(clientTypeStorage)
   // /*VALIDACIONES*/
   const validationsForm = (form: initialformProps) => {
-    let errors: initialErrorProps = {}
+    const errors: initialErrorProps = {}
 
     if (typeClient === "Locatario" && !form.local) {
       errors.local = '**Inserte un Numero de Local**'

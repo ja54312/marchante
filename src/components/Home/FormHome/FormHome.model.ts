@@ -3,8 +3,8 @@ export interface initialformProps {
     mercadoTianguis?: string
     zonaRegistro?: string
     mercado?: string
-    local?: any
-    nameLocal?: any
+    local?: number | string
+    nameLocal?: string
     email: string
     password: string
     checkTyC: boolean

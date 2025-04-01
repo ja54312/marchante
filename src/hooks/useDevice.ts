@@ -10,7 +10,7 @@ const useDevice = () => {
     const [anchoPantalla, setAnchoPantalla] = useState<number>(0);
 
     useEffect(() => {
-        let item: number = window.innerWidth;
+        const item: number = window.innerWidth;
         setAnchoPantalla(item);
     }, []);
 
@@ -18,7 +18,7 @@ const useDevice = () => {
         window.addEventListener(
             "resize",
             function () {
-                let item: number = window.innerWidth;
+                const item: number = window.innerWidth;
                 setAnchoPantalla(item);
             },
             true

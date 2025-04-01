@@ -9,7 +9,13 @@ import ContainerModal from './ContainerModal'
 //style
 import './Modal.scss'
 
-const ModalProducts = ({ isOpen, closeModal, caseModal }: any) => {
+interface ModalProductsProps {
+    isOpen: boolean;
+    closeModal: () => void;
+    caseModal: 'edit' | 'active' | 'delete' | 'desactive';
+}
+
+const ModalProducts: React.FC<ModalProductsProps> = ({ isOpen, closeModal, caseModal }) => {
 
     const initialColorText = {
         color: '',
@@ -18,7 +24,7 @@ const ModalProducts = ({ isOpen, closeModal, caseModal }: any) => {
 
     const [colorText, setColorText] = useState(initialColorText)
 
-    const handleModalDialogClick = (e: any) => {
+    const handleModalDialogClick = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation()
     }
 

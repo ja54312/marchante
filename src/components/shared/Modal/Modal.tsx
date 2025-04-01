@@ -3,9 +3,17 @@ isOpen = estado inicial del modal (abierto o cerrado)
 children = contenido del modal
 */
 import './Modal.scss'
-const Modal = ({ isOpen, closeModal, children }: any) => {
-    const handleModalDialogClick = (e: any) => {
-        e.stopPropagation()
+import { ReactNode } from 'react';
+
+interface ModalProps {
+    isOpen: boolean;
+    closeModal: () => void;
+    children: ReactNode;
+}
+
+const Modal = ({ isOpen, closeModal, children }: ModalProps) => {
+    const handleModalDialogClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
     }
 
     return (
