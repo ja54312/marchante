@@ -109,15 +109,7 @@ export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct 
                                     <td>{product.prePz}</td>
                                     <td>{product.prePs}</td>
                                     <td className="text-right">
-                                        <button
-                                            className="btn btn-primary btn-sm"
-                                            data-toggle="modal"
-                                            data-target="#editProductModal"
-                                            onClick={handleEditar}
-                                        >
-                                            Editar
-                                        </button>
-                                        <button
+                                    <button
                                             className="btn btn-warning btn-sm"
                                             data-toggle="modal"
                                             data-target="#suspendProductModal"
@@ -132,6 +124,14 @@ export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct 
                                             onClick={handleActivar}
                                         >
                                             Activar
+                                        </button>
+                                        <button
+                                            className="btn btn-primary btn-sm"
+                                            data-toggle="modal"
+                                            data-target="#editProductModal"
+                                            onClick={handleEditar}
+                                        >
+                                            Editar
                                         </button>
                                         <button
                                             className="btn btn-danger btn-sm"
