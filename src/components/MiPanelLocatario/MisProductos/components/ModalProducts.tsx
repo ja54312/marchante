@@ -11,7 +11,7 @@ import './Modal.scss'
 
 interface ModalProductsProps {
     isOpen: boolean | (() => void);
-    closeModal: boolean | (() => void);
+    closeModal: () => void;
     caseModal: 'edit' | 'active' | 'delete' | 'desactive';
 }
 
@@ -59,7 +59,7 @@ const ModalProducts: React.FC<ModalProductsProps> = ({ isOpen, closeModal, caseM
 
 
     return (
-        <div className={`modal-react ${isOpen && "modal-react-open"}`} onClick={closeModal}>
+        <div className={`modal-react ${isOpen && "modal-react-open"}`} onClick={() => closeModal()}>
             <div className="modal-react__dialogProducts" onClick={handleModalDialogClick} >
                 <div className={`modal-content alert-${colorText.color} border border-${colorText.color}`}>
                     <div className={`modal-header bg-${colorText.color} text-black-50`}>
