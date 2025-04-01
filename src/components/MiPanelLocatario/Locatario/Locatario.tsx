@@ -22,7 +22,7 @@ export const Locatario: React.FC<LocatarioProps> = ({ typeClient }) => {
     }
     const [selectedOption, setSelectedOption] = useState<string>('productos')
     const [product, setProduct] = useState<initialProductProps>(initialProduct);
-    console.log('selectedOption', selectedOption)
+    //console.log('selectedOption', selectedOption)
 
     return (
         <section className='sectionLocatario container mb-5'>
