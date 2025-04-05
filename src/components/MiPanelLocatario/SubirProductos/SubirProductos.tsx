@@ -21,7 +21,8 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
     const [products, setProducts] = useLocalStorage<initialProductProps[]>('products', []);
 
     const [productCategory, setProductCategory] = useState('');
-    console.log('productCategory', productCategory);
+    const [customCategory, setCustomCategory] = useState(''); // Estado para la categoría personalizada
+    //console.log('productCategory', productCategory);
     //console.log('product', product);
     const [isSaveButtonDisabled, setIsSaveButtonDisabled] = useState(true);
 
@@ -47,9 +48,15 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
     }
 
     const addProduct = () => {
+        if (productCategory === "0" && customCategory.trim() !== "") {
+            alert(`La categoría personalizada "${customCategory}" será evaluada para darse de alta.`);
+        }
+    
         console.log('Agregando producto...');
         setProducts([...products, product]);
         setProduct(initialProduct);
+        setProductCategory(''); // Reinicia la categoría seleccionada
+        setCustomCategory(''); // Limpia la categoría personalizada
     }
 
     useEffect(() => {
@@ -58,7 +65,6 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
         );
         setIsSaveButtonDisabled(!isProductChanged);
     }, [product])
-
 
 
 
@@ -81,6 +87,12 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
                             onChange={(e) => setProductCategory(e.target.value)}
                         >
                             <option>Selecciona una categoría...</option>
+                            <option value="1">Frutas</option>
+                            <option value="2">Verduras</option>
+                            <option value="3">Carnes</option>
+                            <option value="4">Lácteos</option>
+                            <option value="5">Panadería</option>
+                            <option value="6">Bebidas</option>
                             <option value="0">Otro...</option>
                         </select>
                     </div>
@@ -98,6 +110,19 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
                         >
                     </button>
                 </div>
+                {productCategory === "0" && (
+                        <div>
+                            <label htmlFor="customCategory">Escribe tu categoría</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="customCategory"
+                                value={customCategory}
+                                onChange={(e) => setCustomCategory(e.target.value)}
+                                placeholder="Ingresa una categoría personalizada"
+                            />
+                        </div>
+                        )}
             </div>
             <div className="form-row align-items-center text-center">
                 <div className="form-group col-md-4">
