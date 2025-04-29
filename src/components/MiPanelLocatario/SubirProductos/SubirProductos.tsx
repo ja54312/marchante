@@ -67,6 +67,27 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
     }, [product])
 
 
+    const categories = [
+        { id: 1, name: 'Abarrotes' },
+        { id: 2, name: 'Frutas' },
+        { id: 3, name: 'Verduras' },
+        { id: 4, name: 'Carnes' },
+        { id: 5, name: 'Pescados' },
+        { id: 6, name: 'Mariscos' },
+        { id: 7, name: 'Tortilleria' },
+        { id: 8, name: 'Ropa' },
+        { id: 9, name: 'Zapatería' },
+        { id: 10, name: 'Disfraces' },
+        { id: 11, name: 'Mascotas' },
+        { id: 12, name: 'Juguetes' },
+        { id: 13, name: 'Herramientas' },
+        { id: 14, name: 'Papelería' },
+        { id: 15, name: 'Costura' },
+        { id: 16, name: 'Ferretería' },
+        { id: 17, name: 'Belleza' },
+        { id: 18, name: 'Florería' },
+        { id: 19, name: 'Comida' },
+    ]
 
     return (
         <div
@@ -86,13 +107,12 @@ export const SubirProductos: React.FC<subirProductosProps> = ({ product, setProd
                             id="productCategory"
                             onChange={(e) => setProductCategory(e.target.value)}
                         >
-                            <option>Selecciona una categoría...</option>
-                            <option value="1">Frutas</option>
-                            <option value="2">Verduras</option>
-                            <option value="3">Carnes</option>
-                            <option value="4">Lácteos</option>
-                            <option value="5">Panadería</option>
-                            <option value="6">Bebidas</option>
+                            <option value="">Selecciona una categoría...</option>
+                            {categories.map((category) => (
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            ))}
                             <option value="0">Otro...</option>
                         </select>
                     </div>

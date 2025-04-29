@@ -106,33 +106,33 @@ export const MisProductos: React.FC<misProductosProps> = ({ product, setProduct 
                                 <th scope="col">PRECIO POR 1 PIEZA</th>
                                 <th scope="col">PRECIO POR 1 KILO</th>
                                 <th className="text-right" scope="col">
-                                    EDITAR / SUSPENDER / ACTIVAR / BORRAR
+                                    Buscar
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="table-body">
+                        <tbody id="table-body" >
                             {products.map((product, index) => (
-                                <tr key={index}>
+                                <tr key={index} style={{ backgroundColor: product.isActive ? '#ffffff' : '#f4f4f4' }}>
                                     <td>{product.product}</td>
                                     <td>{product.prePz}</td>
                                     <td>{product.prePs}</td>
                                     <td className="text-right">
-                                    <button
-                                            className="btn btn-warning btn-sm"
-                                            data-toggle="modal"
-                                            data-target="#suspendProductModal"
-                                            onClick={handleSuspender}
-                                        >
-                                            Suspender
-                                        </button>
-                                        <button
-                                            className="btn btn-success btn-sm"
-                                            data-toggle="modal"
-                                            data-target="#activateProductModal"
-                                            onClick={handleActivar}
-                                        >
-                                            Activar
-                                        </button>
+                                        <label className="switch">
+                                            <input 
+                                                type="checkbox" 
+                                                checked={product.isActive} 
+                                                onChange={() => {
+                                                    const updatedProducts = products.map((p, i) =>
+                                                        i === index ? { ...p, isActive: !p.isActive } : p
+                                                    );
+                                                    setProducts(updatedProducts);
+                                                    localStorage.setItem('products', JSON.stringify(updatedProducts));
+                                                }}
+                                            />
+                                            <span 
+                                                className="slider" 
+                                            ></span>
+                                        </label>
                                         <button
                                             className="btn btn-primary btn-sm"
                                             data-toggle="modal"
